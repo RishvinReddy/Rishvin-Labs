@@ -1,0 +1,1154 @@
+{
+  "category": "Students",
+  "description": "Best For: College students, freshers, engineering students, portfolios, placements, hackathons.",
+  "subcategories": [
+    {
+      "name": "1. Career & Placement Services",
+      "services": [
+        {
+          "name": "Resume Review",
+          "price": "199",
+          "currency": "INR",
+          "description": "Analysis, weakness identification, improvement suggestions"
+        },
+        {
+          "name": "ATS Resume Optimization",
+          "price": "299",
+          "currency": "INR",
+          "description": "ATS formatting, better keywords, improved structure"
+        },
+        {
+          "name": "Premium Resume Building",
+          "price": "799",
+          "currency": "INR",
+          "description": "Professional resume, ATS optimization, strong bullet points"
+        },
+        {
+          "name": "Resume + Project Alignment",
+          "price": "399",
+          "currency": "INR",
+          "description": "Match projects with resume, better positioning"
+        },
+        {
+          "name": "Placement Profile Review",
+          "price": "299",
+          "currency": "INR",
+          "description": "Resume, LinkedIn, GitHub feedback"
+        },
+        {
+          "name": "Internship Application Strategy",
+          "price": "499",
+          "currency": "INR",
+          "description": "Roadmap, profile review, application strategy"
+        },
+        {
+          "name": "Placement Ready Package",
+          "price": "999",
+          "currency": "INR",
+          "description": "Resume, LinkedIn, GitHub optimization",
+          "popular": true
+        },
+        {
+          "name": "Ultimate Career Starter Pack",
+          "price": "1,999",
+          "currency": "INR",
+          "description": "Resume, LinkedIn, GitHub, Portfolio website"
+        }
+      ]
+    },
+    {
+      "name": "2. Portfolio & Personal Branding",
+      "services": [
+        {
+          "name": "Basic Student Portfolio",
+          "price": "799",
+          "currency": "INR",
+          "description": "About, Skills, Projects, Contact"
+        },
+        {
+          "name": "Premium Portfolio Website",
+          "price": "1,499",
+          "currency": "INR",
+          "description": "Modern UI, animations, responsive",
+          "popular": true
+        },
+        {
+          "name": "GitHub Portfolio Setup",
+          "price": "399",
+          "currency": "INR",
+          "description": "Profile cleanup, project organization"
+        },
+        {
+          "name": "LinkedIn Optimization",
+          "price": "399",
+          "currency": "INR",
+          "description": "Headline, about section, skill setup"
+        },
+        {
+          "name": "Personal Branding Strategy",
+          "price": "499",
+          "currency": "INR",
+          "description": "Online presence guidance"
+        },
+        {
+          "name": "Digital Presence Audit",
+          "price": "299",
+          "currency": "INR",
+          "description": "LinkedIn, GitHub, Resume, Portfolio review"
+        }
+      ]
+    },
+    {
+      "name": "3. Academic Project Services",
+      "services": [
+        {
+          "name": "Mini Project Guidance",
+          "price": "299",
+          "currency": "INR",
+          "description": "Guidance for short academic projects"
+        },
+        {
+          "name": "Major Project Guidance",
+          "price": "999",
+          "currency": "INR",
+          "description": "Comprehensive final year guidance",
+          "popular": true
+        },
+        {
+          "name": "Project Architecture Planning",
+          "price": "499",
+          "currency": "INR",
+          "description": "Tech stack suggestions, architecture"
+        },
+        {
+          "name": "IoT Project Guidance",
+          "price": "499",
+          "currency": "INR",
+          "description": "Hardware and sensor integration"
+        },
+        {
+          "name": "Arduino Help",
+          "price": "299",
+          "currency": "INR",
+          "description": "Microcontroller programming"
+        },
+        {
+          "name": "ESP32 Help",
+          "price": "399",
+          "currency": "INR",
+          "description": "Wi-Fi and Bluetooth module assistance"
+        },
+        {
+          "name": "Circuit Troubleshooting",
+          "price": "299",
+          "currency": "INR",
+          "description": "Hardware debugging"
+        },
+        {
+          "name": "Tinkercad Simulation Help",
+          "price": "399",
+          "currency": "INR",
+          "description": "Virtual circuit testing"
+        },
+        {
+          "name": "Smart Agriculture Guidance",
+          "price": "499",
+          "currency": "INR",
+          "description": "IoT for farming"
+        },
+        {
+          "name": "Custom Project Consultation",
+          "price": "499",
+          "currency": "INR",
+          "description": "Custom tech stack and domain"
+        },
+        {
+          "name": "End-to-End Project Guidance",
+          "price": "2,999",
+          "currency": "INR",
+          "description": "Architecture, planning, coding support, documentation"
+        }
+      ]
+    },
+    {
+      "name": "4. Coding & Development Services",
+      "services": [
+        {
+          "name": "GitHub Setup",
+          "price": "299",
+          "currency": "INR",
+          "description": "Version control basics"
+        },
+        {
+          "name": "README Creation",
+          "price": "199",
+          "currency": "INR",
+          "description": "Project documentation"
+        },
+        {
+          "name": "Portfolio Deployment",
+          "price": "299",
+          "currency": "INR",
+          "description": "Go live with your website"
+        },
+        {
+          "name": "Bug Fixing",
+          "price": "199",
+          "startingAt": true,
+          "currency": "INR",
+          "description": "Resolve code issues"
+        },
+        {
+          "name": "Website Debugging",
+          "price": "399",
+          "currency": "INR",
+          "description": "Deep issue resolution"
+        },
+        {
+          "name": "Coding Guidance Session",
+          "price": "299",
+          "currency": "INR",
+          "description": "1-on-1 coding help"
+        },
+        {
+          "name": "Mini App Guidance",
+          "price": "499",
+          "currency": "INR",
+          "description": "Build small applications"
+        },
+        {
+          "name": "Full Project Roadmap",
+          "price": "799",
+          "currency": "INR",
+          "description": "Step-by-step development guide"
+        },
+        {
+          "name": "API Integration Help",
+          "price": "499",
+          "currency": "INR",
+          "description": "Connect external services"
+        },
+        {
+          "name": "Frontend Guidance",
+          "price": "399",
+          "currency": "INR",
+          "description": "UI/UX and client-side logic"
+        },
+        {
+          "name": "Backend Guidance",
+          "price": "499",
+          "currency": "INR",
+          "description": "Server, database, and API logic"
+        }
+      ]
+    },
+    {
+      "name": "5. AI Productivity for Students",
+      "services": [
+        {
+          "name": "AI Productivity Setup",
+          "price": "299",
+          "currency": "INR",
+          "description": "ChatGPT setup, workflow guidance"
+        },
+        {
+          "name": "AI Learning Workflow",
+          "price": "399",
+          "currency": "INR",
+          "description": "Study systems and optimization"
+        },
+        {
+          "name": "AI Research Setup",
+          "price": "399",
+          "currency": "INR",
+          "description": "Tools for academic research"
+        },
+        {
+          "name": "AI Resume Enhancement",
+          "price": "199",
+          "currency": "INR",
+          "description": "Quick AI-driven ATS tweaks"
+        },
+        {
+          "name": "AI Career Guidance",
+          "price": "299",
+          "currency": "INR",
+          "description": "AI-powered career pathing"
+        },
+        {
+          "name": "Personalized AI Workflow",
+          "price": "799",
+          "currency": "INR",
+          "description": "Complete custom automation"
+        }
+      ]
+    },
+    {
+      "name": "6. Documentation & Reports",
+      "services": [
+        {
+          "name": "Technical Report Writing",
+          "price": "499",
+          "currency": "INR",
+          "description": "IEEE format documentation"
+        },
+        {
+          "name": "Project Documentation",
+          "price": "499",
+          "currency": "INR",
+          "description": "Detailed project manuals"
+        },
+        {
+          "name": "PPT / Presentation Design",
+          "price": "299",
+          "currency": "INR",
+          "description": "Project defense slides"
+        },
+        {
+          "name": "UML Diagram Package",
+          "price": "499",
+          "currency": "INR",
+          "description": "Use case, sequence, activity, deployment"
+        },
+        {
+          "name": "Research Formatting",
+          "price": "299",
+          "currency": "INR",
+          "description": "Academic paper structuring"
+        },
+        {
+          "name": "Viva Preparation Notes",
+          "price": "199",
+          "currency": "INR",
+          "description": "Defense Q&A prep material"
+        },
+        {
+          "name": "Documentation Review",
+          "price": "299",
+          "currency": "INR",
+          "description": "Feedback and improvements"
+        }
+      ]
+    },
+    {
+      "name": "7. Hackathons & Competitions",
+      "services": [
+        {
+          "name": "Hackathon Team Guidance",
+          "price": "499",
+          "currency": "INR",
+          "description": "Team structure and execution"
+        },
+        {
+          "name": "Hackathon Idea Validation",
+          "price": "299",
+          "currency": "INR",
+          "description": "Refine your winning concept"
+        },
+        {
+          "name": "PPT for Hackathons",
+          "price": "399",
+          "currency": "INR",
+          "description": "Pitch presentations"
+        },
+        {
+          "name": "Pitch Deck Support",
+          "price": "499",
+          "currency": "INR",
+          "description": "Investor and judge-ready decks"
+        },
+        {
+          "name": "Project Architecture Help",
+          "price": "499",
+          "currency": "INR",
+          "description": "Scalable hackathon architecture"
+        },
+        {
+          "name": "Hackathon Strategy Session",
+          "price": "299",
+          "currency": "INR",
+          "description": "Time management and roadmap"
+        }
+      ]
+    },
+    {
+      "name": "8. Internship & Job Preparation",
+      "services": [
+        {
+          "name": "Internship Profile Audit",
+          "price": "299",
+          "currency": "INR",
+          "description": "Identify gaps in your profile"
+        },
+        {
+          "name": "Resume for Internship",
+          "price": "399",
+          "currency": "INR",
+          "description": "Tailored for early career"
+        },
+        {
+          "name": "Internship Roadmap",
+          "price": "499",
+          "currency": "INR",
+          "description": "Step-by-step acquisition plan"
+        },
+        {
+          "name": "LinkedIn Optimization",
+          "price": "399",
+          "currency": "INR",
+          "description": "Attract recruiters"
+        },
+        {
+          "name": "GitHub Cleanup",
+          "price": "399",
+          "currency": "INR",
+          "description": "Showcase your best code"
+        },
+        {
+          "name": "Interview Preparation",
+          "price": "299",
+          "currency": "INR",
+          "description": "Common questions and strategies"
+        },
+        {
+          "name": "Mock Interview",
+          "price": "399",
+          "currency": "INR",
+          "description": "Practice with feedback"
+        },
+        {
+          "name": "Job Ready Package",
+          "price": "1,499",
+          "currency": "INR",
+          "description": "Complete job prep suite"
+        }
+      ]
+    },
+    {
+      "name": "9. Technical Mentorship",
+      "services": [
+        {
+          "name": "1-on-1 Mentorship Call",
+          "price": "299",
+          "currency": "INR",
+          "description": "Per session advice"
+        },
+        {
+          "name": "Weekly Mentorship",
+          "price": "799",
+          "currency": "INR",
+          "description": "Per month weekly syncs"
+        },
+        {
+          "name": "Monthly Growth Plan",
+          "price": "1,499",
+          "currency": "INR",
+          "description": "Project guidance, career guidance, accountability"
+        }
+      ]
+    },
+    {
+      "name": "10. Freelancing & Personal Growth",
+      "services": [
+        {
+          "name": "Freelancing Setup",
+          "price": "499",
+          "currency": "INR",
+          "description": "Get started with client work"
+        },
+        {
+          "name": "Fiverr/Upwork Guidance",
+          "price": "399",
+          "currency": "INR",
+          "description": "Profile and gig setup"
+        },
+        {
+          "name": "Personal Brand Strategy",
+          "price": "499",
+          "currency": "INR",
+          "description": "Long-term growth plan"
+        },
+        {
+          "name": "Tech Career Planning",
+          "price": "399",
+          "currency": "INR",
+          "description": "Navigating the industry"
+        },
+        {
+          "name": "Skill Roadmap",
+          "price": "299",
+          "currency": "INR",
+          "description": "What to learn next"
+        }
+      ]
+    },
+    {
+      "name": "11. Student Creator Services",
+      "services": [
+        {
+          "name": "Instagram Setup",
+          "price": "299",
+          "currency": "INR",
+          "description": "Professional creator profile"
+        },
+        {
+          "name": "Creator Portfolio",
+          "price": "999",
+          "currency": "INR",
+          "description": "Showcase your work"
+        },
+        {
+          "name": "Bio Link Website",
+          "price": "399",
+          "currency": "INR",
+          "description": "Custom link-in-bio page"
+        },
+        {
+          "name": "Social Optimization",
+          "price": "399",
+          "currency": "INR",
+          "description": "Grow your audience"
+        },
+        {
+          "name": "Creator Growth Setup",
+          "price": "799",
+          "currency": "INR",
+          "description": "End-to-end creator launch"
+        }
+      ]
+    },
+    {
+      "name": "12. Student Subscription Plans",
+      "services": [
+        {
+          "name": "Starter Support",
+          "price": "199",
+          "currency": "INR",
+          "description": "Monthly doubt support"
+        },
+        {
+          "name": "Growth Plan",
+          "price": "499",
+          "currency": "INR",
+          "description": "Career + coding support monthly"
+        },
+        {
+          "name": "Premium Mentorship",
+          "price": "999",
+          "currency": "INR",
+          "description": "Personalized monthly guidance"
+        }
+      ]
+    },
+    {
+      "name": "13. Exam & Study Support Services",
+      "services": [
+        {
+          "name": "Study Roadmap",
+          "price": "199",
+          "currency": "INR",
+          "description": "Subject roadmap, Study planning"
+        },
+        {
+          "name": "Semester Preparation Strategy",
+          "price": "299",
+          "currency": "INR",
+          "description": "Exam preparation plan, priority topics"
+        },
+        {
+          "name": "Personalized Study Plan",
+          "price": "399",
+          "currency": "INR",
+          "description": "Daily roadmap, productivity system"
+        },
+        {
+          "name": "Subject-Specific Guidance",
+          "price": "199",
+          "currency": "INR",
+          "description": "DSA, IoT, Physics, Web Dev, Python"
+        },
+        {
+          "name": "Notes Structuring",
+          "price": "199",
+          "currency": "INR",
+          "description": "Better notes organization"
+        },
+        {
+          "name": "Smart Study Workflow Setup",
+          "price": "299",
+          "currency": "INR",
+          "description": "AI study workflow, Notion system"
+        },
+        {
+          "name": "Exam Strategy Consultation",
+          "price": "199",
+          "currency": "INR",
+          "description": "Actionable guidance for finals"
+        },
+        {
+          "name": "Assignment Structuring Help",
+          "price": "299",
+          "currency": "INR",
+          "description": "Formatting and structure"
+        },
+        {
+          "name": "Open Book Exam Strategy",
+          "price": "199",
+          "currency": "INR",
+          "description": "Resource mapping and index creation"
+        }
+      ]
+    },
+    {
+      "name": "14. Tech Learning Roadmaps",
+      "services": [
+        {
+          "name": "Cybersecurity Roadmap",
+          "price": "299",
+          "currency": "INR",
+          "description": "Step-by-step learning guide"
+        },
+        {
+          "name": "Full Stack Roadmap",
+          "price": "299",
+          "currency": "INR",
+          "description": "Frontend and backend learning guide"
+        },
+        {
+          "name": "IoT Roadmap",
+          "price": "299",
+          "currency": "INR",
+          "description": "Hardware and software integration guide"
+        },
+        {
+          "name": "Blockchain Roadmap",
+          "price": "299",
+          "currency": "INR",
+          "description": "Web3 and smart contracts guide"
+        },
+        {
+          "name": "AI/ML Roadmap",
+          "price": "299",
+          "currency": "INR",
+          "description": "Machine learning learning guide"
+        },
+        {
+          "name": "Career Domain Selection",
+          "price": "399",
+          "currency": "INR",
+          "description": "Helps students choose their path"
+        },
+        {
+          "name": "Personalized Tech Roadmap",
+          "price": "799",
+          "currency": "INR",
+          "description": "Based on interests, goals, and placement target"
+        }
+      ]
+    },
+    {
+      "name": "15. Student Productivity Services",
+      "services": [
+        {
+          "name": "Productivity Audit",
+          "price": "199",
+          "currency": "INR",
+          "description": "Analyze your daily routine"
+        },
+        {
+          "name": "Time Management System",
+          "price": "299",
+          "currency": "INR",
+          "description": "Effective scheduling techniques"
+        },
+        {
+          "name": "Notion Workspace Setup",
+          "price": "499",
+          "currency": "INR",
+          "description": "Custom productivity dashboard"
+        },
+        {
+          "name": "Student Dashboard Setup",
+          "price": "399",
+          "currency": "INR",
+          "description": "Centralized tools organization"
+        },
+        {
+          "name": "Goal Planning System",
+          "price": "299",
+          "currency": "INR",
+          "description": "Short and long term targets"
+        },
+        {
+          "name": "Semester Productivity Setup",
+          "price": "499",
+          "currency": "INR",
+          "description": "Complete system for the term"
+        },
+        {
+          "name": "Digital Organization Setup",
+          "price": "399",
+          "currency": "INR",
+          "description": "File and asset management"
+        },
+        {
+          "name": "AI Productivity Stack",
+          "price": "499",
+          "currency": "INR",
+          "description": "AI tools, workflow, automations"
+        }
+      ]
+    },
+    {
+      "name": "16. Hackathon Services (Expanded)",
+      "services": [
+        {
+          "name": "Hackathon Team Building Strategy",
+          "price": "299",
+          "currency": "INR",
+          "description": "Find the right skillsets"
+        },
+        {
+          "name": "Project Idea Brainstorming",
+          "price": "299",
+          "currency": "INR",
+          "description": "Generate winning concepts"
+        },
+        {
+          "name": "Winning Hackathon Roadmap",
+          "price": "499",
+          "currency": "INR",
+          "description": "Step-by-step execution plan"
+        },
+        {
+          "name": "Hackathon MVP Planning",
+          "price": "499",
+          "currency": "INR",
+          "description": "Minimum viable product scoping"
+        },
+        {
+          "name": "Tech Stack Recommendation",
+          "price": "299",
+          "currency": "INR",
+          "description": "Best tools for speed"
+        },
+        {
+          "name": "Presentation Coaching",
+          "price": "299",
+          "currency": "INR",
+          "description": "Deliver a powerful pitch"
+        },
+        {
+          "name": "Pitch Practice",
+          "price": "399",
+          "currency": "INR",
+          "description": "Mock presentation with feedback"
+        },
+        {
+          "name": "Demo Preparation",
+          "price": "299",
+          "currency": "INR",
+          "description": "Showcase your tech flawlessly"
+        },
+        {
+          "name": "End-to-End Hackathon Support",
+          "price": "1,999",
+          "currency": "INR",
+          "description": "Complete project guidance"
+        }
+      ]
+    },
+    {
+      "name": "17. Research & Paper Support",
+      "services": [
+        {
+          "name": "Technical Review Formatting",
+          "price": "299",
+          "currency": "INR",
+          "description": "Format to academic standards"
+        },
+        {
+          "name": "IEEE Formatting",
+          "price": "399",
+          "currency": "INR",
+          "description": "Standard IEEE compliance"
+        },
+        {
+          "name": "Citation Help",
+          "price": "199",
+          "currency": "INR",
+          "description": "Reference management"
+        },
+        {
+          "name": "Research Paper Structuring",
+          "price": "499",
+          "currency": "INR",
+          "description": "Logical flow and sections"
+        },
+        {
+          "name": "Literature Review Guidance",
+          "price": "399",
+          "currency": "INR",
+          "description": "Analyze existing research"
+        },
+        {
+          "name": "Paper Presentation PPT",
+          "price": "299",
+          "currency": "INR",
+          "description": "Slides for your defense"
+        },
+        {
+          "name": "Research Project Guidance",
+          "price": "799",
+          "currency": "INR",
+          "description": "Comprehensive research support"
+        }
+      ]
+    },
+    {
+      "name": "18. Coding Interview Preparation",
+      "services": [
+        {
+          "name": "DSA Preparation Roadmap",
+          "price": "399",
+          "currency": "INR",
+          "description": "Data structures learning path"
+        },
+        {
+          "name": "Coding Profile Review",
+          "price": "299",
+          "currency": "INR",
+          "description": "Feedback on HackerRank/CodeChef"
+        },
+        {
+          "name": "LeetCode Strategy",
+          "price": "299",
+          "currency": "INR",
+          "description": "Pattern recognition methodology"
+        },
+        {
+          "name": "GitHub Resume Optimization",
+          "price": "399",
+          "currency": "INR",
+          "description": "Showcase your commits"
+        },
+        {
+          "name": "Mock Technical Interview",
+          "price": "399",
+          "currency": "INR",
+          "description": "Practice with feedback"
+        },
+        {
+          "name": "Placement Coding Strategy",
+          "price": "499",
+          "currency": "INR",
+          "description": "Targeted preparation"
+        },
+        {
+          "name": "Coding Growth Plan",
+          "price": "999",
+          "currency": "INR",
+          "description": "Long term coding development"
+        }
+      ]
+    },
+    {
+      "name": "19. Personal Branding for Students",
+      "services": [
+        {
+          "name": "Personal Brand Audit",
+          "price": "299",
+          "currency": "INR",
+          "description": "Identify your current standing"
+        },
+        {
+          "name": "Professional Online Presence",
+          "price": "499",
+          "currency": "INR",
+          "description": "Setup key professional channels"
+        },
+        {
+          "name": "Student LinkedIn Growth",
+          "price": "399",
+          "currency": "INR",
+          "description": "Network expansion strategy"
+        },
+        {
+          "name": "Personal Website Strategy",
+          "price": "299",
+          "currency": "INR",
+          "description": "Planning your digital home"
+        },
+        {
+          "name": "Personal Brand Consultation",
+          "price": "399",
+          "currency": "INR",
+          "description": "1-on-1 strategy session"
+        },
+        {
+          "name": "Online Reputation Setup",
+          "price": "299",
+          "currency": "INR",
+          "description": "Manage your digital footprint"
+        }
+      ]
+    },
+    {
+      "name": "20. Student Entrepreneur Services",
+      "services": [
+        {
+          "name": "Startup Idea Validation",
+          "price": "299",
+          "currency": "INR",
+          "description": "Test your concept"
+        },
+        {
+          "name": "Side Hustle Planning",
+          "price": "399",
+          "currency": "INR",
+          "description": "Monetize your skills"
+        },
+        {
+          "name": "Student Founder Guidance",
+          "price": "499",
+          "currency": "INR",
+          "description": "Balance studies and startup"
+        },
+        {
+          "name": "MVP Planning",
+          "price": "499",
+          "currency": "INR",
+          "description": "Scope out your first release"
+        },
+        {
+          "name": "Business Website Starter",
+          "price": "999",
+          "currency": "INR",
+          "description": "Basic startup presence"
+        },
+        {
+          "name": "Startup Toolkit Setup",
+          "price": "499",
+          "currency": "INR",
+          "description": "Essential founder tools"
+        },
+        {
+          "name": "Student Founder Package",
+          "price": "1,999",
+          "currency": "INR",
+          "description": "Complete launch kit"
+        }
+      ]
+    },
+    {
+      "name": "21. Content Creator Students",
+      "services": [
+        {
+          "name": "Student Creator Website",
+          "price": "999",
+          "currency": "INR",
+          "description": "Your creative hub"
+        },
+        {
+          "name": "Portfolio for Creators",
+          "price": "799",
+          "currency": "INR",
+          "description": "Showcase your media"
+        },
+        {
+          "name": "Instagram Setup",
+          "price": "299",
+          "currency": "INR",
+          "description": "Professional creator profile"
+        },
+        {
+          "name": "Bio Optimization",
+          "price": "199",
+          "currency": "INR",
+          "description": "Convert profile views"
+        },
+        {
+          "name": "Creator Growth Setup",
+          "price": "499",
+          "currency": "INR",
+          "description": "Content planning system"
+        },
+        {
+          "name": "Content Strategy Basics",
+          "price": "399",
+          "currency": "INR",
+          "description": "What and when to post"
+        }
+      ]
+    },
+    {
+      "name": "22. Community / Club Support",
+      "services": [
+        {
+          "name": "Club Website",
+          "price": "1,499",
+          "currency": "INR",
+          "description": "Digital home for your college club"
+        },
+        {
+          "name": "Event Registration Page",
+          "price": "499",
+          "currency": "INR",
+          "description": "Collect attendee data"
+        },
+        {
+          "name": "Club Branding",
+          "price": "399",
+          "currency": "INR",
+          "description": "Logos and visual identity"
+        },
+        {
+          "name": "Event Poster Guidance",
+          "price": "299",
+          "currency": "INR",
+          "description": "Design feedback for events"
+        },
+        {
+          "name": "Technical Event Setup",
+          "price": "799",
+          "currency": "INR",
+          "description": "Infrastructure for tech events"
+        },
+        {
+          "name": "Hackathon Website",
+          "price": "1,999",
+          "currency": "INR",
+          "description": "Complete event platform"
+        }
+      ]
+    },
+    {
+      "name": "23. Student Digital Services",
+      "services": [
+        {
+          "name": "Email Setup",
+          "price": "199",
+          "currency": "INR",
+          "description": "Professional email configuration"
+        },
+        {
+          "name": "Portfolio Hosting",
+          "price": "199",
+          "currency": "INR",
+          "description": "Get your site online"
+        },
+        {
+          "name": "GitHub Pages Deployment",
+          "price": "299",
+          "currency": "INR",
+          "description": "Free hosting setup"
+        },
+        {
+          "name": "Domain Guidance",
+          "price": "199",
+          "currency": "INR",
+          "description": "Choose and buy your .com"
+        },
+        {
+          "name": "Website Maintenance",
+          "price": "199",
+          "currency": "INR",
+          "description": "Monthly upkeep"
+        },
+        {
+          "name": "Basic SEO",
+          "price": "299",
+          "currency": "INR",
+          "description": "Get found on Google"
+        }
+      ]
+    },
+    {
+      "name": "24. Student VIP Membership",
+      "services": [
+        {
+          "name": "Starter Support",
+          "price": "199",
+          "currency": "INR",
+          "description": "Per month, monthly support"
+        },
+        {
+          "name": "Growth Plan",
+          "price": "499",
+          "currency": "INR",
+          "description": "Per month, Career + coding support"
+        },
+        {
+          "name": "Elite Plan",
+          "price": "999",
+          "currency": "INR",
+          "description": "Per month, priority mentoring, resume reviews, project guidance"
+        }
+      ]
+    }
+  ],
+  "packages": [
+    {
+      "name": "Placement Booster Pack",
+      "price": "999",
+      "currency": "INR",
+      "description": "Essential placement tools",
+      "includes": [
+        "Resume",
+        "LinkedIn",
+        "GitHub"
+      ]
+    },
+    {
+      "name": "Internship Ready Pack",
+      "price": "1,499",
+      "currency": "INR",
+      "description": "Everything for internships",
+      "includes": [
+        "Resume",
+        "Roadmap",
+        "LinkedIn",
+        "Interview Prep"
+      ]
+    },
+    {
+      "name": "Final Year Project Pack",
+      "price": "1,999",
+      "currency": "INR",
+      "description": "Ace your final year",
+      "includes": [
+        "Project",
+        "Docs",
+        "Presentation"
+      ]
+    },
+    {
+      "name": "Student Tech Growth Bundle",
+      "price": "2,999",
+      "currency": "INR",
+      "description": "The ultimate student ecosystem",
+      "includes": [
+        "Career",
+        "Projects",
+        "Portfolio",
+        "Mentorship"
+      ],
+      "popular": true
+    },
+    {
+      "name": "Rishvin Labs Student Success Program",
+      "price": "199/month",
+      "currency": "INR",
+      "description": "The ultimate monthly membership for Woxsen students and beyond.",
+      "includes": [
+        "Resume Reviews",
+        "Internship Guidance",
+        "Coding Help",
+        "Project Guidance",
+        "AI Productivity",
+        "Placement Roadmap"
+      ],
+      "popular": true
+    }
+  ]
+}

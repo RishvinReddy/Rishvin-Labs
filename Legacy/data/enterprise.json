@@ -1,0 +1,26 @@
+{
+  "category": "Enterprise Solutions",
+  "description": "Scalable systems and security",
+  "services": [
+    {
+      "id": "security-audit",
+      "name": "Security Audit",
+      "price": 15000,
+      "currency": "INR",
+      "startingAt": true,
+      "description": "Comprehensive vulnerability scan",
+      "features": [
+        "Penetration testing",
+        "OWASP Top 10",
+        "Detailed report"
+      ],
+      "delivery": "2-3 Weeks",
+      "popular": false,
+      "tags": [
+        "security",
+        "enterprise"
+      ]
+    }
+  ],
+  "packages": []
+}

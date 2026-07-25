@@ -1,0 +1,50 @@
+{
+  "category": "Open Source & GitHub Services",
+  "description": "Best For: Developers looking to build a strong open-source presence.",
+  "services": [
+    {
+      "name": "GitHub Profile Optimization",
+      "price": "399",
+      "currency": "INR",
+      "description": "Stand out to recruiters",
+      "popular": true
+    },
+    {
+      "name": "README Enhancement",
+      "price": "199",
+      "currency": "INR",
+      "description": "Detailed project documentation"
+    },
+    {
+      "name": "Repository Organization",
+      "price": "299",
+      "currency": "INR",
+      "description": "Clean up your codebase structure"
+    },
+    {
+      "name": "Open Source Contribution Setup",
+      "price": "499",
+      "currency": "INR",
+      "description": "Get started with open source"
+    },
+    {
+      "name": "Git/GitHub Training",
+      "price": "399",
+      "currency": "INR",
+      "description": "Learn version control basics"
+    },
+    {
+      "name": "GitHub Portfolio Setup",
+      "price": "499",
+      "currency": "INR",
+      "description": "Host your portfolio for free"
+    },
+    {
+      "name": "Documentation Cleanup",
+      "price": "299",
+      "currency": "INR",
+      "description": "Organize your project docs"
+    }
+  ],
+  "packages": []
+}

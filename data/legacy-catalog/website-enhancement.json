@@ -1,0 +1,69 @@
+{
+  "category": "Website Enhancement Services",
+  "description": "Best For: People who already have websites.",
+  "services": [
+    {
+      "name": "Website Speed Optimization",
+      "price": "499",
+      "currency": "INR",
+      "description": "Improve load times"
+    },
+    {
+      "name": "Mobile Responsiveness Fix",
+      "price": "399",
+      "currency": "INR",
+      "description": "Fix mobile layout issues"
+    },
+    {
+      "name": "UI Improvement",
+      "price": "499",
+      "currency": "INR",
+      "description": "Modernize your design"
+    },
+    {
+      "name": "Complete Website Redesign",
+      "price": "1,999",
+      "currency": "INR",
+      "description": "Full visual overhaul",
+      "popular": true
+    },
+    {
+      "name": "Landing Page Redesign",
+      "price": "799",
+      "currency": "INR",
+      "description": "Optimize for conversions"
+    },
+    {
+      "name": "Dark Mode Addition",
+      "price": "199",
+      "currency": "INR",
+      "description": "Implement theme toggling"
+    },
+    {
+      "name": "SEO Optimization",
+      "price": "499",
+      "currency": "INR",
+      "description": "Boost search rankings"
+    },
+    {
+      "name": "Bug Fixing",
+      "price": "199",
+      "startingAt": true,
+      "currency": "INR",
+      "description": "Resolve technical issues"
+    },
+    {
+      "name": "Accessibility Improvements",
+      "price": "399",
+      "currency": "INR",
+      "description": "Make your site usable for all"
+    },
+    {
+      "name": "Website Audit",
+      "price": "299",
+      "currency": "INR",
+      "description": "Comprehensive review report"
+    }
+  ],
+  "packages": []
+}

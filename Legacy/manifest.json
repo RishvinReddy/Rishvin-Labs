@@ -1,0 +1,21 @@
+{
+  "name": "Rishvin Labs",
+  "short_name": "Rishvin Labs",
+  "description": "Engineering Intelligent Digital Systems",
+  "start_url": "/rishvin-labs/",
+  "display": "standalone",
+  "background_color": "#020617",
+  "theme_color": "#6366f1",
+  "icons": [
+    {
+      "src": "favicon/favicon.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "favicon/favicon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

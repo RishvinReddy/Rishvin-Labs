@@ -1,0 +1,62 @@
+{
+  "category": "Maintenance & Support",
+  "description": "Keep your digital presence running smoothly.",
+  "services": [
+    {
+      "name": "Quick Fix",
+      "price": "199",
+      "currency": "INR",
+      "description": "One-time minor issue resolution"
+    },
+    {
+      "name": "Emergency Fix",
+      "price": "499",
+      "currency": "INR",
+      "description": "Urgent technical support"
+    },
+    {
+      "name": "Feature Addition",
+      "price": "499",
+      "currency": "INR",
+      "description": "Add new functionality"
+    },
+    {
+      "name": "Consultation Call",
+      "price": "299",
+      "currency": "INR",
+      "description": "Technical advice session"
+    }
+  ],
+  "packages": [
+    {
+      "name": "Starter Maintenance",
+      "price": "199",
+      "currency": "INR",
+      "description": "Per month",
+      "includes": [
+        "Minor fixes"
+      ]
+    },
+    {
+      "name": "Growth Maintenance",
+      "price": "499",
+      "currency": "INR",
+      "description": "Per month",
+      "includes": [
+        "Updates",
+        "Support"
+      ],
+      "popular": true
+    },
+    {
+      "name": "Premium Maintenance",
+      "price": "999",
+      "currency": "INR",
+      "description": "Per month",
+      "includes": [
+        "Priority support",
+        "Upgrades"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,97 @@
+{
+  "category": "Small Businesses",
+  "description": "Best For: Shops, clinics, cafes, agencies, local businesses.",
+  "services": [
+    {
+      "name": "Basic Business Website",
+      "price": "999",
+      "currency": "INR",
+      "description": "Essential online presence"
+    },
+    {
+      "name": "Business Website Pro",
+      "price": "2,499",
+      "currency": "INR",
+      "description": "Professional multi-page website",
+      "popular": true
+    },
+    {
+      "name": "Premium Website",
+      "price": "4,999",
+      "currency": "INR",
+      "description": "High-end design and features"
+    },
+    {
+      "name": "WhatsApp Integration",
+      "price": "199",
+      "currency": "INR",
+      "description": "Direct customer chat"
+    },
+    {
+      "name": "Contact Form Setup",
+      "price": "199",
+      "currency": "INR",
+      "description": "Lead generation form"
+    },
+    {
+      "name": "Google Maps Setup",
+      "price": "199",
+      "currency": "INR",
+      "description": "Location integration"
+    },
+    {
+      "name": "SEO Basics",
+      "price": "299",
+      "currency": "INR",
+      "description": "Search engine visibility"
+    },
+    {
+      "name": "Google Analytics Setup",
+      "price": "299",
+      "currency": "INR",
+      "description": "Traffic monitoring"
+    },
+    {
+      "name": "Website Maintenance",
+      "price": "199",
+      "currency": "INR",
+      "description": "Per month"
+    }
+  ],
+  "packages": [
+    {
+      "name": "Local Business Starter",
+      "price": "999",
+      "currency": "INR",
+      "description": "Get your business online quickly",
+      "includes": [
+        "One-page website",
+        "Contact section",
+        "WhatsApp button"
+      ]
+    },
+    {
+      "name": "Business Growth Package",
+      "price": "2,499",
+      "currency": "INR",
+      "description": "Scale your digital presence",
+      "includes": [
+        "Multi-page website",
+        "SEO basics",
+        "Maps integration"
+      ],
+      "popular": true
+    },
+    {
+      "name": "Premium Business Package",
+      "price": "4,999",
+      "currency": "INR",
+      "description": "The ultimate business solution",
+      "includes": [
+        "Premium UI",
+        "Automation",
+        "Optimization"
+      ]
+    }
+  ]
+}

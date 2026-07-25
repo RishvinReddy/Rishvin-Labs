@@ -1,0 +1,70 @@
+{
+  "category": "Social Media & Personal Branding",
+  "description": "Best For: Creators, founders, students.",
+  "services": [
+    {
+      "name": "Bio Optimization",
+      "price": "199",
+      "currency": "INR",
+      "description": "Engaging profile descriptions"
+    },
+    {
+      "name": "Instagram Setup",
+      "price": "299",
+      "currency": "INR",
+      "description": "Professional profile initialization"
+    },
+    {
+      "name": "LinkedIn Branding",
+      "price": "499",
+      "currency": "INR",
+      "description": "Stand out to professionals"
+    },
+    {
+      "name": "Personal Brand Strategy",
+      "price": "999",
+      "currency": "INR",
+      "description": "Long-term growth plan"
+    },
+    {
+      "name": "Creator Portfolio Setup",
+      "price": "999",
+      "currency": "INR",
+      "description": "Showcase your best work"
+    },
+    {
+      "name": "Social Media Profile Audit",
+      "price": "299",
+      "currency": "INR",
+      "description": "Identify areas for improvement"
+    },
+    {
+      "name": "Online Presence Audit",
+      "price": "399",
+      "currency": "INR",
+      "description": "Comprehensive digital review"
+    }
+  ],
+  "packages": [
+    {
+      "name": "Creator Starter",
+      "price": "499",
+      "currency": "INR",
+      "description": "Essential brand setup",
+      "includes": [
+        "Social optimization"
+      ]
+    },
+    {
+      "name": "Personal Brand Pro",
+      "price": "1,499",
+      "currency": "INR",
+      "description": "Complete online identity",
+      "includes": [
+        "Website optimization",
+        "Profile optimization"
+      ],
+      "popular": true
+    }
+  ]
+}

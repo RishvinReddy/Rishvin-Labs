@@ -1,0 +1,56 @@
+{
+  "category": "Documentation Services",
+  "description": "Best For: Engineering students and developers needing robust docs.",
+  "services": [
+    {
+      "name": "Technical Documentation",
+      "price": "499",
+      "currency": "INR",
+      "description": "Clear and concise technical manuals"
+    },
+    {
+      "name": "Project Report Formatting",
+      "price": "299",
+      "currency": "INR",
+      "description": "IEEE format documentation"
+    },
+    {
+      "name": "PPT Design",
+      "price": "299",
+      "currency": "INR",
+      "description": "Professional presentation slides"
+    },
+    {
+      "name": "UML Diagrams",
+      "price": "499",
+      "currency": "INR",
+      "description": "System architecture visualization"
+    },
+    {
+      "name": "PRD Creation",
+      "price": "799",
+      "currency": "INR",
+      "description": "Product Requirements Document"
+    },
+    {
+      "name": "SRS Document",
+      "price": "799",
+      "currency": "INR",
+      "description": "Software Requirements Specification",
+      "popular": true
+    },
+    {
+      "name": "Research Formatting",
+      "price": "499",
+      "currency": "INR",
+      "description": "Academic paper structuring"
+    },
+    {
+      "name": "Documentation Review",
+      "price": "299",
+      "currency": "INR",
+      "description": "Feedback and improvement suggestions"
+    }
+  ],
+  "packages": []
+}

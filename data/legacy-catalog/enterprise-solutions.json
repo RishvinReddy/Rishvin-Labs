@@ -1,0 +1,70 @@
+{
+  "category": "Custom Enterprise Solutions",
+  "description": "Best For: Larger clients & future growth.",
+  "services": [
+    {
+      "name": "Custom web apps",
+      "price": "4,999",
+      "startingAt": true,
+      "currency": "INR",
+      "description": "Tailored web applications"
+    },
+    {
+      "name": "AI integrations",
+      "price": "4,999",
+      "startingAt": true,
+      "currency": "INR",
+      "description": "LLM and machine learning features"
+    },
+    {
+      "name": "Automation systems",
+      "price": "4,999",
+      "startingAt": true,
+      "currency": "INR",
+      "description": "Workflow optimization"
+    },
+    {
+      "name": "Dashboards",
+      "price": "4,999",
+      "startingAt": true,
+      "currency": "INR",
+      "description": "Data visualization panels"
+    },
+    {
+      "name": "Internal tools",
+      "price": "4,999",
+      "startingAt": true,
+      "currency": "INR",
+      "description": "Custom employee utilities"
+    },
+    {
+      "name": "Workflow systems",
+      "price": "4,999",
+      "startingAt": true,
+      "currency": "INR",
+      "description": "Business process management"
+    },
+    {
+      "name": "IoT solutions",
+      "price": "4,999",
+      "startingAt": true,
+      "currency": "INR",
+      "description": "Enterprise hardware integrations"
+    },
+    {
+      "name": "Business automation",
+      "price": "4,999",
+      "startingAt": true,
+      "currency": "INR",
+      "description": "End-to-end automation"
+    },
+    {
+      "name": "Enterprise Consultation",
+      "price": "999",
+      "currency": "INR",
+      "description": "Per session strategy and planning",
+      "popular": true
+    }
+  ],
+  "packages": []
+}

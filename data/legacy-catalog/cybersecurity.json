@@ -1,0 +1,62 @@
+{
+  "category": "Cybersecurity Services",
+  "description": "Best For: Students, startups, small businesses.",
+  "services": [
+    {
+      "name": "Basic Website Security Audit",
+      "price": "499",
+      "currency": "INR",
+      "description": "Vulnerability assessment"
+    },
+    {
+      "name": "Security Best Practices Setup",
+      "price": "399",
+      "currency": "INR",
+      "description": "Implementation of standard security measures"
+    },
+    {
+      "name": "GitHub Security Review",
+      "price": "499",
+      "currency": "INR",
+      "description": "Code and repository security check"
+    },
+    {
+      "name": "Security Consultation",
+      "price": "399",
+      "currency": "INR",
+      "description": "Strategic security advice"
+    },
+    {
+      "name": "Beginner Cybersecurity Guidance",
+      "price": "299",
+      "currency": "INR",
+      "description": "Introduction to digital safety"
+    },
+    {
+      "name": "Password & Privacy Setup",
+      "price": "199",
+      "currency": "INR",
+      "description": "Secure account configuration"
+    },
+    {
+      "name": "Security Checklist",
+      "price": "299",
+      "currency": "INR",
+      "description": "Customized action plan"
+    }
+  ],
+  "packages": [
+    {
+      "name": "Security Starter Pack",
+      "price": "999",
+      "currency": "INR",
+      "description": "Essential security baseline",
+      "includes": [
+        "Website audit",
+        "GitHub security",
+        "Best practices"
+      ],
+      "popular": true
+    }
+  ]
+}

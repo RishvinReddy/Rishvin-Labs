@@ -1,0 +1,93 @@
+{
+  "category": "Startups",
+  "description": "Best For: Founders, MVPs, early-stage startups.",
+  "services": [
+    {
+      "name": "Startup Consultation",
+      "price": "499",
+      "currency": "INR",
+      "description": "Per session"
+    },
+    {
+      "name": "Startup Landing Page",
+      "price": "999",
+      "currency": "INR",
+      "description": "Convert visitors to users"
+    },
+    {
+      "name": "MVP Website",
+      "price": "1,999",
+      "currency": "INR",
+      "description": "Launch your minimum viable product",
+      "popular": true
+    },
+    {
+      "name": "Business Website",
+      "price": "2,999",
+      "currency": "INR",
+      "description": "Professional online presence"
+    },
+    {
+      "name": "Startup Branding Guidance",
+      "price": "499",
+      "currency": "INR",
+      "description": "Brand identity and design direction"
+    },
+    {
+      "name": "Pitch Deck Design",
+      "price": "799",
+      "currency": "INR",
+      "description": "Investor-ready presentations"
+    },
+    {
+      "name": "Tech Architecture Guidance",
+      "price": "999",
+      "currency": "INR",
+      "description": "System design and tech stack selection"
+    },
+    {
+      "name": "Product Roadmap Consultation",
+      "price": "999",
+      "currency": "INR",
+      "description": "Strategic planning for product growth"
+    }
+  ],
+  "packages": [
+    {
+      "name": "Startup Lite",
+      "price": "1,499",
+      "currency": "INR",
+      "description": "Essential online presence",
+      "includes": [
+        "Landing page",
+        "Contact form",
+        "Mobile responsive"
+      ]
+    },
+    {
+      "name": "Startup Launch",
+      "price": "2,999",
+      "currency": "INR",
+      "description": "Complete launch solution",
+      "includes": [
+        "Website",
+        "Branding support",
+        "Deployment",
+        "Optimization"
+      ],
+      "popular": true
+    },
+    {
+      "name": "Startup Premium",
+      "price": "4,999",
+      "currency": "INR",
+      "description": "Advanced startup ecosystem",
+      "includes": [
+        "Full website",
+        "Premium UI",
+        "Automation",
+        "Consultation"
+      ]
+    }
+  ]
+}

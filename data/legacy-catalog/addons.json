@@ -1,0 +1,74 @@
+{
+  "category": "Universal Add-ons",
+  "description": "Available for any service or package.",
+  "services": [
+    {
+      "name": "Extra Revision",
+      "price": "199",
+      "currency": "INR",
+      "description": "Additional round of changes"
+    },
+    {
+      "name": "Fast Delivery",
+      "price": "499",
+      "currency": "INR",
+      "description": "Expedited project completion",
+      "popular": true
+    },
+    {
+      "name": "Extra Page",
+      "price": "299",
+      "currency": "INR",
+      "description": "Additional website page"
+    },
+    {
+      "name": "Animations",
+      "price": "299",
+      "currency": "INR",
+      "description": "Custom motion design"
+    },
+    {
+      "name": "Dark Mode",
+      "price": "199",
+      "currency": "INR",
+      "description": "Theme toggle implementation"
+    },
+    {
+      "name": "SEO Setup",
+      "price": "299",
+      "currency": "INR",
+      "description": "Basic search engine optimization"
+    },
+    {
+      "name": "Contact Form",
+      "price": "199",
+      "currency": "INR",
+      "description": "Lead generation form"
+    },
+    {
+      "name": "WhatsApp Chat",
+      "price": "199",
+      "currency": "INR",
+      "description": "Direct messaging widget"
+    },
+    {
+      "name": "Analytics Setup",
+      "price": "299",
+      "currency": "INR",
+      "description": "Traffic monitoring integration"
+    },
+    {
+      "name": "Hosting Help",
+      "price": "199",
+      "currency": "INR",
+      "description": "Server configuration assist"
+    },
+    {
+      "name": "Domain Setup",
+      "price": "199",
+      "currency": "INR",
+      "description": "DNS and registrar configuration"
+    }
+  ],
+  "packages": []
+}

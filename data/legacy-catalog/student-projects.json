@@ -1,0 +1,231 @@
+{
+  "category": "Academic Excellence",
+  "description": "Elite student services tailored for academic excellence.",
+  "subcategories": [
+    {
+      "name": "3. Academic Project Services",
+      "services": [
+        {
+          "name": "Mini Project Guidance",
+          "price": "299",
+          "currency": "INR",
+          "description": "Guidance for short academic projects"
+        },
+        {
+          "name": "Major Project Guidance",
+          "price": "999",
+          "currency": "INR",
+          "description": "Comprehensive final year guidance",
+          "popular": true
+        },
+        {
+          "name": "Project Architecture Planning",
+          "price": "499",
+          "currency": "INR",
+          "description": "Tech stack suggestions, architecture"
+        },
+        {
+          "name": "IoT Project Guidance",
+          "price": "499",
+          "currency": "INR",
+          "description": "Hardware and sensor integration"
+        },
+        {
+          "name": "Arduino Help",
+          "price": "299",
+          "currency": "INR",
+          "description": "Microcontroller programming"
+        },
+        {
+          "name": "ESP32 Help",
+          "price": "399",
+          "currency": "INR",
+          "description": "Wi-Fi and Bluetooth module assistance"
+        },
+        {
+          "name": "Circuit Troubleshooting",
+          "price": "299",
+          "currency": "INR",
+          "description": "Hardware debugging"
+        },
+        {
+          "name": "Tinkercad Simulation Help",
+          "price": "399",
+          "currency": "INR",
+          "description": "Virtual circuit testing"
+        },
+        {
+          "name": "Smart Agriculture Guidance",
+          "price": "499",
+          "currency": "INR",
+          "description": "IoT for farming"
+        },
+        {
+          "name": "Custom Project Consultation",
+          "price": "499",
+          "currency": "INR",
+          "description": "Custom tech stack and domain"
+        },
+        {
+          "name": "End-to-End Project Guidance",
+          "price": "2,999",
+          "currency": "INR",
+          "description": "Architecture, planning, coding support, documentation"
+        }
+      ]
+    },
+    {
+      "name": "6. Documentation & Reports",
+      "services": [
+        {
+          "name": "Technical Report Writing",
+          "price": "499",
+          "currency": "INR",
+          "description": "IEEE format documentation"
+        },
+        {
+          "name": "Project Documentation",
+          "price": "499",
+          "currency": "INR",
+          "description": "Detailed project manuals"
+        },
+        {
+          "name": "PPT / Presentation Design",
+          "price": "299",
+          "currency": "INR",
+          "description": "Project defense slides"
+        },
+        {
+          "name": "UML Diagram Package",
+          "price": "499",
+          "currency": "INR",
+          "description": "Use case, sequence, activity, deployment"
+        },
+        {
+          "name": "Research Formatting",
+          "price": "299",
+          "currency": "INR",
+          "description": "Academic paper structuring"
+        },
+        {
+          "name": "Viva Preparation Notes",
+          "price": "199",
+          "currency": "INR",
+          "description": "Defense Q&A prep material"
+        },
+        {
+          "name": "Documentation Review",
+          "price": "299",
+          "currency": "INR",
+          "description": "Feedback and improvements"
+        }
+      ]
+    },
+    {
+      "name": "13. Exam & Study Support Services",
+      "services": [
+        {
+          "name": "Study Roadmap",
+          "price": "199",
+          "currency": "INR",
+          "description": "Subject roadmap, Study planning"
+        },
+        {
+          "name": "Semester Preparation Strategy",
+          "price": "299",
+          "currency": "INR",
+          "description": "Exam preparation plan, priority topics"
+        },
+        {
+          "name": "Personalized Study Plan",
+          "price": "399",
+          "currency": "INR",
+          "description": "Daily roadmap, productivity system"
+        },
+        {
+          "name": "Subject-Specific Guidance",
+          "price": "199",
+          "currency": "INR",
+          "description": "DSA, IoT, Physics, Web Dev, Python"
+        },
+        {
+          "name": "Notes Structuring",
+          "price": "199",
+          "currency": "INR",
+          "description": "Better notes organization"
+        },
+        {
+          "name": "Smart Study Workflow Setup",
+          "price": "299",
+          "currency": "INR",
+          "description": "AI study workflow, Notion system"
+        },
+        {
+          "name": "Exam Strategy Consultation",
+          "price": "199",
+          "currency": "INR",
+          "description": "Actionable guidance for finals"
+        },
+        {
+          "name": "Assignment Structuring Help",
+          "price": "299",
+          "currency": "INR",
+          "description": "Formatting and structure"
+        },
+        {
+          "name": "Open Book Exam Strategy",
+          "price": "199",
+          "currency": "INR",
+          "description": "Resource mapping and index creation"
+        }
+      ]
+    },
+    {
+      "name": "17. Research & Paper Support",
+      "services": [
+        {
+          "name": "Technical Review Formatting",
+          "price": "299",
+          "currency": "INR",
+          "description": "Format to academic standards"
+        },
+        {
+          "name": "IEEE Formatting",
+          "price": "399",
+          "currency": "INR",
+          "description": "Standard IEEE compliance"
+        },
+        {
+          "name": "Citation Help",
+          "price": "199",
+          "currency": "INR",
+          "description": "Reference management"
+        },
+        {
+          "name": "Research Paper Structuring",
+          "price": "499",
+          "currency": "INR",
+          "description": "Logical flow and sections"
+        },
+        {
+          "name": "Literature Review Guidance",
+          "price": "399",
+          "currency": "INR",
+          "description": "Analyze existing research"
+        },
+        {
+          "name": "Paper Presentation PPT",
+          "price": "299",
+          "currency": "INR",
+          "description": "Slides for your defense"
+        },
+        {
+          "name": "Research Project Guidance",
+          "price": "799",
+          "currency": "INR",
+          "description": "Comprehensive research support"
+        }
+      ]
+    }
+  ]
+}

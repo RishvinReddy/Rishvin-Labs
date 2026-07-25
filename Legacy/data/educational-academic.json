@@ -1,0 +1,103 @@
+{
+  "category": "Educational & Academic Projects",
+  "description": "Best For: Engineering students & universities.",
+  "services": [
+    {
+      "name": "Mini Project Guidance",
+      "price": "299",
+      "currency": "INR",
+      "description": "Short-term academic projects"
+    },
+    {
+      "name": "Major Project Guidance",
+      "price": "999",
+      "currency": "INR",
+      "description": "Final year complex projects",
+      "popular": true
+    },
+    {
+      "name": "IoT Guidance",
+      "price": "499",
+      "currency": "INR",
+      "description": "Hardware and sensor integration"
+    },
+    {
+      "name": "Documentation",
+      "price": "499",
+      "currency": "INR",
+      "description": "Technical reports and manuals"
+    },
+    {
+      "name": "UML Diagrams",
+      "price": "499",
+      "currency": "INR",
+      "description": "System architecture visuals"
+    },
+    {
+      "name": "Presentation Design",
+      "price": "299",
+      "currency": "INR",
+      "description": "Project defense slides"
+    },
+    {
+      "name": "Technical Report Writing",
+      "price": "499",
+      "currency": "INR",
+      "description": "IEEE format documentation"
+    },
+    {
+      "name": "Arduino Help",
+      "price": "299",
+      "currency": "INR",
+      "description": "Microcontroller programming"
+    },
+    {
+      "name": "Tinkercad Simulation Help",
+      "price": "399",
+      "currency": "INR",
+      "description": "Virtual circuit testing"
+    },
+    {
+      "name": "Viva Support",
+      "price": "199",
+      "currency": "INR",
+      "description": "Defense Q&A preparation"
+    }
+  ],
+  "packages": [
+    {
+      "name": "Mini Project Package",
+      "price": "799",
+      "currency": "INR",
+      "description": "Complete mini project",
+      "includes": [
+        "Project guidance",
+        "Documentation"
+      ]
+    },
+    {
+      "name": "Major Project Package",
+      "price": "1,999",
+      "currency": "INR",
+      "description": "End-to-end major project",
+      "includes": [
+        "Guidance",
+        "Docs",
+        "UML Diagrams"
+      ],
+      "popular": true
+    },
+    {
+      "name": "Premium Academic Package",
+      "price": "3,999",
+      "currency": "INR",
+      "description": "Complete end-to-end support",
+      "includes": [
+        "Major Project",
+        "Documentation",
+        "Viva Support",
+        "Presentation Design"
+      ]
+    }
+  ]
+}

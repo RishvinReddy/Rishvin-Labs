@@ -1,0 +1,84 @@
+{
+  "category": "Professionals & Job Seekers",
+  "description": "Best For: Job seekers, professionals, switchers.",
+  "services": [
+    {
+      "name": "Resume Review",
+      "price": "199",
+      "currency": "INR",
+      "description": "Feedback and improvements"
+    },
+    {
+      "name": "ATS Resume",
+      "price": "399",
+      "currency": "INR",
+      "description": "Optimize for tracking systems"
+    },
+    {
+      "name": "Premium Resume",
+      "price": "799",
+      "currency": "INR",
+      "description": "Professionally crafted design",
+      "popular": true
+    },
+    {
+      "name": "LinkedIn Optimization",
+      "price": "499",
+      "currency": "INR",
+      "description": "Headline and profile setup"
+    },
+    {
+      "name": "Personal Website",
+      "price": "1,499",
+      "currency": "INR",
+      "description": "Digital portfolio and CV"
+    },
+    {
+      "name": "Interview Guidance",
+      "price": "299",
+      "currency": "INR",
+      "description": "Preparation and strategy"
+    },
+    {
+      "name": "Career Profile Review",
+      "price": "299",
+      "currency": "INR",
+      "description": "Comprehensive feedback"
+    }
+  ],
+  "packages": [
+    {
+      "name": "Job Ready Package",
+      "price": "999",
+      "currency": "INR",
+      "description": "Essential application materials",
+      "includes": [
+        "Resume Review",
+        "LinkedIn Optimization"
+      ]
+    },
+    {
+      "name": "Career Boost Package",
+      "price": "1,999",
+      "currency": "INR",
+      "description": "Stand out to recruiters",
+      "includes": [
+        "Premium Resume",
+        "LinkedIn Optimization",
+        "Personal Website"
+      ],
+      "popular": true
+    },
+    {
+      "name": "Premium Professional Package",
+      "price": "2,999",
+      "currency": "INR",
+      "description": "Complete personal brand",
+      "includes": [
+        "Personal Website",
+        "Interview Guidance",
+        "Career Profile Review"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,144 @@
+{
+  "sections": [
+    {
+      "id": "students",
+      "title": "Students",
+      "icon": "graduation-cap",
+      "file": "students.json",
+      "enabled": false
+    },
+    {
+      "id": "startups",
+      "title": "Startups",
+      "icon": "rocket",
+      "file": "startups.json",
+      "enabled": true
+    },
+    {
+      "id": "small-businesses",
+      "title": "Small Businesses",
+      "icon": "store",
+      "file": "small-businesses.json",
+      "enabled": true
+    },
+    {
+      "id": "creators-freelancers",
+      "title": "Creators & Freelancers",
+      "icon": "pen-tool",
+      "file": "creators-freelancers.json",
+      "enabled": true
+    },
+    {
+      "id": "developers-tech",
+      "title": "Developers & Tech",
+      "icon": "terminal",
+      "file": "developers-tech.json",
+      "enabled": true
+    },
+    {
+      "id": "professionals-jobseekers",
+      "title": "Professionals & Job Seekers",
+      "icon": "briefcase",
+      "file": "professionals-jobseekers.json",
+      "enabled": true
+    },
+    {
+      "id": "educational-academic",
+      "title": "Educational & Academic",
+      "icon": "book-open",
+      "file": "educational-academic.json",
+      "enabled": true
+    },
+    {
+      "id": "enterprise",
+      "title": "Enterprise Solutions",
+      "icon": "building",
+      "file": "enterprise-solutions.json",
+      "enabled": true
+    },
+    {
+      "id": "ai-automation",
+      "title": "AI & Automation",
+      "icon": "cpu",
+      "file": "ai-automation.json",
+      "enabled": true
+    },
+    {
+      "id": "website-enhancement",
+      "title": "Website Enhancement",
+      "icon": "layout-template",
+      "file": "website-enhancement.json",
+      "enabled": true
+    },
+    {
+      "id": "social-media",
+      "title": "Social Media & Branding",
+      "icon": "share-2",
+      "file": "social-media-branding.json",
+      "enabled": true
+    },
+    {
+      "id": "documentation",
+      "title": "Documentation Services",
+      "icon": "file-text",
+      "file": "documentation.json",
+      "enabled": true
+    },
+    {
+      "id": "opensource-github",
+      "title": "Open Source & GitHub",
+      "icon": "github",
+      "file": "opensource-github.json",
+      "enabled": true
+    },
+    {
+      "id": "tech-consultation",
+      "title": "Tech Consultation",
+      "icon": "message-square",
+      "file": "tech-consultation.json",
+      "enabled": true
+    },
+    {
+      "id": "cybersecurity",
+      "title": "Cybersecurity",
+      "icon": "shield",
+      "file": "cybersecurity.json",
+      "enabled": true
+    },
+    {
+      "id": "iot-hardware",
+      "title": "IoT & Hardware",
+      "icon": "cpu",
+      "file": "iot-hardware.json",
+      "enabled": true
+    },
+    {
+      "id": "digital-business",
+      "title": "Digital Business Setup",
+      "icon": "globe",
+      "file": "digital-business.json",
+      "enabled": true
+    },
+    {
+      "id": "addons",
+      "title": "Universal Add-ons",
+      "icon": "plus-circle",
+      "file": "addons.json",
+      "enabled": true
+    },
+    {
+      "id": "maintenance",
+      "title": "Maintenance Plans",
+      "icon": "settings",
+      "file": "maintenance.json",
+      "enabled": true
+    },
+    {
+      "id": "premium-bundles",
+      "title": "Premium Bundles",
+      "icon": "package",
+      "file": "premium-bundles.json",
+      "enabled": true
+    }
+  ]
+}

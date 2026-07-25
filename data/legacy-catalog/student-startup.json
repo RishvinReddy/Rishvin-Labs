@@ -1,0 +1,307 @@
+{
+  "category": "Startup Builder",
+  "description": "Elite student services tailored for startup builder.",
+  "subcategories": [
+    {
+      "name": "4. Coding & Development Services",
+      "services": [
+        {
+          "name": "GitHub Setup",
+          "price": "299",
+          "currency": "INR",
+          "description": "Version control basics"
+        },
+        {
+          "name": "README Creation",
+          "price": "199",
+          "currency": "INR",
+          "description": "Project documentation"
+        },
+        {
+          "name": "Portfolio Deployment",
+          "price": "299",
+          "currency": "INR",
+          "description": "Go live with your website"
+        },
+        {
+          "name": "Bug Fixing",
+          "price": "199",
+          "startingAt": true,
+          "currency": "INR",
+          "description": "Resolve code issues"
+        },
+        {
+          "name": "Website Debugging",
+          "price": "399",
+          "currency": "INR",
+          "description": "Deep issue resolution"
+        },
+        {
+          "name": "Coding Guidance Session",
+          "price": "299",
+          "currency": "INR",
+          "description": "1-on-1 coding help"
+        },
+        {
+          "name": "Mini App Guidance",
+          "price": "499",
+          "currency": "INR",
+          "description": "Build small applications"
+        },
+        {
+          "name": "Full Project Roadmap",
+          "price": "799",
+          "currency": "INR",
+          "description": "Step-by-step development guide"
+        },
+        {
+          "name": "API Integration Help",
+          "price": "499",
+          "currency": "INR",
+          "description": "Connect external services"
+        },
+        {
+          "name": "Frontend Guidance",
+          "price": "399",
+          "currency": "INR",
+          "description": "UI/UX and client-side logic"
+        },
+        {
+          "name": "Backend Guidance",
+          "price": "499",
+          "currency": "INR",
+          "description": "Server, database, and API logic"
+        }
+      ]
+    },
+    {
+      "name": "5. AI Productivity for Students",
+      "services": [
+        {
+          "name": "AI Productivity Setup",
+          "price": "299",
+          "currency": "INR",
+          "description": "ChatGPT setup, workflow guidance"
+        },
+        {
+          "name": "AI Learning Workflow",
+          "price": "399",
+          "currency": "INR",
+          "description": "Study systems and optimization"
+        },
+        {
+          "name": "AI Research Setup",
+          "price": "399",
+          "currency": "INR",
+          "description": "Tools for academic research"
+        },
+        {
+          "name": "AI Resume Enhancement",
+          "price": "199",
+          "currency": "INR",
+          "description": "Quick AI-driven ATS tweaks"
+        },
+        {
+          "name": "AI Career Guidance",
+          "price": "299",
+          "currency": "INR",
+          "description": "AI-powered career pathing"
+        },
+        {
+          "name": "Personalized AI Workflow",
+          "price": "799",
+          "currency": "INR",
+          "description": "Complete custom automation"
+        }
+      ]
+    },
+    {
+      "name": "14. Tech Learning Roadmaps",
+      "services": [
+        {
+          "name": "Cybersecurity Roadmap",
+          "price": "299",
+          "currency": "INR",
+          "description": "Step-by-step learning guide"
+        },
+        {
+          "name": "Full Stack Roadmap",
+          "price": "299",
+          "currency": "INR",
+          "description": "Frontend and backend learning guide"
+        },
+        {
+          "name": "IoT Roadmap",
+          "price": "299",
+          "currency": "INR",
+          "description": "Hardware and software integration guide"
+        },
+        {
+          "name": "Blockchain Roadmap",
+          "price": "299",
+          "currency": "INR",
+          "description": "Web3 and smart contracts guide"
+        },
+        {
+          "name": "AI/ML Roadmap",
+          "price": "299",
+          "currency": "INR",
+          "description": "Machine learning learning guide"
+        },
+        {
+          "name": "Career Domain Selection",
+          "price": "399",
+          "currency": "INR",
+          "description": "Helps students choose their path"
+        },
+        {
+          "name": "Personalized Tech Roadmap",
+          "price": "799",
+          "currency": "INR",
+          "description": "Based on interests, goals, and placement target"
+        }
+      ]
+    },
+    {
+      "name": "15. Student Productivity Services",
+      "services": [
+        {
+          "name": "Productivity Audit",
+          "price": "199",
+          "currency": "INR",
+          "description": "Analyze your daily routine"
+        },
+        {
+          "name": "Time Management System",
+          "price": "299",
+          "currency": "INR",
+          "description": "Effective scheduling techniques"
+        },
+        {
+          "name": "Notion Workspace Setup",
+          "price": "499",
+          "currency": "INR",
+          "description": "Custom productivity dashboard"
+        },
+        {
+          "name": "Student Dashboard Setup",
+          "price": "399",
+          "currency": "INR",
+          "description": "Centralized tools organization"
+        },
+        {
+          "name": "Goal Planning System",
+          "price": "299",
+          "currency": "INR",
+          "description": "Short and long term targets"
+        },
+        {
+          "name": "Semester Productivity Setup",
+          "price": "499",
+          "currency": "INR",
+          "description": "Complete system for the term"
+        },
+        {
+          "name": "Digital Organization Setup",
+          "price": "399",
+          "currency": "INR",
+          "description": "File and asset management"
+        },
+        {
+          "name": "AI Productivity Stack",
+          "price": "499",
+          "currency": "INR",
+          "description": "AI tools, workflow, automations"
+        }
+      ]
+    },
+    {
+      "name": "20. Student Entrepreneur Services",
+      "services": [
+        {
+          "name": "Startup Idea Validation",
+          "price": "299",
+          "currency": "INR",
+          "description": "Test your concept"
+        },
+        {
+          "name": "Side Hustle Planning",
+          "price": "399",
+          "currency": "INR",
+          "description": "Monetize your skills"
+        },
+        {
+          "name": "Student Founder Guidance",
+          "price": "499",
+          "currency": "INR",
+          "description": "Balance studies and startup"
+        },
+        {
+          "name": "MVP Planning",
+          "price": "499",
+          "currency": "INR",
+          "description": "Scope out your first release"
+        },
+        {
+          "name": "Business Website Starter",
+          "price": "999",
+          "currency": "INR",
+          "description": "Basic startup presence"
+        },
+        {
+          "name": "Startup Toolkit Setup",
+          "price": "499",
+          "currency": "INR",
+          "description": "Essential founder tools"
+        },
+        {
+          "name": "Student Founder Package",
+          "price": "1,999",
+          "currency": "INR",
+          "description": "Complete launch kit"
+        }
+      ]
+    },
+    {
+      "name": "23. Student Digital Services",
+      "services": [
+        {
+          "name": "Email Setup",
+          "price": "199",
+          "currency": "INR",
+          "description": "Professional email configuration"
+        },
+        {
+          "name": "Portfolio Hosting",
+          "price": "199",
+          "currency": "INR",
+          "description": "Get your site online"
+        },
+        {
+          "name": "GitHub Pages Deployment",
+          "price": "299",
+          "currency": "INR",
+          "description": "Free hosting setup"
+        },
+        {
+          "name": "Domain Guidance",
+          "price": "199",
+          "currency": "INR",
+          "description": "Choose and buy your .com"
+        },
+        {
+          "name": "Website Maintenance",
+          "price": "199",
+          "currency": "INR",
+          "description": "Monthly upkeep"
+        },
+        {
+          "name": "Basic SEO",
+          "price": "299",
+          "currency": "INR",
+          "description": "Get found on Google"
+        }
+      ]
+    }
+  ]
+}

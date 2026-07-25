@@ -1,0 +1,101 @@
+{
+  "category": "Developers & Tech Enthusiasts",
+  "description": "Best For: Developers, coders, open-source contributors.",
+  "services": [
+    {
+      "name": "GitHub Setup",
+      "price": "299",
+      "currency": "INR",
+      "description": "Professional profile initialization"
+    },
+    {
+      "name": "GitHub Pages Deployment",
+      "price": "299",
+      "currency": "INR",
+      "description": "Host your site for free"
+    },
+    {
+      "name": "README Creation",
+      "price": "199",
+      "currency": "INR",
+      "description": "Detailed project documentation"
+    },
+    {
+      "name": "Portfolio Deployment",
+      "price": "299",
+      "currency": "INR",
+      "description": "Go live with your portfolio"
+    },
+    {
+      "name": "Portfolio Optimization",
+      "price": "499",
+      "currency": "INR",
+      "description": "Improve design and performance"
+    },
+    {
+      "name": "Bug Fixing",
+      "price": "199",
+      "startingAt": true,
+      "currency": "INR",
+      "description": "Resolve code issues"
+    },
+    {
+      "name": "Website Debugging",
+      "price": "499",
+      "currency": "INR",
+      "description": "Deep issue resolution"
+    },
+    {
+      "name": "Code Review",
+      "price": "499",
+      "currency": "INR",
+      "description": "Best practices analysis"
+    },
+    {
+      "name": "API Integration",
+      "price": "499",
+      "currency": "INR",
+      "description": "Connect external services"
+    },
+    {
+      "name": "Documentation",
+      "price": "299",
+      "currency": "INR",
+      "description": "Clear and concise guides"
+    }
+  ],
+  "packages": [
+    {
+      "name": "Developer Starter",
+      "price": "499",
+      "currency": "INR",
+      "description": "Basic developer presence",
+      "includes": [
+        "GitHub Setup",
+        "README Creation"
+      ]
+    },
+    {
+      "name": "Developer Pro",
+      "price": "999",
+      "currency": "INR",
+      "description": "Standard developer profile",
+      "includes": [
+        "GitHub Setup",
+        "Portfolio Deployment"
+      ],
+      "popular": true
+    },
+    {
+      "name": "Developer Premium",
+      "price": "1,999",
+      "currency": "INR",
+      "description": "Complete dev profile upgrade",
+      "includes": [
+        "Portfolio Optimization",
+        "Code Review",
+        "API Integration basics"
+      ]
+    }
+  ]
+}

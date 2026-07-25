@@ -1,0 +1,119 @@
+{
+  "category": "Memberships & Packages",
+  "description": "Elite student services tailored for memberships & packages.",
+  "subcategories": [
+    {
+      "name": "Bundles & Mega Packs",
+      "services": [
+        {
+          "name": "Placement Booster Pack",
+          "price": "999",
+          "currency": "INR",
+          "description": "Essential placement tools",
+          "features": [
+            "Resume",
+            "LinkedIn",
+            "GitHub"
+          ]
+        },
+        {
+          "name": "Internship Ready Pack",
+          "price": "1,499",
+          "currency": "INR",
+          "description": "Everything for internships",
+          "features": [
+            "Resume",
+            "Roadmap",
+            "LinkedIn",
+            "Interview Prep"
+          ]
+        },
+        {
+          "name": "Final Year Project Pack",
+          "price": "1,999",
+          "currency": "INR",
+          "description": "Ace your final year",
+          "features": [
+            "Project",
+            "Docs",
+            "Presentation"
+          ]
+        },
+        {
+          "name": "Student Tech Growth Bundle",
+          "price": "2,999",
+          "currency": "INR",
+          "description": "The ultimate student ecosystem",
+          "popular": true,
+          "features": [
+            "Career",
+            "Projects",
+            "Portfolio",
+            "Mentorship"
+          ]
+        },
+        {
+          "name": "Rishvin Labs Student Success Program",
+          "price": "199/month",
+          "currency": "INR",
+          "description": "The ultimate monthly membership for Woxsen students and beyond.",
+          "popular": true,
+          "features": [
+            "Resume Reviews",
+            "Internship Guidance",
+            "Coding Help",
+            "Project Guidance",
+            "AI Productivity",
+            "Placement Roadmap"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "12. Student Subscription Plans",
+      "services": [
+        {
+          "name": "Starter Support",
+          "price": "199",
+          "currency": "INR",
+          "description": "Monthly doubt support"
+        },
+        {
+          "name": "Growth Plan",
+          "price": "499",
+          "currency": "INR",
+          "description": "Career + coding support monthly"
+        },
+        {
+          "name": "Premium Mentorship",
+          "price": "999",
+          "currency": "INR",
+          "description": "Personalized monthly guidance"
+        }
+      ]
+    },
+    {
+      "name": "24. Student VIP Membership",
+      "services": [
+        {
+          "name": "Starter Support",
+          "price": "199",
+          "currency": "INR",
+          "description": "Per month, monthly support"
+        },
+        {
+          "name": "Growth Plan",
+          "price": "499",
+          "currency": "INR",
+          "description": "Per month, Career + coding support"
+        },
+        {
+          "name": "Elite Plan",
+          "price": "999",
+          "currency": "INR",
+          "description": "Per month, priority mentoring, resume reviews, project guidance"
+        }
+      ]
+    }
+  ]
+}

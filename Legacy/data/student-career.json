@@ -1,0 +1,218 @@
+{
+  "category": "Career Growth",
+  "description": "Elite student services tailored for career growth.",
+  "subcategories": [
+    {
+      "name": "1. Career & Placement Services",
+      "services": [
+        {
+          "name": "Resume Review",
+          "price": "199",
+          "currency": "INR",
+          "description": "Analysis, weakness identification, improvement suggestions"
+        },
+        {
+          "name": "ATS Resume Optimization",
+          "price": "299",
+          "currency": "INR",
+          "description": "ATS formatting, better keywords, improved structure"
+        },
+        {
+          "name": "Premium Resume Building",
+          "price": "799",
+          "currency": "INR",
+          "description": "Professional resume, ATS optimization, strong bullet points"
+        },
+        {
+          "name": "Resume + Project Alignment",
+          "price": "399",
+          "currency": "INR",
+          "description": "Match projects with resume, better positioning"
+        },
+        {
+          "name": "Placement Profile Review",
+          "price": "299",
+          "currency": "INR",
+          "description": "Resume, LinkedIn, GitHub feedback"
+        },
+        {
+          "name": "Internship Application Strategy",
+          "price": "499",
+          "currency": "INR",
+          "description": "Roadmap, profile review, application strategy"
+        },
+        {
+          "name": "Placement Ready Package",
+          "price": "999",
+          "currency": "INR",
+          "description": "Resume, LinkedIn, GitHub optimization",
+          "popular": true
+        },
+        {
+          "name": "Ultimate Career Starter Pack",
+          "price": "1,999",
+          "currency": "INR",
+          "description": "Resume, LinkedIn, GitHub, Portfolio website"
+        }
+      ]
+    },
+    {
+      "name": "8. Internship & Job Preparation",
+      "services": [
+        {
+          "name": "Internship Profile Audit",
+          "price": "299",
+          "currency": "INR",
+          "description": "Identify gaps in your profile"
+        },
+        {
+          "name": "Resume for Internship",
+          "price": "399",
+          "currency": "INR",
+          "description": "Tailored for early career"
+        },
+        {
+          "name": "Internship Roadmap",
+          "price": "499",
+          "currency": "INR",
+          "description": "Step-by-step acquisition plan"
+        },
+        {
+          "name": "LinkedIn Optimization",
+          "price": "399",
+          "currency": "INR",
+          "description": "Attract recruiters"
+        },
+        {
+          "name": "GitHub Cleanup",
+          "price": "399",
+          "currency": "INR",
+          "description": "Showcase your best code"
+        },
+        {
+          "name": "Interview Preparation",
+          "price": "299",
+          "currency": "INR",
+          "description": "Common questions and strategies"
+        },
+        {
+          "name": "Mock Interview",
+          "price": "399",
+          "currency": "INR",
+          "description": "Practice with feedback"
+        },
+        {
+          "name": "Job Ready Package",
+          "price": "1,499",
+          "currency": "INR",
+          "description": "Complete job prep suite"
+        }
+      ]
+    },
+    {
+      "name": "9. Technical Mentorship",
+      "services": [
+        {
+          "name": "1-on-1 Mentorship Call",
+          "price": "299",
+          "currency": "INR",
+          "description": "Per session advice"
+        },
+        {
+          "name": "Weekly Mentorship",
+          "price": "799",
+          "currency": "INR",
+          "description": "Per month weekly syncs"
+        },
+        {
+          "name": "Monthly Growth Plan",
+          "price": "1,499",
+          "currency": "INR",
+          "description": "Project guidance, career guidance, accountability"
+        }
+      ]
+    },
+    {
+      "name": "10. Freelancing & Personal Growth",
+      "services": [
+        {
+          "name": "Freelancing Setup",
+          "price": "499",
+          "currency": "INR",
+          "description": "Get started with client work"
+        },
+        {
+          "name": "Fiverr/Upwork Guidance",
+          "price": "399",
+          "currency": "INR",
+          "description": "Profile and gig setup"
+        },
+        {
+          "name": "Personal Brand Strategy",
+          "price": "499",
+          "currency": "INR",
+          "description": "Long-term growth plan"
+        },
+        {
+          "name": "Tech Career Planning",
+          "price": "399",
+          "currency": "INR",
+          "description": "Navigating the industry"
+        },
+        {
+          "name": "Skill Roadmap",
+          "price": "299",
+          "currency": "INR",
+          "description": "What to learn next"
+        }
+      ]
+    },
+    {
+      "name": "18. Coding Interview Preparation",
+      "services": [
+        {
+          "name": "DSA Preparation Roadmap",
+          "price": "399",
+          "currency": "INR",
+          "description": "Data structures learning path"
+        },
+        {
+          "name": "Coding Profile Review",
+          "price": "299",
+          "currency": "INR",
+          "description": "Feedback on HackerRank/CodeChef"
+        },
+        {
+          "name": "LeetCode Strategy",
+          "price": "299",
+          "currency": "INR",
+          "description": "Pattern recognition methodology"
+        },
+        {
+          "name": "GitHub Resume Optimization",
+          "price": "399",
+          "currency": "INR",
+          "description": "Showcase your commits"
+        },
+        {
+          "name": "Mock Technical Interview",
+          "price": "399",
+          "currency": "INR",
+          "description": "Practice with feedback"
+        },
+        {
+          "name": "Placement Coding Strategy",
+          "price": "499",
+          "currency": "INR",
+          "description": "Targeted preparation"
+        },
+        {
+          "name": "Coding Growth Plan",
+          "price": "999",
+          "currency": "INR",
+          "description": "Long term coding development"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,96 @@
+{
+  "category": "Premium Bundles",
+  "description": "Complete packages for ultimate value.",
+  "services": [],
+  "packages": [
+    {
+      "name": "Student Success Bundle",
+      "price": "1,499",
+      "currency": "INR",
+      "description": "Everything a student needs",
+      "includes": [
+        "Resume",
+        "LinkedIn",
+        "GitHub",
+        "Portfolio"
+      ]
+    },
+    {
+      "name": "Startup Launch Bundle",
+      "price": "2,999",
+      "currency": "INR",
+      "description": "Ready to launch",
+      "includes": [
+        "Website",
+        "Branding",
+        "Deployment"
+      ]
+    },
+    {
+      "name": "Creator Brand Bundle",
+      "price": "1,999",
+      "currency": "INR",
+      "description": "For modern creators",
+      "includes": [
+        "Website",
+        "Optimization"
+      ]
+    },
+    {
+      "name": "Business Digital Bundle",
+      "price": "2,999",
+      "currency": "INR",
+      "description": "Go digital today",
+      "includes": [
+        "Website",
+        "SEO",
+        "WhatsApp"
+      ],
+      "popular": true
+    },
+    {
+      "name": "Developer Growth Bundle",
+      "price": "1,499",
+      "currency": "INR",
+      "description": "Developer toolkit",
+      "includes": [
+        "GitHub",
+        "README",
+        "Portfolio"
+      ]
+    },
+    {
+      "name": "Career Accelerator Bundle",
+      "price": "1,499",
+      "currency": "INR",
+      "description": "Get hired faster",
+      "includes": [
+        "Resume",
+        "LinkedIn",
+        "Website"
+      ]
+    },
+    {
+      "name": "Academic Excellence Bundle",
+      "price": "1,999",
+      "currency": "INR",
+      "description": "Top tier grades",
+      "includes": [
+        "Project",
+        "Docs",
+        "Presentation"
+      ]
+    },
+    {
+      "name": "Ultimate Tech Bundle",
+      "price": "4,999",
+      "currency": "INR",
+      "description": "Everything needed to launch digitally",
+      "includes": [
+        "Complete platform",
+        "Full optimization",
+        "End-to-end support"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "category": "Digital Business Setup",
+  "description": "Best For: New businesses and entrepreneurs.",
+  "services": [
+    {
+      "name": "Google Business Setup",
+      "price": "399",
+      "currency": "INR",
+      "description": "Local search optimization"
+    },
+    {
+      "name": "Business Email Setup",
+      "price": "299",
+      "currency": "INR",
+      "description": "Professional communication"
+    },
+    {
+      "name": "Domain Guidance",
+      "price": "199",
+      "currency": "INR",
+      "description": "Naming and registrar advice"
+    },
+    {
+      "name": "Hosting Guidance",
+      "price": "199",
+      "currency": "INR",
+      "description": "Server and platform selection"
+    },
+    {
+      "name": "Contact Setup",
+      "price": "199",
+      "currency": "INR",
+      "description": "Lead capture forms"
+    },
+    {
+      "name": "WhatsApp Business Setup",
+      "price": "299",
+      "currency": "INR",
+      "description": "Professional messaging profile"
+    },
+    {
+      "name": "Online Presence Setup",
+      "price": "799",
+      "currency": "INR",
+      "description": "Comprehensive digital launch",
+      "popular": true
+    }
+  ],
+  "packages": []
+}

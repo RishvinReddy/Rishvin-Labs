@@ -1,0 +1,165 @@
+{
+  "category": "Personal Branding",
+  "description": "Elite student services tailored for personal branding.",
+  "subcategories": [
+    {
+      "name": "2. Portfolio & Personal Branding",
+      "services": [
+        {
+          "name": "Basic Student Portfolio",
+          "price": "799",
+          "currency": "INR",
+          "description": "About, Skills, Projects, Contact"
+        },
+        {
+          "name": "Premium Portfolio Website",
+          "price": "1,499",
+          "currency": "INR",
+          "description": "Modern UI, animations, responsive",
+          "popular": true
+        },
+        {
+          "name": "GitHub Portfolio Setup",
+          "price": "399",
+          "currency": "INR",
+          "description": "Profile cleanup, project organization"
+        },
+        {
+          "name": "LinkedIn Optimization",
+          "price": "399",
+          "currency": "INR",
+          "description": "Headline, about section, skill setup"
+        },
+        {
+          "name": "Personal Branding Strategy",
+          "price": "499",
+          "currency": "INR",
+          "description": "Online presence guidance"
+        },
+        {
+          "name": "Digital Presence Audit",
+          "price": "299",
+          "currency": "INR",
+          "description": "LinkedIn, GitHub, Resume, Portfolio review"
+        }
+      ]
+    },
+    {
+      "name": "11. Student Creator Services",
+      "services": [
+        {
+          "name": "Instagram Setup",
+          "price": "299",
+          "currency": "INR",
+          "description": "Professional creator profile"
+        },
+        {
+          "name": "Creator Portfolio",
+          "price": "999",
+          "currency": "INR",
+          "description": "Showcase your work"
+        },
+        {
+          "name": "Bio Link Website",
+          "price": "399",
+          "currency": "INR",
+          "description": "Custom link-in-bio page"
+        },
+        {
+          "name": "Social Optimization",
+          "price": "399",
+          "currency": "INR",
+          "description": "Grow your audience"
+        },
+        {
+          "name": "Creator Growth Setup",
+          "price": "799",
+          "currency": "INR",
+          "description": "End-to-end creator launch"
+        }
+      ]
+    },
+    {
+      "name": "19. Personal Branding for Students",
+      "services": [
+        {
+          "name": "Personal Brand Audit",
+          "price": "299",
+          "currency": "INR",
+          "description": "Identify your current standing"
+        },
+        {
+          "name": "Professional Online Presence",
+          "price": "499",
+          "currency": "INR",
+          "description": "Setup key professional channels"
+        },
+        {
+          "name": "Student LinkedIn Growth",
+          "price": "399",
+          "currency": "INR",
+          "description": "Network expansion strategy"
+        },
+        {
+          "name": "Personal Website Strategy",
+          "price": "299",
+          "currency": "INR",
+          "description": "Planning your digital home"
+        },
+        {
+          "name": "Personal Brand Consultation",
+          "price": "399",
+          "currency": "INR",
+          "description": "1-on-1 strategy session"
+        },
+        {
+          "name": "Online Reputation Setup",
+          "price": "299",
+          "currency": "INR",
+          "description": "Manage your digital footprint"
+        }
+      ]
+    },
+    {
+      "name": "21. Content Creator Students",
+      "services": [
+        {
+          "name": "Student Creator Website",
+          "price": "999",
+          "currency": "INR",
+          "description": "Your creative hub"
+        },
+        {
+          "name": "Portfolio for Creators",
+          "price": "799",
+          "currency": "INR",
+          "description": "Showcase your media"
+        },
+        {
+          "name": "Instagram Setup",
+          "price": "299",
+          "currency": "INR",
+          "description": "Professional creator profile"
+        },
+        {
+          "name": "Bio Optimization",
+          "price": "199",
+          "currency": "INR",
+          "description": "Convert profile views"
+        },
+        {
+          "name": "Creator Growth Setup",
+          "price": "499",
+          "currency": "INR",
+          "description": "Content planning system"
+        },
+        {
+          "name": "Content Strategy Basics",
+          "price": "399",
+          "currency": "INR",
+          "description": "What and when to post"
+        }
+      ]
+    }
+  ]
+}

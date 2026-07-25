@@ -1,0 +1,44 @@
+[
+  {
+    "id": "career",
+    "title": "Career Growth",
+    "icon": "briefcase",
+    "file": "student-career.json",
+    "enabled": true
+  },
+  {
+    "id": "projects",
+    "title": "Academic Excellence",
+    "icon": "cpu",
+    "file": "student-projects.json",
+    "enabled": true
+  },
+  {
+    "id": "brand",
+    "title": "Personal Branding",
+    "icon": "fingerprint",
+    "file": "student-brand.json",
+    "enabled": true
+  },
+  {
+    "id": "hackathons",
+    "title": "Competitive Edge",
+    "icon": "award",
+    "file": "student-hackathons.json",
+    "enabled": true
+  },
+  {
+    "id": "startup",
+    "title": "Startup Builder",
+    "icon": "rocket",
+    "file": "student-startup.json",
+    "enabled": true
+  },
+  {
+    "id": "memberships",
+    "title": "Memberships & Packages",
+    "icon": "crown",
+    "file": "student-memberships.json",
+    "enabled": true
+  }
+]

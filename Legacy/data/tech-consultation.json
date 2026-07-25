@@ -1,0 +1,56 @@
+{
+  "category": "Tech Consultation Services",
+  "description": "Best For: Individuals and teams needing expert tech advice.",
+  "services": [
+    {
+      "name": "Tech Career Guidance",
+      "price": "299",
+      "currency": "INR",
+      "description": "Path planning and advice"
+    },
+    {
+      "name": "Project Consultation",
+      "price": "399",
+      "currency": "INR",
+      "description": "Architecture and design review"
+    },
+    {
+      "name": "Startup Tech Consultation",
+      "price": "499",
+      "currency": "INR",
+      "description": "Tech stack and scaling advice",
+      "popular": true
+    },
+    {
+      "name": "Portfolio Review",
+      "price": "199",
+      "currency": "INR",
+      "description": "Actionable feedback"
+    },
+    {
+      "name": "Resume Review",
+      "price": "199",
+      "currency": "INR",
+      "description": "Improve your CV"
+    },
+    {
+      "name": "LinkedIn Review",
+      "price": "199",
+      "currency": "INR",
+      "description": "Optimize your profile"
+    },
+    {
+      "name": "Website Review",
+      "price": "299",
+      "currency": "INR",
+      "description": "UX and performance audit"
+    },
+    {
+      "name": "Code Review",
+      "price": "499",
+      "currency": "INR",
+      "description": "Best practices analysis"
+    }
+  ],
+  "packages": []
+}

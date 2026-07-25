@@ -1,0 +1,156 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-serif: 'Playfair Display', 'Georgia', serif;
+  --font-mono: 'JetBrains Mono', 'Courier New', monospace;
+
+  /* Legacy Light Editorial Palette */
+  --color-studio-bg: #ffffff;
+  --color-studio-secondary: #f4f4f5;
+  --color-studio-tertiary: #e4e4e7;
+  --color-studio-surface: #ffffff;
+  --color-studio-card: #ffffff;
+  --color-studio-border: rgba(0, 0, 0, 0.08);
+  --color-studio-border-strong: rgba(0, 0, 0, 0.15);
+  
+  --color-studio-text: #09090b;
+  --color-studio-text-secondary: #52525b;
+  --color-studio-text-muted: #a1a1aa;
+
+  /* Accents */
+  --color-accent-blue: #2563eb;
+  --color-accent-violet: #7c3aed;
+  --color-accent-emerald: #059669;
+  --color-accent-teal: #0891b2;
+  --color-accent-gold: #b45309;
+
+  /* Custom Shadows */
+  --shadow-card: 0 4px 24px rgba(0, 0, 0, 0.05);
+  --shadow-card-hover: 0 12px 48px rgba(0, 0, 0, 0.12);
+  --shadow-iso: 0 20px 40px rgba(0, 0, 0, 0.08);
+  --shadow-iso-hover: 0 40px 80px rgba(0, 0, 0, 0.15);
+
+  /* Animations */
+  --animate-pulse-slow: pulse-slow 4s cubic-bezier(0.4, 0, 0.6, 1) infinite alternate;
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-front-float: front-float 8s ease-in-out infinite;
+  --animate-card-float-1: card-float-1 6s ease-in-out infinite alternate;
+  --animate-card-float-2: card-float-2 7s ease-in-out infinite alternate-reverse;
+  --animate-card-float-3: card-float-3 5.5s ease-in-out infinite alternate;
+  --animate-card-float-4: card-float-4 4.5s ease-in-out infinite alternate;
+}
+
+@keyframes pulse-slow {
+  0% { opacity: 0.2; transform: scale(0.98); }
+  100% { opacity: 0.4; transform: scale(1.02); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes front-float {
+  0% { transform: scale(1.15) translateY(0px); }
+  50% { transform: scale(1.15) translateY(-15px); }
+  100% { transform: scale(1.15) translateY(0px); }
+}
+
+@keyframes card-float-1 {
+  0% { transform: translateY(0px); }
+  100% { transform: translateY(-10px); }
+}
+
+@keyframes card-float-2 {
+  0% { transform: translateY(0px) rotate(-3deg); }
+  100% { transform: translateY(-12px) rotate(-3deg); }
+}
+
+@keyframes card-float-3 {
+  0% { transform: translateY(0px); }
+  100% { transform: translateY(-15px); }
+}
+
+@keyframes card-float-4 {
+  0% { transform: translateY(0px); }
+  100% { transform: translateY(-8px); }
+}
+
+@keyframes bar-grow {
+  0% { transform: scaleY(0); }
+  100% { transform: scaleY(1); }
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+/* Global Studio Styling */
+:root {
+  color-scheme: light;
+}
+
+body {
+  background-color: var(--color-studio-bg);
+  color: var(--color-studio-text);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+  selection-background-color: var(--color-accent-blue);
+  selection-color: #ffffff;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-studio-secondary);
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Glass & Card Utilities */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--color-studio-border);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+}
+
+.tech-badge {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  background: #f8fafc;
+  border: 1px solid var(--color-studio-border);
+  color: var(--color-studio-text-secondary);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.iso-card {
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
+}
+.iso-card:hover {
+  transform: translateY(-15px) scale(1.03) !important;
+  box-shadow: 0 35px 70px rgba(0, 0, 0, 0.15) !important;
+  z-index: 20 !important;
+}
+
+.chart-bar {
+  transform-origin: bottom;
+  transform: scaleY(0);
+  animation: bar-grow 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}

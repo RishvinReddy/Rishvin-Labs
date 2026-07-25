@@ -1,0 +1,82 @@
+{
+  "category": "Creators & Freelancers",
+  "description": "Best For: YouTubers, freelancers, designers, creators.",
+  "services": [
+    {
+      "name": "Creator Portfolio",
+      "price": "999",
+      "currency": "INR",
+      "description": "Showcase your work"
+    },
+    {
+      "name": "Personal Brand Website",
+      "price": "1,499",
+      "currency": "INR",
+      "description": "Build your online identity",
+      "popular": true
+    },
+    {
+      "name": "Premium Creator Website",
+      "price": "2,999",
+      "currency": "INR",
+      "description": "Complete customized platform"
+    },
+    {
+      "name": "Bio Link Website",
+      "price": "399",
+      "currency": "INR",
+      "description": "Custom link-in-bio page"
+    },
+    {
+      "name": "Social Media Branding Guidance",
+      "price": "399",
+      "currency": "INR",
+      "description": "Profile and aesthetic strategies"
+    },
+    {
+      "name": "Personal Brand Strategy",
+      "price": "999",
+      "currency": "INR",
+      "description": "Growth and monetization planning"
+    },
+    {
+      "name": "Portfolio Optimization",
+      "price": "499",
+      "currency": "INR",
+      "description": "Enhance your existing portfolio"
+    }
+  ],
+  "packages": [
+    {
+      "name": "Creator Starter",
+      "price": "799",
+      "currency": "INR",
+      "description": "Essential creator presence",
+      "includes": [
+        "Portfolio setup",
+        "Branding setup"
+      ]
+    },
+    {
+      "name": "Creator Growth",
+      "price": "1,999",
+      "currency": "INR",
+      "description": "Accelerate your personal brand",
+      "includes": [
+        "Website",
+        "Social optimization"
+      ],
+      "popular": true
+    },
+    {
+      "name": "Creator Premium",
+      "price": "3,999",
+      "currency": "INR",
+      "description": "The ultimate creator ecosystem",
+      "includes": [
+        "Complete personal brand",
+        "Custom design"
+      ]
+    }
+  ]
+}

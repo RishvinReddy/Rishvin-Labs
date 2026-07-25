@@ -1,0 +1,147 @@
+{
+  "category": "Competitive Edge",
+  "description": "Elite student services tailored for competitive edge.",
+  "subcategories": [
+    {
+      "name": "7. Hackathons & Competitions",
+      "services": [
+        {
+          "name": "Hackathon Team Guidance",
+          "price": "499",
+          "currency": "INR",
+          "description": "Team structure and execution"
+        },
+        {
+          "name": "Hackathon Idea Validation",
+          "price": "299",
+          "currency": "INR",
+          "description": "Refine your winning concept"
+        },
+        {
+          "name": "PPT for Hackathons",
+          "price": "399",
+          "currency": "INR",
+          "description": "Pitch presentations"
+        },
+        {
+          "name": "Pitch Deck Support",
+          "price": "499",
+          "currency": "INR",
+          "description": "Investor and judge-ready decks"
+        },
+        {
+          "name": "Project Architecture Help",
+          "price": "499",
+          "currency": "INR",
+          "description": "Scalable hackathon architecture"
+        },
+        {
+          "name": "Hackathon Strategy Session",
+          "price": "299",
+          "currency": "INR",
+          "description": "Time management and roadmap"
+        }
+      ]
+    },
+    {
+      "name": "16. Hackathon Services (Expanded)",
+      "services": [
+        {
+          "name": "Hackathon Team Building Strategy",
+          "price": "299",
+          "currency": "INR",
+          "description": "Find the right skillsets"
+        },
+        {
+          "name": "Project Idea Brainstorming",
+          "price": "299",
+          "currency": "INR",
+          "description": "Generate winning concepts"
+        },
+        {
+          "name": "Winning Hackathon Roadmap",
+          "price": "499",
+          "currency": "INR",
+          "description": "Step-by-step execution plan"
+        },
+        {
+          "name": "Hackathon MVP Planning",
+          "price": "499",
+          "currency": "INR",
+          "description": "Minimum viable product scoping"
+        },
+        {
+          "name": "Tech Stack Recommendation",
+          "price": "299",
+          "currency": "INR",
+          "description": "Best tools for speed"
+        },
+        {
+          "name": "Presentation Coaching",
+          "price": "299",
+          "currency": "INR",
+          "description": "Deliver a powerful pitch"
+        },
+        {
+          "name": "Pitch Practice",
+          "price": "399",
+          "currency": "INR",
+          "description": "Mock presentation with feedback"
+        },
+        {
+          "name": "Demo Preparation",
+          "price": "299",
+          "currency": "INR",
+          "description": "Showcase your tech flawlessly"
+        },
+        {
+          "name": "End-to-End Hackathon Support",
+          "price": "1,999",
+          "currency": "INR",
+          "description": "Complete project guidance"
+        }
+      ]
+    },
+    {
+      "name": "22. Community / Club Support",
+      "services": [
+        {
+          "name": "Club Website",
+          "price": "1,499",
+          "currency": "INR",
+          "description": "Digital home for your college club"
+        },
+        {
+          "name": "Event Registration Page",
+          "price": "499",
+          "currency": "INR",
+          "description": "Collect attendee data"
+        },
+        {
+          "name": "Club Branding",
+          "price": "399",
+          "currency": "INR",
+          "description": "Logos and visual identity"
+        },
+        {
+          "name": "Event Poster Guidance",
+          "price": "299",
+          "currency": "INR",
+          "description": "Design feedback for events"
+        },
+        {
+          "name": "Technical Event Setup",
+          "price": "799",
+          "currency": "INR",
+          "description": "Infrastructure for tech events"
+        },
+        {
+          "name": "Hackathon Website",
+          "price": "1,999",
+          "currency": "INR",
+          "description": "Complete event platform"
+        }
+      ]
+    }
+  ]
+}

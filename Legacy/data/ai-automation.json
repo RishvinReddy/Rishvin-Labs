@@ -1,0 +1,101 @@
+{
+  "category": "AI & Automation Services",
+  "description": "Best For: Students, startups, businesses, creators.",
+  "services": [
+    {
+      "name": "AI Tool Setup",
+      "price": "299",
+      "currency": "INR",
+      "description": "Basic AI integration"
+    },
+    {
+      "name": "ChatGPT Workflow Setup",
+      "price": "499",
+      "currency": "INR",
+      "description": "Custom prompt workflows"
+    },
+    {
+      "name": "AI Productivity Setup",
+      "price": "499",
+      "currency": "INR",
+      "description": "Automate daily tasks"
+    },
+    {
+      "name": "AI Content Workflow",
+      "price": "799",
+      "currency": "INR",
+      "description": "Automated content generation pipeline"
+    },
+    {
+      "name": "Prompt Engineering Support",
+      "price": "499",
+      "currency": "INR",
+      "description": "Optimize AI outputs"
+    },
+    {
+      "name": "AI Research Assistant Setup",
+      "price": "799",
+      "currency": "INR",
+      "description": "Custom research pipelines"
+    },
+    {
+      "name": "AI Resume Optimization",
+      "price": "299",
+      "currency": "INR",
+      "description": "AI-powered ATS enhancement"
+    },
+    {
+      "name": "AI Chatbot Integration",
+      "price": "999",
+      "currency": "INR",
+      "description": "Deploy a custom chatbot"
+    },
+    {
+      "name": "Custom AI Workflow",
+      "price": "1,999",
+      "currency": "INR",
+      "description": "Advanced multi-agent setup"
+    },
+    {
+      "name": "AI Consultation",
+      "price": "499",
+      "currency": "INR",
+      "description": "Per session strategy call"
+    }
+  ],
+  "packages": [
+    {
+      "name": "AI Starter",
+      "price": "499",
+      "currency": "INR",
+      "description": "Beginner AI setup",
+      "includes": [
+        "AI tool recommendations",
+        "Workflow setup"
+      ]
+    },
+    {
+      "name": "AI Productivity Pack",
+      "price": "999",
+      "currency": "INR",
+      "description": "Boost daily efficiency",
+      "includes": [
+        "Automation workflow",
+        "Templates",
+        "Setup"
+      ],
+      "popular": true
+    },
+    {
+      "name": "AI Premium",
+      "price": "2,999",
+      "currency": "INR",
+      "description": "Complete AI system setup",
+      "includes": [
+        "Complete AI system setup",
+        "Custom workflows",
+        "Consultation"
+      ]
+    }
+  ]
+}
