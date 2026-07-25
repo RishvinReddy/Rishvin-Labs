@@ -89,7 +89,7 @@ export function Navbar() {
         {/* ── LOGO ── */}
         <Link href="/" className="flex items-center gap-3 group shrink-0">
           <img
-            src="/images/logo/logo.png"
+            src="/icon.png"
             alt="Rishvin Labs"
             className="w-8 h-8 object-contain group-hover:scale-105 transition-transform"
             onError={e => { e.currentTarget.style.display = "none"; }}
