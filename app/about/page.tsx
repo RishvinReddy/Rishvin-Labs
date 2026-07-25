@@ -155,19 +155,42 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* 4. FOUNDER'S MANIFESTO */}
+      {/* 4. FOUNDER'S MANIFESTO & BIO */}
       <section className="py-28 bg-[#000000] text-white px-6 relative overflow-hidden">
         <div className="max-w-screen-2xl mx-auto">
-          <p className="text-2xl sm:text-4xl md:text-5xl font-serif font-bold leading-tight tracking-tight text-white mb-12">
+          <p className="text-2xl sm:text-4xl md:text-5xl font-serif font-bold leading-tight tracking-tight text-white mb-16 max-w-5xl">
             &ldquo;Architecture survives; implementations change. We do not build features, we build resilient systems. Quality is not a metric&mdash;it is a prerequisite.&rdquo;
           </p>
-          <div className="flex items-center gap-4">
-            <div className="w-16 h-16 rounded-full bg-gradient-to-br from-blue-600 to-blue-400 flex items-center justify-center text-white font-bold text-2xl shadow-lg shadow-blue-500/20">
-              R
+          
+          <div className="flex flex-col lg:flex-row gap-12 lg:items-center">
+            <div className="flex items-center gap-6 lg:w-1/3">
+              <div className="w-20 h-20 rounded-full bg-gradient-to-br from-blue-600 to-blue-400 flex items-center justify-center text-white font-bold text-3xl shadow-lg shadow-blue-500/20 shrink-0">
+                R
+              </div>
+              <div>
+                <h3 className="text-2xl font-bold text-white mb-1">Rishvin Reddy</h3>
+                <div className="font-mono text-xs text-blue-400 uppercase tracking-widest">Lead Architect / Founder</div>
+              </div>
             </div>
-            <div>
-              <div className="text-lg font-bold text-white">Rishvin Reddy</div>
-              <div className="font-mono text-xs text-zinc-400 uppercase tracking-widest mt-1">Lead Architect / Founder</div>
+            
+            <div className="lg:w-2/3 lg:border-l lg:border-zinc-800 lg:pl-12 flex flex-col gap-6 text-zinc-400 font-sans text-base sm:text-lg leading-relaxed">
+              <p>
+                Rishvin Labs is founded and led by Rishvin Reddy, a Computer Science Engineering student at Woxsen University specializing in software engineering, cybersecurity, IoT, embedded systems, blockchain, and intelligent automation.
+              </p>
+              <p>
+                With a background in building practical, high-performance technology systems, Rishvin's engineering focus spans from secure zero-trust web applications to deep-sleep IoT monitoring platforms and experimental engineering prototypes.
+              </p>
+              <div className="pt-4">
+                <a
+                  href="https://rishvinreddy.vercel.app"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-3 bg-white text-black px-6 py-3 rounded-xl font-bold text-sm hover:bg-zinc-200 transition-all shadow-lg"
+                >
+                  <span>Explore Rishvin Reddy's Engineering Portfolio</span>
+                  <ArrowRight className="w-4 h-4" />
+                </a>
+              </div>
             </div>
           </div>
         </div>

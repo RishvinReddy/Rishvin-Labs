@@ -83,6 +83,17 @@ export function Footer() {
             <h4 className="font-mono text-xs font-bold text-white uppercase tracking-widest mb-6">
               Connect
             </h4>
+            <div className="flex flex-col gap-3 font-sans text-sm text-zinc-400 mb-6">
+              <a href="https://rishvinreddy.vercel.app" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors flex items-center gap-2 group">
+                <ArrowRight className="w-3.5 h-3.5 text-blue-500 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
+                <span>Founder — Rishvin Reddy</span>
+              </a>
+              <a href="https://rishvinreddy.vercel.app" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors flex items-center gap-2 group">
+                <ArrowRight className="w-3.5 h-3.5 text-blue-500 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
+                <span>Portfolio</span>
+              </a>
+            </div>
+
             <div className="flex items-center gap-3">
               <a
                 href="https://github.com/RishvinReddy"

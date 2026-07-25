@@ -3,9 +3,9 @@
 import React from "react";
 import Link from "next/link";
 import { motion, type Variants } from "motion/react";
-import { STUDIO_PACKAGES } from "@/data/packages";
+import { FLAGSHIP_PACKAGES } from "@/data/catalog";
 import { Check, ArrowUpRight, Sparkles, Zap, ShieldCheck } from "lucide-react";
-import { toUSD } from "@/lib/currency";
+import { toUSD, formatINR } from "@/lib/currency";
 
 export function PackagesSection() {
   const containerVariants: Variants = {
@@ -52,9 +52,9 @@ export function PackagesSection() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.1 }}
-          className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch"
+          className="grid grid-cols-1 lg:grid-cols-3 xl:grid-cols-5 gap-6 items-stretch"
         >
-          {STUDIO_PACKAGES.map((pkg) => (
+          {FLAGSHIP_PACKAGES.map((pkg) => (
             <motion.div
               key={pkg.id}
               variants={cardVariants}
@@ -85,21 +85,37 @@ export function PackagesSection() {
                 </p>
 
                 <div className="pb-6 mb-6 border-b border-white/10">
-                  <div className="flex items-baseline gap-1.5">
-                    <span className="text-lg font-mono text-slate-400 font-bold">₹</span>
-                    <span className="text-4xl sm:text-5xl font-mono font-black text-white tracking-tight">
-                      {pkg.price}
+                  <div className="flex flex-col gap-1">
+                    {pkg.pricing.type === "starting" && (
+                      <span className="text-[10px] uppercase font-bold tracking-widest text-slate-400">Starting from</span>
+                    )}
+                    {pkg.pricing.type === "fixed" && (
+                      <span className="text-[10px] uppercase font-bold tracking-widest text-slate-400">Fixed price</span>
+                    )}
+                    <div className="flex items-baseline gap-1.5">
+                      <span className="text-lg font-mono text-slate-400 font-bold">₹</span>
+                      <span className="text-4xl sm:text-4xl font-mono font-black text-white tracking-tight">
+                        {formatINR(pkg.pricing.startingPrice)}
+                      </span>
+                      {pkg.pricing.advancedPrice && (
+                        <>
+                          <span className="text-xl font-medium text-slate-400 mx-1">–</span>
+                          <span className="text-xl font-bold font-mono text-white">
+                            {formatINR(pkg.pricing.advancedPrice)}
+                          </span>
+                        </>
+                      )}
+                    </div>
+                  </div>
+                  <div className="flex items-center justify-between mt-2">
+                    <span className="text-xs font-mono text-slate-500 font-semibold">
+                      {toUSD(pkg.pricing.startingPrice)}
                     </span>
-                    {/* USD equivalent as small secondary text */}
-                    <span className="text-xs font-mono text-slate-500 ml-1 font-semibold">
-                      {toUSD(pkg.price)}
+                    <span className="font-mono text-[11px] text-slate-500 uppercase block">
+                      {pkg.pricing.type === "monthly" ? "/ month" : "per project"}
                     </span>
                   </div>
-                  {pkg.period && (
-                    <span className="font-mono text-[11px] text-slate-500 uppercase mt-1 block">
-                      {pkg.period}
-                    </span>
-                  )}
+
                 </div>
 
                 <ul className="space-y-3 mb-8">

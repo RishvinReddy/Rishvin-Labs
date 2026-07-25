@@ -3,8 +3,9 @@
 import React from "react";
 import Link from "next/link";
 import { motion } from "motion/react";
-import { SERVICE_CATEGORIES } from "@/data/services";
-import { ArrowUpRight, Globe, Terminal, LayoutTemplate, Cpu, Shield, Radio, Blocks, MessageSquare } from "lucide-react";
+import { SERVICE_CATEGORIES } from "@/data/catalog";
+import { ArrowUpRight, Globe, Terminal, LayoutTemplate, Cpu, Shield, Radio, Blocks, MessageSquare, Package, Workflow, Code2 } from "lucide-react";
+import { formatINR } from "@/lib/currency";
 
 const ICON_MAP: Record<string, React.FC<{ className?: string }>> = {
   Globe,
@@ -15,6 +16,9 @@ const ICON_MAP: Record<string, React.FC<{ className?: string }>> = {
   Radio,
   Blocks,
   MessageSquare,
+  Package,
+  Workflow,
+  Code2
 };
 
 export function ServicesPreview() {
@@ -80,7 +84,7 @@ export function ServicesPreview() {
                     {cat.services.slice(0, 2).map((svc) => (
                       <div key={svc.name} className="flex items-center justify-between text-xs font-mono text-slate-400">
                         <span className="truncate pr-2">• {svc.name}</span>
-                        {svc.price && <span className="text-slate-500 shrink-0">₹{svc.price}</span>}
+                        {svc.pricing && <span className="text-slate-500 shrink-0">₹{formatINR(svc.pricing.startingPrice)}</span>}
                       </div>
                     ))}
                   </div>

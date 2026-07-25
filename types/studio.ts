@@ -1,8 +1,15 @@
-export interface ServiceItem {
-  name: string;
-  price?: string;
+export interface Pricing {
+  startingPrice: number;
+  advancedPrice?: number;
   currency?: string;
-  description: string;
+  type?: "starting" | "fixed" | "range" | "custom" | "monthly";
+}
+
+export interface ServiceItem {
+  id: string;
+  name: string;
+  pricing: Pricing;
+  description?: string;
   popular?: boolean;
   features?: string[];
 }
@@ -39,11 +46,9 @@ export interface Technology {
 export interface Package {
   id: string;
   name: string;
-  price: string;
-  currency: string;
-  period?: string;
+  pricing: Pricing;
   description: string;
   popular?: boolean;
   features: string[];
-  ctaLabel: string;
+  ctaLabel?: string;
 }

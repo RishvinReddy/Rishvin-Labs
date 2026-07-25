@@ -4,14 +4,12 @@ import React, { useState } from "react";
 import { StudentsHero } from "@/components/sections/students-hero";
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
+import { StudentServicesSection } from "@/components/sections/student-services-section";
+import { StudentPackagesSection } from "@/components/sections/student-packages-section";
 import Link from "next/link";
 import { 
   ArrowRight, 
-  Award, 
-  Map, 
-  FolderGit2, 
   Briefcase, 
-  Users, 
   Check, 
   Send, 
   MessageSquare, 
@@ -21,7 +19,6 @@ import {
 } from "lucide-react";
 
 export default function StudentsPage() {
-  const [activeTab, setActiveTab] = useState<string>("all");
   const [chatInput, setChatInput] = useState<string>("");
   const [messages, setMessages] = useState<string[]>([
     "How do we structure our hackathon pitch?",
@@ -44,60 +41,7 @@ export default function StudentsPage() {
     setTodos(prev => prev.map((t, i) => i === index ? { ...t, done: !t.done } : t));
   };
 
-  const tracks = [
-    {
-      id: "hackathons",
-      num: "01",
-      title: "Hackathons",
-      subtitle: "Code & Innovate & Pitch",
-      desc: "Build & Compete. Compete in global hackathons with confidence, battle-tested system architecture, and winning presentation decks.",
-      icon: Award,
-      color: "bg-blue-600",
-      category: "compete"
-    },
-    {
-      id: "roadmaps",
-      num: "02",
-      title: "Roadmaps",
-      subtitle: "Guides & Paths & Skills",
-      desc: "Learn Faster. Follow battle-tested engineering roadmaps to mastering full-stack web, embedded IoT, and zero-trust security.",
-      icon: Map,
-      color: "bg-violet-600",
-      category: "learn"
-    },
-    {
-      id: "cyber",
-      num: "03",
-      title: "Cybersecurity Engineering",
-      subtitle: "Deploy & Showcase & Shine",
-      desc: "Portfolio Ready. Build real-world security tools, password vaults, and encryption audits that recruiters and hiring managers love.",
-      icon: FolderGit2,
-      color: "bg-emerald-600",
-      category: "build"
-    },
-    {
-      id: "opportunities",
-      num: "04",
-      title: "Opportunities",
-      subtitle: "Apply & Interview & Secure",
-      desc: "Internships & Jobs. Discover and apply to exclusive tier-1 roles and research grants tailored specifically for ambitious student engineers.",
-      icon: Briefcase,
-      color: "bg-blue-600",
-      category: "compete"
-    },
-    {
-      id: "mentorship",
-      num: "05",
-      title: "Career Mentorship",
-      subtitle: "Audit & Refine & Grow",
-      desc: "1-on-1 GitHub hygiene reviews, portfolio audits, and mock technical architectural interviews with principal studio engineers.",
-      icon: Users,
-      color: "bg-violet-600",
-      category: "learn"
-    }
-  ];
 
-  const filteredTracks = activeTab === "all" ? tracks : tracks.filter(t => t.category === activeTab);
 
   return (
     <main className="min-h-screen flex flex-col bg-[#fafafa] text-zinc-950 font-sans selection:bg-blue-600 selection:text-white">
@@ -126,90 +70,13 @@ export default function StudentsPage() {
         </div>
       </section>
 
-      {/* 3. DISCOVER SOLUTIONS & THE 5 ACADEMIC TRACKS */}
-      <section id="tracks" className="py-24 px-6 bg-[#fafafa] flex-1">
-        <div className="max-w-screen-2xl mx-auto space-y-16">
-          
-          <div className="text-center max-w-3xl mx-auto space-y-4">
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-zinc-200 font-mono text-xs text-zinc-600 uppercase tracking-widest shadow-sm">
-              <span className="w-2 h-2 rounded-full bg-blue-600" />
-              <span>Service Catalogue</span>
-            </div>
-            <h2 className="text-4xl sm:text-5xl font-serif font-bold tracking-tight text-zinc-950">
-              Discover Solutions.
-            </h2>
-            <p className="text-zinc-600 text-base sm:text-lg">
-              Select a domain below to explore tailored academic tracks, engineering resources, and career acceleration.
-            </p>
+      {/* 3. STUDENT PACKAGES */}
+      <StudentPackagesSection />
 
-            {/* Filter Tabs */}
-            <div className="flex flex-wrap justify-center gap-2 pt-4">
-              {[
-                { id: "all", label: "All Tracks (5)" },
-                { id: "compete", label: "Compete & Win" },
-                { id: "learn", label: "Learn & Guide" },
-                { id: "build", label: "Build & Deploy" }
-              ].map((tab) => (
-                <button
-                  key={tab.id}
-                  onClick={() => setActiveTab(tab.id)}
-                  className={`px-5 py-2.5 rounded-xl font-mono text-xs font-bold uppercase tracking-wider transition-all ${
-                    activeTab === tab.id
-                      ? "bg-zinc-950 text-white shadow-sm"
-                      : "bg-white border border-zinc-200 text-zinc-700 hover:border-zinc-300"
-                  }`}
-                >
-                  {tab.label}
-                </button>
-              ))}
-            </div>
-          </div>
+      {/* 4. STUDENT SERVICES */}
+      <StudentServicesSection />
 
-          {/* TRACKS GRID */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {filteredTracks.map((tr) => {
-              const IconComp = tr.icon;
-              return (
-                <div
-                  key={tr.id}
-                  className="bg-white border border-zinc-200 rounded-3xl p-8 flex flex-col justify-between hover:shadow-xl hover:border-blue-600 transition-all group"
-                >
-                  <div>
-                    <div className="flex justify-between items-center mb-6">
-                      <span className="font-mono text-xs font-bold text-zinc-400">
-                        [ {tr.num} ]
-                      </span>
-                      <div className={`w-12 h-12 rounded-2xl ${tr.color} text-white flex items-center justify-center shadow-md group-hover:scale-110 transition-transform`}>
-                        <IconComp className="w-6 h-6" />
-                      </div>
-                    </div>
-
-                    <h3 className="text-2xl font-serif font-bold text-zinc-950 mb-2 group-hover:text-blue-600 transition-colors">
-                      {tr.title}
-                    </h3>
-                    <p className="text-zinc-600 text-sm leading-relaxed mb-6">
-                      {tr.desc}
-                    </p>
-                  </div>
-
-                  <div className="pt-6 border-t border-zinc-100 flex items-center justify-between font-mono text-xs">
-                    <span className="font-bold text-zinc-800">{tr.subtitle}</span>
-                    <Link
-                      href="/contact"
-                      className="w-8 h-8 rounded-full bg-zinc-100 group-hover:bg-blue-600 group-hover:text-white flex items-center justify-center transition-colors"
-                    >
-                      <ArrowRight className="w-4 h-4" />
-                    </Link>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-
-        </div>
-      </section>
-
-      {/* 4. CTA */}
+      {/* 5. CTA */}
       <section className="py-20 bg-white border-t border-zinc-200 px-6 text-center">
         <div className="max-w-2xl mx-auto">
           <h2 className="text-3xl sm:text-4xl font-serif font-bold tracking-tight text-zinc-950 mb-4">

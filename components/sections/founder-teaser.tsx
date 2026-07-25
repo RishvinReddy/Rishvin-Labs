@@ -67,12 +67,33 @@ export function FounderTeaser() {
         {/* RIGHT COLUMN: Gapless Bento Grid of Domains (flex 2) */}
         <div className="lg:w-2/3 flex flex-col justify-between">
           
-          {/* Massive Header */}
-          <div className="p-10 lg:p-14 border-b border-zinc-800 bg-[#050505]">
-            <h2 className="text-5xl sm:text-6xl md:text-7xl font-serif font-black leading-[0.95] tracking-tight text-white">
-              Studio <br />
-              <span className="text-zinc-600">Engineering.</span>
+          {/* Massive Header / Bio */}
+          <div className="p-10 lg:p-14 border-b border-zinc-800 bg-[#050505] flex flex-col gap-6">
+            <h2 className="text-3xl sm:text-5xl font-serif font-black leading-tight tracking-tight text-white">
+              Built by <span className="text-zinc-500">Rishvin Reddy.</span>
             </h2>
+            <div className="font-sans text-sm sm:text-base text-zinc-400 leading-relaxed max-w-3xl space-y-4">
+              <p>
+                Rishvin Labs is founded and led by Rishvin Reddy, a Computer Science Engineering student and technology builder working across software engineering, cybersecurity, Internet of Things, embedded systems, blockchain and intelligent automation.
+              </p>
+              <p>
+                Rishvin's work focuses on building practical technology systems—from secure software and web applications to IoT monitoring platforms, automation systems and experimental engineering products.
+              </p>
+              <p>
+                Alongside Rishvin Labs, he maintains a dedicated engineering portfolio documenting projects, technical work, experiments, skills and ongoing development.
+              </p>
+            </div>
+            <div>
+              <a
+                href="https://rishvinreddy.vercel.app"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 mt-4 text-blue-400 font-bold hover:text-blue-300 transition-colors group"
+              >
+                <span>Explore Rishvin Reddy's Portfolio</span>
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              </a>
+            </div>
           </div>
 
           {/* Grid of 3 Domains */}
