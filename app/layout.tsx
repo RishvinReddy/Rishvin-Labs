@@ -62,7 +62,10 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: "https://rishvinreddy.vercel.app/rishvin-labs",
-  }
+  },
+  verification: {
+    google: "gqSeJRumXVEo6URkxbldpICOXZ9OBRZ3gs-B-9Wu-4k",
+  },
 };
 
 import { cookies } from "next/headers";
