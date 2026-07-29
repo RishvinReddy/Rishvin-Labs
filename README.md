@@ -42,24 +42,24 @@ graph TD
     Client[Client / Browser] -->|HTTP/HTTPS| NextRouter(Next.js App Router)
     
     subgraph Core Routes
-        NextRouter --> Home[/]
-        NextRouter --> About[/about]
-        NextRouter --> Contact[/contact]
-        NextRouter --> Founder[/founder]
-        NextRouter --> Services[/services]
+        NextRouter --> Home["/"]
+        NextRouter --> About["/about"]
+        NextRouter --> Contact["/contact"]
+        NextRouter --> Founder["/founder"]
+        NextRouter --> Services["/services"]
     end
 
     subgraph Content Hub
-        NextRouter --> Blog[/blog]
-        NextRouter --> Journal[/journal]
-        NextRouter --> Projects[/projects]
-        NextRouter --> Labs[/labs]
+        NextRouter --> Blog["/blog"]
+        NextRouter --> Journal["/journal"]
+        NextRouter --> Projects["/projects"]
+        NextRouter --> Labs["/labs"]
     end
 
     subgraph Philosophy & Community
-        NextRouter --> Manifesto[/manifesto]
-        NextRouter --> Recommendation[/recommendation]
-        NextRouter --> Students[/students]
+        NextRouter --> Manifesto["/manifesto"]
+        NextRouter --> Recommendation["/recommendation"]
+        NextRouter --> Students["/students"]
     end
 
     Blog --> MDX[MDX Engine]
