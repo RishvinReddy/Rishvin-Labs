@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import { Terminal, GitBranch, Globe, Mail, ArrowRight } from "lucide-react";
+import { Terminal, GitBranch, Globe2, Mail, ArrowRight } from "lucide-react";
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -11,10 +11,10 @@ export function Footer() {
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_15%_50%,rgba(37,99,235,0.12),transparent_50%),radial-gradient(circle_at_85%_30%,rgba(124,58,237,0.12),transparent_50%),radial-gradient(circle_at_50%_100%,rgba(16,185,129,0.05),transparent_50%)] pointer-events-none z-0 animate-pulse-slow" />
 
       <div className="max-w-screen-2xl mx-auto px-6 relative z-10 pb-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 mb-16">
+        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-12 gap-10 mb-16">
           
-          {/* Brand Col (col-span-4) */}
-          <div className="lg:col-span-4">
+          {/* Brand Col */}
+          <div className="col-span-2 lg:col-span-4 lg:pr-8">
             <Link href="/" className="inline-flex items-center gap-3 mb-6 group text-decoration-none">
               <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-blue-600 to-violet-600 flex items-center justify-center shadow-lg shadow-blue-500/20 group-hover:scale-105 transition-transform">
                 <Terminal className="w-5 h-5 text-white" />
@@ -23,106 +23,97 @@ export function Footer() {
                 Rishvin <span className="font-normal italic text-blue-400">Labs</span>
               </span>
             </Link>
-            <p className="text-zinc-400 text-sm leading-relaxed max-w-xs font-sans">
-              A high-end engineering studio building intelligent digital systems, IoT sensor networks, and fortified web architectures for modern businesses.
+            <p className="text-zinc-400 text-sm leading-relaxed mb-8 font-sans">
+              A high-end engineering studio building intelligent digital systems, IoT sensor networks, and fortified web architectures.
             </p>
-          </div>
-
-          {/* Company Links (col-span-2) */}
-          <div className="lg:col-span-2">
-            <h4 className="font-mono text-xs font-bold text-white uppercase tracking-widest mb-6">
-              Company
-            </h4>
-            <div className="flex flex-col gap-3 font-sans text-sm text-zinc-400">
-              <Link href="#about" className="hover:text-white transition-colors flex items-center gap-2 group">
-                <ArrowRight className="w-3.5 h-3.5 text-blue-500 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
-                <span>About Us</span>
-              </Link>
-              <Link href="#services" className="hover:text-white transition-colors flex items-center gap-2 group">
-                <ArrowRight className="w-3.5 h-3.5 text-blue-500 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
-                <span>Services</span>
-              </Link>
-              <Link href="#work" className="hover:text-white transition-colors flex items-center gap-2 group">
-                <ArrowRight className="w-3.5 h-3.5 text-blue-500 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
-                <span>Projects</span>
-              </Link>
-              <Link href="#contact" className="hover:text-white transition-colors flex items-center gap-2 group">
-                <ArrowRight className="w-3.5 h-3.5 text-blue-500 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
-                <span>Contact</span>
-              </Link>
+            {/* Newsletter */}
+            <div className="space-y-3">
+              <h4 className="font-mono text-[10px] font-bold text-zinc-500 uppercase tracking-widest">Subscribe to Research Newsletter</h4>
+              <form className="flex items-center">
+                <input 
+                  type="email" 
+                  placeholder="name@company.com" 
+                  className="bg-white/5 border border-white/10 rounded-l-xl px-4 py-2.5 text-sm text-white w-full outline-none focus:border-blue-500 transition-colors"
+                />
+                <button 
+                  type="button" 
+                  className="bg-blue-600 hover:bg-blue-500 text-white px-4 py-2.5 rounded-r-xl text-sm font-bold transition-colors"
+                >
+                  Join
+                </button>
+              </form>
             </div>
           </div>
 
-          {/* Services Links (col-span-3) */}
-          <div className="lg:col-span-3">
-            <h4 className="font-mono text-xs font-bold text-white uppercase tracking-widest mb-6">
-              Services
-            </h4>
-            <div className="flex flex-col gap-3 font-sans text-sm text-zinc-400">
-              <Link href="#services" className="hover:text-white transition-colors flex items-center gap-2 group">
-                <ArrowRight className="w-3.5 h-3.5 text-blue-500 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
-                <span>Web Development</span>
-              </Link>
-              <Link href="#services" className="hover:text-white transition-colors flex items-center gap-2 group">
-                <ArrowRight className="w-3.5 h-3.5 text-blue-500 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
-                <span>SaaS & Cloud Platforms</span>
-              </Link>
-              <Link href="#services" className="hover:text-white transition-colors flex items-center gap-2 group">
-                <ArrowRight className="w-3.5 h-3.5 text-blue-500 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
-                <span>IoT Telemetry Solutions</span>
-              </Link>
-              <Link href="#services" className="hover:text-white transition-colors flex items-center gap-2 group">
-                <ArrowRight className="w-3.5 h-3.5 text-blue-500 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
-                <span>Cybersecurity Vaults</span>
-              </Link>
+          {/* Links Grid */}
+          <div className="col-span-2 lg:col-span-8 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-8">
+            {/* Company */}
+            <div>
+              <h4 className="font-mono text-[10px] font-bold text-white uppercase tracking-widest mb-5">Company</h4>
+              <div className="flex flex-col gap-3 font-sans text-sm text-zinc-400">
+                <Link href="/about" className="hover:text-white transition-colors">About Us</Link>
+                <Link href="/services" className="hover:text-white transition-colors">Services</Link>
+                <Link href="/contact" className="hover:text-white transition-colors">Contact</Link>
+                <Link href="/careers" className="hover:text-white transition-colors">Careers</Link>
+                <Link href="/partners" className="hover:text-white transition-colors">Partners</Link>
+              </div>
+            </div>
+
+            {/* Knowledge */}
+            <div>
+              <h4 className="font-mono text-[10px] font-bold text-white uppercase tracking-widest mb-5">Knowledge</h4>
+              <div className="flex flex-col gap-3 font-sans text-sm text-zinc-400">
+                <Link href="/blog" className="hover:text-white transition-colors">Blog</Link>
+                <Link href="/research" className="hover:text-white transition-colors">Research</Link>
+                <Link href="/whitepapers" className="hover:text-white transition-colors">Whitepapers</Link>
+                <Link href="/tutorials" className="hover:text-white transition-colors">Tutorials</Link>
+                <Link href="/faq" className="hover:text-white transition-colors">FAQ</Link>
+              </div>
+            </div>
+
+            {/* Products / Engineering */}
+            <div>
+              <h4 className="font-mono text-[10px] font-bold text-white uppercase tracking-widest mb-5">Engineering</h4>
+              <div className="flex flex-col gap-3 font-sans text-sm text-zinc-400">
+                <Link href="/case-studies" className="hover:text-white transition-colors">Case Studies</Link>
+                <Link href="/projects" className="hover:text-white transition-colors">Projects</Link>
+                <Link href="/open-source" className="hover:text-white transition-colors">Open Source</Link>
+                <Link href="/status" className="hover:text-white transition-colors">Status Page</Link>
+                <Link href="/changelog" className="hover:text-white transition-colors">Changelog</Link>
+              </div>
+            </div>
+
+            {/* Legal */}
+            <div>
+              <h4 className="font-mono text-[10px] font-bold text-white uppercase tracking-widest mb-5">Legal</h4>
+              <div className="flex flex-col gap-3 font-sans text-sm text-zinc-400">
+                <Link href="/legal/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</Link>
+                <Link href="/legal/terms-and-conditions" className="hover:text-white transition-colors">Terms of Service</Link>
+                <Link href="/legal/refund-policy" className="hover:text-white transition-colors">Refund Policy</Link>
+                <Link href="/legal/cookie-policy" className="hover:text-white transition-colors">Cookie Policy</Link>
+                <Link href="/legal/disclaimer" className="hover:text-white transition-colors">Disclaimer</Link>
+              </div>
+            </div>
+
+            {/* Connect */}
+            <div>
+              <h4 className="font-mono text-[10px] font-bold text-white uppercase tracking-widest mb-5">Connect</h4>
+              <div className="flex flex-col gap-3 font-sans text-sm text-zinc-400">
+                <a href="mailto:rishvinreddy@gmail.com" className="hover:text-white transition-colors flex items-center gap-2">
+                  <Mail className="w-3.5 h-3.5" /> Email Us
+                </a>
+                <a href="https://github.com/RishvinReddy" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors flex items-center gap-2">
+                  <GitBranch className="w-3.5 h-3.5" /> GitHub
+                </a>
+                <a href="https://linkedin.com/in/rishvinreddy" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors flex items-center gap-2">
+                  <Globe2 className="w-3.5 h-3.5" /> LinkedIn
+                </a>
+                <a href="https://rishvinreddy.vercel.app" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors flex items-center gap-2">
+                  <ArrowRight className="w-3.5 h-3.5" /> Portfolio
+                </a>
+              </div>
             </div>
           </div>
-
-          {/* Connect (col-span-3) */}
-          <div className="lg:col-span-3">
-            <h4 className="font-mono text-xs font-bold text-white uppercase tracking-widest mb-6">
-              Connect
-            </h4>
-            <div className="flex flex-col gap-3 font-sans text-sm text-zinc-400 mb-6">
-              <a href="https://rishvinreddy.vercel.app" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors flex items-center gap-2 group">
-                <ArrowRight className="w-3.5 h-3.5 text-blue-500 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
-                <span>Founder — Rishvin Reddy</span>
-              </a>
-              <a href="https://rishvinreddy.vercel.app" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors flex items-center gap-2 group">
-                <ArrowRight className="w-3.5 h-3.5 text-blue-500 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
-                <span>Portfolio</span>
-              </a>
-            </div>
-
-            <div className="flex items-center gap-3">
-              <a
-                href="https://github.com/RishvinReddy"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-11 h-11 rounded-full bg-white/5 border border-white/15 flex items-center justify-center text-white hover:bg-blue-600 hover:border-blue-600 hover:-translate-y-1 transition-all shadow-lg"
-                aria-label="GitHub"
-              >
-                <GitBranch className="w-4 h-4" />
-              </a>
-              <a
-                href="https://rishvinreddy.vercel.app"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-11 h-11 rounded-full bg-white/5 border border-white/15 flex items-center justify-center text-white hover:bg-blue-600 hover:border-blue-600 hover:-translate-y-1 transition-all shadow-lg"
-                aria-label="Portfolio"
-              >
-                <Globe className="w-4 h-4" />
-              </a>
-              <a
-                href="mailto:rishvinreddy@gmail.com"
-                className="w-11 h-11 rounded-full bg-white/5 border border-white/15 flex items-center justify-center text-white hover:bg-blue-600 hover:border-blue-600 hover:-translate-y-1 transition-all shadow-lg"
-                aria-label="Email"
-              >
-                <Mail className="w-4 h-4" />
-              </a>
-            </div>
-          </div>
-
         </div>
 
         {/* Bottom Copyright Bar */}

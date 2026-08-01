@@ -18,6 +18,7 @@ import {
   ArrowRight,
   FolderGit2
 } from "lucide-react";
+import { SearchBar } from "@/components/search/SearchBar";
 
 export function Navbar() {
   const [scrolled, setScrolled]           = useState(false);
@@ -52,7 +53,12 @@ export function Navbar() {
   }, []);
 
   /* ── close on route change ── */
-  useEffect(() => { setMobileMenuOpen(false); setStudioOpen(false); }, [pathname]);
+  useEffect(() => { 
+    setTimeout(() => {
+      setMobileMenuOpen(false); 
+      setStudioOpen(false); 
+    }, 0);
+  }, [pathname]);
 
   /* ── Studio dropdown data ── */
   const studioMenu = [
@@ -219,6 +225,8 @@ export function Navbar() {
 
         {/* ── RIGHT: Status + CTA ── */}
         <div className="hidden lg:flex items-center gap-3 shrink-0">
+          <SearchBar />
+
           {/* Live dot */}
           <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-emerald-50 border border-emerald-200/80 font-mono text-[10px] font-bold text-emerald-700">
             <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
@@ -256,6 +264,9 @@ export function Navbar() {
             className="lg:hidden border-b border-zinc-200 bg-white/98 backdrop-blur-2xl px-6 py-6 overflow-hidden shadow-xl"
           >
             <div className="flex flex-col gap-2 font-mono">
+              <div className="px-4 py-2">
+                <SearchBar />
+              </div>
 
               {[
                 { label: "Home",     href: "/",         active: pathname === "/" },

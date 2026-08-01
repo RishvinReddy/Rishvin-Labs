@@ -18,15 +18,17 @@ export function GlobalIntro({ hasSeenIntro }: GlobalIntroProps) {
   useEffect(() => {
     const mql = window.matchMedia("(prefers-reduced-motion: reduce)");
     if (mql.matches) {
-      setReducedMotion(true);
-      setShowFinal(true);
+      setTimeout(() => {
+        setReducedMotion(true);
+        setShowFinal(true);
+      }, 0);
     }
   }, []);
 
   useEffect(() => {
     if (!hasPlayed) {
       document.cookie = "intro_played=1; path=/";
-      setHasPlayed(true);
+      setTimeout(() => setHasPlayed(true), 0);
     }
   }, [hasPlayed]);
 
@@ -43,7 +45,8 @@ export function GlobalIntro({ hasSeenIntro }: GlobalIntroProps) {
       const timer = setTimeout(() => setIndex(index + 1), 250);
       return () => clearTimeout(timer);
     } else if (index === greetings.length && !showFinal) {
-      setShowFinal(true);
+      const t = setTimeout(() => setShowFinal(true), 0);
+      return () => clearTimeout(t);
     } else if (showFinal && !isDone) {
       const timer = setTimeout(() => setIsDone(true), 250);
       return () => clearTimeout(timer);

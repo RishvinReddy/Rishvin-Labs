@@ -1,0 +1,72 @@
+---
+title: "ChainForensics: De-anonymizing Blockchain Transactions"
+date: "2024-03-15"
+description: "A machine learning pipeline for tracing illicit crypto flows across decentralized exchanges."
+author: "Rishvin Reddy"
+tags: ["blockchain", "machine-learning", "security", "forensics"]
+coverImage: "/chainforensics-cover.jpg"
+---
+
+## Executive Summary
+
+As decentralized finance (DeFi) ecosystems grow, they increasingly become targets for sophisticated financial crimes. **ChainForensics** was developed to bridge the visibility gap in on-chain investigations. By combining advanced graph neural networks (GNNs) with real-time heuristic modeling, the platform successfully traced over $450M in stolen funds across multiple layer-1 and layer-2 networks within its first six months of deployment.
+
+This case study outlines the engineering decisions, architectural constraints, and security considerations involved in building a high-throughput blockchain analytics pipeline.
+
+## Problem Statement
+
+Traditional blockchain explorers rely on simple linear tracing (e.g., following a UTXO or account balance). However, modern money laundering techniques utilize:
+- **Mixers and Tumblers:** (e.g., Tornado Cash)
+- **Cross-Chain Bridges:** Swapping assets between Ethereum, Polygon, and Avalanche to obscure trails.
+- **Micro-structuring:** Splitting large illicit funds into thousands of micro-transactions.
+
+Existing forensics tools were either too slow (batch processing over 24 hours) or failed to cross the "bridge boundary." ChainForensics needed to process transactions in near real-time (sub-5 seconds) and maintain state across different blockchain networks.
+
+## Requirements
+
+1. **Real-time Ingestion:** Sub-5 second latency from block confirmation to graph update.
+2. **Cross-Chain Correlation:** Deterministic mapping of bridge events.
+3. **High Availability:** 99.99% uptime during market volatility (when illicit activity spikes).
+4. **Data Privacy:** Role-Based Access Control (RBAC) ensuring only authorized investigators access deanonymized IP metadata.
+
+## Architecture
+
+The system was designed around an event-driven architecture using Apache Kafka as the central nervous system.
+
+### Data Ingestion Layer
+Custom RPC nodes (Geth and Erigon) stream new block headers and transaction receipts directly into a Kafka topic. To handle chain reorgs, a specialized `ReorgManager` service maintains a sliding window of the last 100 blocks, rolling back graph states if a longer chain is detected.
+
+### Processing Pipeline
+The core ML pipeline is built in Python (PyTorch Geometric) and deployed as microservices on Kubernetes. 
+1. **Heuristic Engine:** Applies known tags (e.g., "Binance Hot Wallet", "Known Phishing Contract").
+2. **Graph Neural Network (GNN):** Infers the probability that an unknown address belongs to a known cluster based on behavioral patterns (gas usage, interaction frequency, time-of-day clustering).
+
+## Database Design
+
+Given the highly relational nature of blockchain data, a traditional RDBMS was insufficient. We utilized a hybrid polyglot persistence model:
+
+- **Neo4j (Graph Database):** Stores the actual transaction graph (Addresses as Nodes, Transactions as Edges) enabling rapid multi-hop traversal queries (e.g., "Find all paths from Address A to Address B within 5 hops").
+- **ClickHouse (OLAP):** Stores raw transaction metadata and logs for rapid analytical queries and aggregations.
+- **PostgreSQL:** Manages user accounts, RBAC policies, and investigation case notes.
+
+## Security Considerations
+
+As a security product, the infrastructure had to operate under a strict Zero-Trust model.
+- **VPC Peering & PrivateLink:** All database instances and internal APIs communicate exclusively over private AWS networks.
+- **KMS Encryption:** All PII (such as IP addresses linked to wallet addresses) are encrypted at rest using AWS KMS with automatic key rotation.
+- **mTLS:** All microservices authenticate with each other using mutual TLS (mTLS) managed by an Istio service mesh.
+
+## Deployment
+
+The entire stack is deployed on AWS using Terraform. Continuous Integration (CI) is handled via GitHub Actions, which builds Docker images, runs automated graph traversal tests, and pushes to Amazon ECR. 
+
+ArgoCD manages the Continuous Deployment (CD) into the Kubernetes clusters (EKS), allowing for GitOps-style rollbacks if a bad heuristic model is deployed.
+
+## Lessons Learned
+
+- **RPC Nodes are Bottlenecks:** Initially, we relied on third-party RPC providers (like Infura), but rate limits and latency spiked during NFT mints. Running our own Erigon nodes became mandatory for predictable performance.
+- **Graph Queries are Expensive:** Deep traversals (7+ hops) in Neo4j can cause memory pressure. We implemented strict query limits and asynchronous background jobs for deep traces.
+
+## Future Roadmap
+
+The next iteration of ChainForensics will focus on **Zero-Knowledge (ZK) Rollup** tracing. As layer-2 solutions obscure transaction data for privacy, we are developing new probabilistic models to correlate L1 deposits with L2 activity without breaking cryptographic guarantees.

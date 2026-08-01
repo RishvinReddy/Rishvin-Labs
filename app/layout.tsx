@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { Inter, Playfair_Display, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
+import { GoogleAnalytics } from "@/components/analytics/GoogleAnalytics";
+import { MicrosoftClarity } from "@/components/analytics/MicrosoftClarity";
+import { OrganizationSchema, WebSiteSchema } from "@/components/seo/schema";
 
 const inter = Inter({
   variable: "--font-sans",
@@ -70,7 +73,6 @@ export const metadata: Metadata = {
 
 import { cookies } from "next/headers";
 import { GlobalIntro } from "@/components/intro/GlobalIntro";
-import { JsonLd } from "@/components/seo/json-ld";
 
 export default async function RootLayout({
   children,
@@ -87,9 +89,12 @@ export default async function RootLayout({
       className={`${inter.variable} ${playfair.variable} ${jetbrainsMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-white text-zinc-950 font-sans selection:bg-blue-600 selection:text-white">
-        <JsonLd />
+        <OrganizationSchema />
+        <WebSiteSchema />
         <GlobalIntro hasSeenIntro={hasSeenIntro} />
         {children}
+        <GoogleAnalytics />
+        <MicrosoftClarity />
       </body>
     </html>
   );

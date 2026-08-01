@@ -491,24 +491,15 @@ export default function ContactPage() {
             <div className="bg-zinc-950 text-white rounded-3xl p-7 shadow-xl">
               <div className="font-mono text-[10px] font-bold text-zinc-400 uppercase tracking-widest mb-4">Quick Contact</div>
               <p className="text-zinc-300 text-sm leading-relaxed mb-5">
-                Prefer to reach out directly? Our engineering lead responds personally.
+                Prefer to reach out directly? Our engineering lead responds personally. Expected response time: <span className="font-bold text-white">within 24 hours</span>.
               </p>
-              <div className="space-y-2.5">
+              <div className="space-y-2.5 mb-6">
                 <a
                   href="mailto:rishvinreddy@gmail.com"
                   className="flex items-center gap-3 p-3.5 rounded-xl bg-white/8 border border-white/10 hover:bg-white/15 hover:border-white/20 transition-all font-mono text-xs font-bold text-white"
                 >
                   <Mail className="w-4 h-4 text-blue-400 shrink-0" />
                   rishvinreddy@gmail.com
-                </a>
-                <a
-                  href="https://wa.me/919XXXXXXXXX"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-3 p-3.5 rounded-xl bg-emerald-500/15 border border-emerald-500/30 hover:bg-emerald-500/25 transition-all font-mono text-xs font-bold text-emerald-400"
-                >
-                  <Phone className="w-4 h-4 shrink-0" />
-                  Message on WhatsApp
                 </a>
                 <a
                   href="https://github.com/RishvinReddy"
@@ -520,6 +511,15 @@ export default function ContactPage() {
                   github.com/RishvinReddy
                 </a>
                 <a
+                  href="https://linkedin.com/in/rishvinreddy"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-3 p-3.5 rounded-xl bg-white/8 border border-white/10 hover:bg-white/15 transition-all font-mono text-xs font-bold text-zinc-300"
+                >
+                  <Globe2 className="w-4 h-4 text-blue-500 shrink-0" />
+                  linkedin.com/in/rishvinreddy
+                </a>
+                <a
                   href="https://rishvinreddy.vercel.app"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -528,6 +528,17 @@ export default function ContactPage() {
                   <Globe className="w-4 h-4 text-emerald-400 shrink-0" />
                   rishvinreddy.vercel.app
                 </a>
+              </div>
+              
+              <div className="space-y-3 pt-5 border-t border-white/10 font-sans text-xs text-zinc-400">
+                <div className="flex items-center gap-3">
+                  <Clock className="w-4 h-4 shrink-0 text-zinc-500" />
+                  <span>Business Hours: Mon–Fri, 9AM – 6PM IST</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <Building2 className="w-4 h-4 shrink-0 text-zinc-500" />
+                  <span>Office: Remote &amp; Hyderabad, India</span>
+                </div>
               </div>
             </div>
 
