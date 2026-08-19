@@ -3,7 +3,7 @@
 import React, { useState, useMemo } from "react";
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
-import { FEATURED_PROJECTS } from "@/data/projects";
+import { projects } from "@/data/projects";
 import Link from "next/link";
 import { ArrowRight, Search } from "lucide-react";
 
@@ -12,11 +12,11 @@ export default function ProjectsPage() {
   const [searchQuery, setSearchQuery] = useState<string>("");
 
   const filteredProjects = useMemo(() => {
-    return FEATURED_PROJECTS.filter((proj) => {
+    return projects.filter((proj) => {
       const matchesFilter = activeFilter === "all" || proj.category === activeFilter;
       const matchesSearch = 
         proj.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        proj.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        proj.solution.toLowerCase().includes(searchQuery.toLowerCase()) ||
         proj.technologies.some(t => t.toLowerCase().includes(searchQuery.toLowerCase()));
       return matchesFilter && matchesSearch;
     });
@@ -95,7 +95,7 @@ export default function ProjectsPage() {
                 return (
                   <Link
                     key={project.id}
-                    href={`/projects/${project.id}`}
+                    href={`/work/${project.id}`}
                     className="bg-white border border-zinc-200 rounded-3xl p-8 flex flex-col justify-between hover:-translate-y-1 hover:shadow-xl hover:border-blue-600 transition-all group"
                   >
                     <div>
@@ -119,7 +119,7 @@ export default function ProjectsPage() {
                         {project.title}
                       </h3>
                       <p className="text-zinc-600 text-sm leading-relaxed mb-8">
-                        {project.description}
+                        {project.solution}
                       </p>
                     </div>
 
@@ -159,7 +159,7 @@ export default function ProjectsPage() {
           </h2>
           <div className="flex flex-wrap items-center justify-center gap-4">
             <Link
-              href="/contact"
+              href="/contact?source=work"
               className="inline-flex items-center gap-2 px-8 py-4 rounded-2xl bg-zinc-950 text-white font-semibold text-base hover:bg-blue-600 transition-all shadow-md shadow-zinc-950/10"
             >
               <span>Start a Project</span>

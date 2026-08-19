@@ -44,7 +44,7 @@ export async function GET(request: Request) {
 
   // Apply filters if provided
   if (typeFilter) {
-    results = results.filter(r => r.type === typeFilter);
+    results = results.filter(r => r && (r as any).type === typeFilter);
   }
 
   // Ensure we don't return more than the limit after filtering

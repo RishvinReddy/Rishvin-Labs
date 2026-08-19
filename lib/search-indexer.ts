@@ -2,7 +2,7 @@ import FlexSearch from 'flexsearch';
 import { getAllContent } from './mdx';
 
 // We map string ids to the actual content to return rich results
-export const contentRegistry = new Map<string, any>();
+export const contentRegistry = new Map<string, Record<string, unknown>>();
 
 // Initialize FlexSearch Document Index
 export const searchIndex = new FlexSearch.Document({

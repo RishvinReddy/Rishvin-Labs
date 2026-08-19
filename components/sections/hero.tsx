@@ -102,31 +102,31 @@ export function Hero() {
           <div className="lg:col-span-5 flex flex-col items-start text-left z-20">
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-violet-50 border border-violet-200/80 font-mono text-[11px] font-bold text-violet-900 mb-6 shadow-2xs">
               <span className="w-2 h-2 rounded-full bg-violet-600 animate-pulse" />
-              <span>TECH STUDIO &bull; EST. 2025</span>
+              <span>FOUNDER-LED TECHNOLOGY STUDIO</span>
             </div>
 
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-serif font-black tracking-tight text-zinc-950 leading-[1.05] mb-6">
               Engineering <br />
               Scalable Digital <br />
               <span className="bg-gradient-to-r from-blue-600 via-violet-600 to-pink-600 bg-clip-text text-transparent italic font-normal">
-                Solutions.
+                Business Systems.
               </span>
             </h1>
 
-            <p className="text-zinc-600 text-base sm:text-lg leading-relaxed mb-8 font-sans">
-              We design and build robust software platforms, custom web applications, advanced IoT sensor networks, and fortified cybersecurity architectures for ambitious enterprises and founders.
+            <p className="text-zinc-600 text-base sm:text-lg leading-relaxed mb-8 font-sans max-w-lg">
+              We design and build robust software platforms, automation workflows, and specialized applications for ambitious businesses that need technology to work flawlessly.
             </p>
 
             <div className="flex flex-wrap items-center gap-4 mb-12 w-full sm:w-auto">
               <Link
-                href="#contact"
+                href="/contact?source=homepage"
                 className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-zinc-950 text-white font-mono text-xs font-bold tracking-wider uppercase hover:bg-blue-600 transition-all shadow-lg shadow-zinc-950/20 w-full sm:w-auto group"
               >
                 <span>[ START_PROJECT ]</span>
                 <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
               </Link>
               <Link
-                href="#work"
+                href="/work"
                 className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-white hover:bg-zinc-50 text-zinc-900 font-mono text-xs font-bold tracking-wider uppercase border border-zinc-200/80 transition-all shadow-xs w-full sm:w-auto"
               >
                 <span>VIEW_WORK()</span>

@@ -47,46 +47,42 @@ export function StudentsHero() {
           {/* ── LEFT COPY ── */}
           <div className="lg:col-span-5 flex flex-col items-start">
             <span className="font-mono text-xs font-bold text-blue-600 uppercase tracking-widest mb-5 inline-block">
-              WHAT STUDENTS BUILD
+              RISHVIN LABS FOR STUDENTS
             </span>
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-serif font-black tracking-tight text-zinc-950 leading-[1.05] mb-6">
-              Learn. Build. Win.<br />
-              <span className="text-blue-600 font-normal italic">Everything</span>{" "}
-              Students Need.
+              Build the skills, projects and proof that move your{" "}
+              <span className="text-blue-600 font-normal italic">career</span> forward.
             </h1>
             <p className="text-lg text-zinc-600 leading-relaxed max-w-xl font-sans mb-8">
-              From hackathons and internships to projects, roadmaps, resources, and career guidance — a complete ecosystem designed to help students build real skills and real opportunities.
+              Resources, engineering support, project guidance and career-focused tools for students who want to build beyond the classroom.
             </p>
             <div className="flex flex-wrap gap-4">
               <a
-                href="#tracks"
+                href="#resources"
                 className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-zinc-950 text-white font-mono text-xs font-bold tracking-wider uppercase hover:bg-blue-600 transition-all shadow-md group"
               >
                 Explore Resources
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
               </a>
               <Link
-                href="/contact"
+                href="/contact?source=students"
                 className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-white border border-zinc-200 text-zinc-800 font-mono text-xs font-bold tracking-wider uppercase hover:bg-zinc-50 transition-all"
               >
-                Start Learning
+                Get Technical Support
               </Link>
             </div>
 
-            {/* Quick stats */}
-            <div className="grid grid-cols-3 gap-6 pt-8 mt-8 border-t border-zinc-200 w-full">
-              <div>
-                <div className="font-serif font-black text-2xl text-zinc-950">500+</div>
-                <div className="font-mono text-[10px] uppercase tracking-widest text-zinc-500 mt-1">Students Helped</div>
-              </div>
-              <div>
-                <div className="font-serif font-black text-2xl text-blue-600">30+</div>
-                <div className="font-mono text-[10px] uppercase tracking-widest text-zinc-500 mt-1">Hackathons Won</div>
-              </div>
-              <div>
-                <div className="font-serif font-black text-2xl text-violet-600">100%</div>
-                <div className="font-mono text-[10px] uppercase tracking-widest text-zinc-500 mt-1">Free Resources</div>
-              </div>
+            {/* Capability Strip */}
+            <div className="pt-8 mt-8 border-t border-zinc-200 w-full flex flex-wrap items-center gap-x-4 gap-y-2">
+              <span className="font-mono text-[11px] font-bold tracking-widest text-zinc-800 uppercase">PROJECTS</span>
+              <span className="text-blue-600 hidden sm:inline">·</span>
+              <span className="font-mono text-[11px] font-bold tracking-widest text-zinc-800 uppercase">RESOURCES</span>
+              <span className="text-blue-600 hidden sm:inline">·</span>
+              <span className="font-mono text-[11px] font-bold tracking-widest text-zinc-800 uppercase">HACKATHONS</span>
+              <span className="text-blue-600 hidden sm:inline">·</span>
+              <span className="font-mono text-[11px] font-bold tracking-widest text-zinc-800 uppercase">OPPORTUNITIES</span>
+              <span className="text-blue-600 hidden sm:inline">·</span>
+              <span className="font-mono text-[11px] font-bold tracking-widest text-zinc-800 uppercase">CAREER</span>
             </div>
           </div>
 

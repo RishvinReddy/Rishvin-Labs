@@ -34,10 +34,10 @@ export function StudentServicesSection() {
         <div className="w-full lg:w-1/3 space-y-8">
           <div>
             <h2 className="text-4xl sm:text-5xl font-serif font-bold tracking-tight text-zinc-950 mb-4">
-              Student Hub
+              Technical Support
             </h2>
             <p className="text-zinc-600 text-lg">
-              Discounted packages, academic assistance, and early-career digital solutions.
+              Targeted engineering support, debugging, and career guidance sessions.
             </p>
           </div>
           
@@ -125,7 +125,7 @@ export function StudentServicesSection() {
                           {toUSD(service.pricing.startingPrice)}
                         </span>
                       </div>
-                      <span className="text-xs text-zinc-500 mt-1 block">/ project</span>
+                      <span className="text-xs text-zinc-500 mt-1 block">/ session</span>
                     </div>
 
                     <ul className="space-y-3 mb-6">
@@ -139,7 +139,7 @@ export function StudentServicesSection() {
                   </div>
 
                   <Link
-                    href="/contact"
+                    href={`/contact?service=${service.id}&source=students`}
                     className="w-full py-4 rounded-xl bg-zinc-950 text-white font-mono text-xs font-bold uppercase tracking-wider text-center hover:bg-blue-600 transition-all flex items-center justify-center gap-2 group/btn shadow-sm"
                   >
                     <span>[ INQUIRE NOW ]</span>

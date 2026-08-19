@@ -35,12 +35,12 @@ export function StudentPackagesSection() {
             <span className="w-1.5 h-1.5 rounded-full bg-blue-600" />
             <span>BUNDLED FOR SUCCESS</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold tracking-tight text-zinc-950 mb-4">
-            Student Packages
+          <h2 className="text-3xl md:text-4xl font-serif font-black tracking-tight text-zinc-950 mb-6">
+            Student Programs
           </h2>
-          <p className="text-zinc-600 text-sm sm:text-base">
+          <p className="text-lg text-zinc-600 font-sans leading-relaxed">
             Comprehensive kits for placements, internships, and massive project launches. 
-            Don't just build a project—build your engineering presence.
+            Structured programs for students looking for comprehensive help, from planning to deployment.
           </p>
         </div>
 
@@ -126,7 +126,7 @@ export function StudentPackagesSection() {
               </div>
 
               <Link
-                href="/contact"
+                href={`/contact?service=${pkg.id}&source=students`}
                 className={`w-full py-4 rounded-xl font-mono text-xs font-bold tracking-wider uppercase flex items-center justify-center gap-2 transition-all group ${
                   pkg.popular
                     ? "bg-blue-600 hover:bg-blue-700 text-white shadow-md shadow-blue-600/20"

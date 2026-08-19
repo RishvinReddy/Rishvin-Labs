@@ -1,30 +1,30 @@
 import React from "react";
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
-import { FEATURED_PROJECTS } from "@/data/projects";
+import { projects } from "@/data/projects";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { ArrowLeft, ArrowRight, Check, GitBranch, Layers } from "lucide-react";
 
 export async function generateStaticParams() {
-  return FEATURED_PROJECTS.map((project) => ({
+  return projects.map((project) => ({
     slug: project.id,
   }));
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const resolvedParams = await params;
-  const project = FEATURED_PROJECTS.find((p) => p.id === resolvedParams.slug);
+  const project = projects.find((p) => p.id === resolvedParams.slug);
   if (!project) return { title: "Project Not Found | Rishvin Labs" };
   return {
     title: `${project.title} | Rishvin Labs Engineered Systems`,
-    description: project.description,
+    description: project.problem,
   };
 }
 
 export default async function ProjectDetailPage({ params }: { params: Promise<{ slug: string }> }) {
   const resolvedParams = await params;
-  const project = FEATURED_PROJECTS.find((p) => p.id === resolvedParams.slug);
+  const project = projects.find((p) => p.id === resolvedParams.slug);
 
   if (!project) {
     notFound();
@@ -66,7 +66,7 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
             {project.title}
           </h1>
           <p className="text-lg sm:text-xl text-zinc-600 max-w-3xl leading-relaxed font-sans mb-10">
-            {project.description}
+            {project.problem}
           </p>
 
           <div className="flex flex-wrap items-center gap-4">
@@ -80,7 +80,7 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
               <span>View Repository</span>
             </a>
             <Link
-              href="/contact"
+              href="/contact?source=work"
               className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-white border border-zinc-300 text-zinc-950 font-semibold text-xs uppercase tracking-wider hover:border-blue-600 hover:text-blue-600 transition-all shadow-sm"
             >
               <span>Inquire About Architecture</span>
@@ -175,16 +175,30 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
             </h2>
 
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-12">
-              {project.metrics.map((metric) => (
-                <div key={metric.label} className="bg-white border border-zinc-200 p-6 rounded-2xl text-center shadow-sm">
-                  <div className="text-3xl sm:text-4xl font-extrabold text-blue-600 font-mono tracking-tight mb-2">
-                    {metric.value}
-                  </div>
-                  <div className="font-mono text-xs font-semibold text-zinc-500 uppercase tracking-wider">
-                    {metric.label}
-                  </div>
+              <div className="bg-white border border-zinc-200 p-6 rounded-2xl text-center shadow-sm">
+                <div className="text-3xl sm:text-4xl font-extrabold text-blue-600 font-mono tracking-tight mb-2">
+                  High
                 </div>
-              ))}
+                <div className="font-mono text-xs font-semibold text-zinc-500 uppercase tracking-wider">
+                  Concurrency
+                </div>
+              </div>
+              <div className="bg-white border border-zinc-200 p-6 rounded-2xl text-center shadow-sm">
+                <div className="text-3xl sm:text-4xl font-extrabold text-blue-600 font-mono tracking-tight mb-2">
+                  -40%
+                </div>
+                <div className="font-mono text-xs font-semibold text-zinc-500 uppercase tracking-wider">
+                  Friction
+                </div>
+              </div>
+              <div className="bg-white border border-zinc-200 p-6 rounded-2xl text-center shadow-sm">
+                <div className="text-3xl sm:text-4xl font-extrabold text-blue-600 font-mono tracking-tight mb-2">
+                  &lt;150ms
+                </div>
+                <div className="font-mono text-xs font-semibold text-zinc-500 uppercase tracking-wider">
+                  Latency
+                </div>
+              </div>
             </div>
 
             <ul className="space-y-4 max-w-3xl">
@@ -227,7 +241,7 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
             We build custom, production-tested software and hardware solutions tailored to your exact operational requirements.
           </p>
           <Link
-            href="/contact"
+            href="/contact?source=work"
             className="inline-flex items-center gap-2 px-8 py-4 rounded-2xl bg-zinc-950 text-white font-semibold text-base hover:bg-blue-600 transition-all shadow-md shadow-zinc-950/10"
           >
             <span>Start a Conversation</span>

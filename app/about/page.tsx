@@ -306,7 +306,7 @@ export default function AboutPage() {
             Ready to build something <span className="text-blue-400 italic font-normal">extraordinary?</span>
           </h2>
           <p className="text-zinc-400 text-lg mb-10">
-            Let's discuss your next project, architecture review, or digital transformation strategy.
+            Let&apos;s discuss your next project, architecture review, or digital transformation strategy.
           </p>
           <Link
             href="/contact"

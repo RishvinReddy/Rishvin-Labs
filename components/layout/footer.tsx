@@ -46,40 +46,45 @@ export function Footer() {
           </div>
 
           {/* Links Grid */}
-          <div className="col-span-2 lg:col-span-8 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-8">
-            {/* Company */}
+          <div className="col-span-2 lg:col-span-8 grid grid-cols-2 sm:grid-cols-4 gap-8">
+            {/* Business */}
             <div>
-              <h4 className="font-mono text-[10px] font-bold text-white uppercase tracking-widest mb-5">Company</h4>
+              <h4 className="font-mono text-[10px] font-bold text-white uppercase tracking-widest mb-5">Business</h4>
               <div className="flex flex-col gap-3 font-sans text-sm text-zinc-400">
-                <Link href="/about" className="hover:text-white transition-colors">About Us</Link>
                 <Link href="/services" className="hover:text-white transition-colors">Services</Link>
+                <Link href="/solutions" className="hover:text-white transition-colors">Solutions</Link>
+                <Link href="/work" className="hover:text-white transition-colors">Work</Link>
+                <Link href="/about" className="hover:text-white transition-colors">About</Link>
                 <Link href="/contact" className="hover:text-white transition-colors">Contact</Link>
-                <Link href="/careers" className="hover:text-white transition-colors">Careers</Link>
-                <Link href="/partners" className="hover:text-white transition-colors">Partners</Link>
               </div>
             </div>
 
-            {/* Knowledge */}
+            {/* Community */}
             <div>
-              <h4 className="font-mono text-[10px] font-bold text-white uppercase tracking-widest mb-5">Knowledge</h4>
+              <h4 className="font-mono text-[10px] font-bold text-white uppercase tracking-widest mb-5">Community</h4>
               <div className="flex flex-col gap-3 font-sans text-sm text-zinc-400">
-                <Link href="/blog" className="hover:text-white transition-colors">Blog</Link>
-                <Link href="/research" className="hover:text-white transition-colors">Research</Link>
+                <Link href="/students" className="hover:text-white transition-colors">Student Hub</Link>
+                <Link href="/labs" className="hover:text-white transition-colors">Labs</Link>
                 <Link href="/whitepapers" className="hover:text-white transition-colors">Whitepapers</Link>
-                <Link href="/tutorials" className="hover:text-white transition-colors">Tutorials</Link>
-                <Link href="/faq" className="hover:text-white transition-colors">FAQ</Link>
               </div>
             </div>
 
-            {/* Products / Engineering */}
+            {/* Connect */}
             <div>
-              <h4 className="font-mono text-[10px] font-bold text-white uppercase tracking-widest mb-5">Engineering</h4>
+              <h4 className="font-mono text-[10px] font-bold text-white uppercase tracking-widest mb-5">Connect</h4>
               <div className="flex flex-col gap-3 font-sans text-sm text-zinc-400">
-                <Link href="/case-studies" className="hover:text-white transition-colors">Case Studies</Link>
-                <Link href="/projects" className="hover:text-white transition-colors">Projects</Link>
-                <Link href="/open-source" className="hover:text-white transition-colors">Open Source</Link>
-                <Link href="/status" className="hover:text-white transition-colors">Status Page</Link>
-                <Link href="/changelog" className="hover:text-white transition-colors">Changelog</Link>
+                <a href="https://github.com/RishvinReddy" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors flex items-center gap-2">
+                  <GitBranch className="w-3.5 h-3.5" /> GitHub
+                </a>
+                <a href="https://linkedin.com/in/rishvinreddy" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors flex items-center gap-2">
+                  <Globe2 className="w-3.5 h-3.5" /> LinkedIn
+                </a>
+                <a href="https://rishvinreddy.vercel.app" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors flex items-center gap-2">
+                  <ArrowRight className="w-3.5 h-3.5" /> Founder
+                </a>
+                <a href="mailto:rishvinreddy@gmail.com" className="hover:text-white transition-colors flex items-center gap-2">
+                  <Mail className="w-3.5 h-3.5" /> Email
+                </a>
               </div>
             </div>
 
@@ -89,28 +94,7 @@ export function Footer() {
               <div className="flex flex-col gap-3 font-sans text-sm text-zinc-400">
                 <Link href="/legal/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</Link>
                 <Link href="/legal/terms-and-conditions" className="hover:text-white transition-colors">Terms of Service</Link>
-                <Link href="/legal/refund-policy" className="hover:text-white transition-colors">Refund Policy</Link>
                 <Link href="/legal/cookie-policy" className="hover:text-white transition-colors">Cookie Policy</Link>
-                <Link href="/legal/disclaimer" className="hover:text-white transition-colors">Disclaimer</Link>
-              </div>
-            </div>
-
-            {/* Connect */}
-            <div>
-              <h4 className="font-mono text-[10px] font-bold text-white uppercase tracking-widest mb-5">Connect</h4>
-              <div className="flex flex-col gap-3 font-sans text-sm text-zinc-400">
-                <a href="mailto:rishvinreddy@gmail.com" className="hover:text-white transition-colors flex items-center gap-2">
-                  <Mail className="w-3.5 h-3.5" /> Email Us
-                </a>
-                <a href="https://github.com/RishvinReddy" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors flex items-center gap-2">
-                  <GitBranch className="w-3.5 h-3.5" /> GitHub
-                </a>
-                <a href="https://linkedin.com/in/rishvinreddy" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors flex items-center gap-2">
-                  <Globe2 className="w-3.5 h-3.5" /> LinkedIn
-                </a>
-                <a href="https://rishvinreddy.vercel.app" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors flex items-center gap-2">
-                  <ArrowRight className="w-3.5 h-3.5" /> Portfolio
-                </a>
               </div>
             </div>
           </div>
@@ -123,7 +107,7 @@ export function Footer() {
           </div>
           <div className="flex items-center gap-6 text-[10px]">
             <span>[ STATUS: OPERATIONAL ]</span>
-            <span>[ SYSTEM: NEXT.JS 16 ]</span>
+            <span>[ SYSTEM: NEXT.JS ]</span>
           </div>
         </div>
       </div>
