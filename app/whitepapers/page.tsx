@@ -2,7 +2,7 @@ import React from "react";
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
 import { getAllContent } from "@/lib/mdx";
-import { constructMetadata } from "@/lib/metadata";
+import { constructMetadata } from "@/lib/seo/metadata";
 import { FileText } from "lucide-react";
 import { ContentCard } from "@/components/content/ContentCard";
 

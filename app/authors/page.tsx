@@ -1,8 +1,8 @@
 import React from "react";
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
-import { constructMetadata } from "@/lib/metadata";
-import { siteConfig } from "@/lib/site";
+import { constructMetadata } from "@/lib/seo/metadata";
+import { siteConfig } from "@/lib/seo/site";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 

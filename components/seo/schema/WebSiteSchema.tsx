@@ -1,13 +1,15 @@
 import React from 'react';
 
-import { siteConfig } from '@/lib/site';
+import { siteConfig } from '@/lib/seo/site';
 
 export function WebSiteSchema() {
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
-    name: siteConfig.name,
+    '@id': `${siteConfig.url}/#website`,
     url: siteConfig.url,
+    name: siteConfig.name,
+    alternateName: "Rishvin Labs",
     potentialAction: {
       '@type': 'SearchAction',
       target: {

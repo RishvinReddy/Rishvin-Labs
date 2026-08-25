@@ -1,6 +1,6 @@
 import { MetadataRoute } from 'next';
 import { getAllMdx } from '@/lib/mdx';
-import { siteConfig } from '@/lib/site';
+import { siteConfig } from '@/lib/seo/site';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const SITE_URL = siteConfig.url;
@@ -8,7 +8,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes = [
     '',
     '/about',
-    '/services',
+    '/about/rishvin-reddy',
+    '/d2c',
+    '/services/ai-development',
+    '/services/software-development',
+    '/services/automation',
+    '/projects',
     '/contact',
     '/faq',
     '/case-studies',

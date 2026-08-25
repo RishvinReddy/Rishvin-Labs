@@ -1,9 +1,9 @@
 import React from "react";
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
-import { constructMetadata } from "@/lib/metadata";
+import { constructMetadata } from "@/lib/seo/metadata";
 import { Download, FolderArchive } from "lucide-react";
-import { siteConfig } from "@/lib/site";
+import { siteConfig } from "@/lib/seo/site";
 
 export const metadata = constructMetadata({
   title: "Resources | Rishvin Labs",

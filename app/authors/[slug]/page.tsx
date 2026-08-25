@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
 import { getAllContent } from "@/lib/mdx";
-import { siteConfig } from "@/lib/site";
+import { siteConfig } from "@/lib/seo/site";
 import { ContentCard } from "@/components/content/ContentCard";
 import { Briefcase, BookOpen, FileText, Code2 } from "lucide-react";
 

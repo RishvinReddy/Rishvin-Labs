@@ -1,7 +1,7 @@
 import React from "react";
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
-import { constructMetadata } from "@/lib/metadata";
+import { constructMetadata } from "@/lib/seo/metadata";
 import { CheckCircle2, Server, Globe2, Activity } from "lucide-react";
 
 export const metadata = constructMetadata({

@@ -1,321 +1,128 @@
 import React from "react";
+import { Metadata } from "next";
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
+import { constructMetadata } from "@/lib/seo/metadata";
+import { BreadcrumbSchema } from "@/components/seo/schema";
 import Link from "next/link";
-import { 
-  Crosshair, 
-  Activity, 
-  ShieldCheck, 
-  Database, 
-  Cpu, 
-  ArrowRight,
-  Globe,
-  Terminal,
-  Zap,
-  Target,
-  Eye,
-  CheckCircle2,
-  Workflow
-} from "lucide-react";
+import { ArrowUpRight, Code, Shield, Cpu } from "lucide-react";
 
-export const metadata = {
-  title: "About | Rishvin Labs",
-  description: "Learn about our mission, vision, core values, and the engineering principles that drive Rishvin Labs.",
-};
+export const metadata: Metadata = constructMetadata({
+  title: "About Rishvin Labs | Software Engineering & AI Studio",
+  description: "Learn about Rishvin Labs, a boutique engineering studio specializing in AI automation, custom software development, and D2C technology solutions.",
+  canonicalUrl: "https://rishvinlabs.com/about",
+});
 
 export default function AboutPage() {
   return (
-    <main className="min-h-screen flex flex-col bg-[#fafafa] text-zinc-950 font-sans selection:bg-blue-600 selection:text-white">
+    <main className="min-h-screen flex flex-col bg-white text-zinc-950 font-sans">
       <Navbar />
+      <BreadcrumbSchema 
+        items={[
+          { name: "Home", url: "/" },
+          { name: "About", url: "/about" }
+        ]} 
+      />
 
-      {/* 1. HERO */}
-      <section className="pt-40 pb-20 px-6 relative text-left">
-        <div className="max-w-screen-2xl mx-auto">
-          <span className="font-mono text-xs font-semibold text-blue-600 uppercase tracking-widest mb-6 inline-block">
-            About The Company
-          </span>
-          <h1 className="text-4xl sm:text-6xl md:text-7xl font-serif font-black tracking-tight text-zinc-950 mb-8 max-w-4xl leading-tight">
-            Building secure software, intelligent systems, and <span className="text-blue-600 font-normal italic">next-generation digital experiences.</span>
+      <section className="pt-32 pb-16 px-6 relative overflow-hidden bg-zinc-50 border-b border-zinc-200">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(37,99,235,0.05),transparent_50%)] pointer-events-none" />
+        <div className="max-w-4xl mx-auto relative z-10 text-center">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-100 text-blue-800 text-xs font-mono font-medium tracking-wide mb-6">
+            EST. 2024
+          </div>
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-serif font-black tracking-tight text-zinc-900 mb-6">
+            Engineering for the <br className="hidden sm:block" />
+            <span className="italic text-zinc-600 font-normal">modern web.</span>
           </h1>
-        </div>
-      </section>
-
-      {/* 2. WHO WE ARE */}
-      <section className="py-20 bg-white border-y border-zinc-200 px-6">
-        <div className="max-w-screen-2xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          <div>
-            <span className="font-mono text-xs font-semibold text-blue-600 uppercase tracking-widest mb-3 block">
-              Who We Are
-            </span>
-            <h2 className="text-3xl sm:text-5xl font-serif font-bold tracking-tight text-zinc-950 mb-6">
-              An Engineering Firm Disguised as a Digital Studio.
-            </h2>
-            <div className="space-y-4 text-lg text-zinc-600 leading-relaxed font-sans">
-              <p>
-                Rishvin Labs is a specialized technology company that bridges the gap between high-performance software engineering and stunning digital design. We partner with startups, enterprises, and ambitious founders to build products that scale globally.
-              </p>
-              <p>
-                Unlike traditional agencies that rely on outsourced templates, every system we deploy is architected from scratch using zero-trust security principles and modern, edge-ready frameworks.
-              </p>
-            </div>
-          </div>
-          <div className="bg-zinc-950 rounded-3xl p-10 text-white shadow-2xl relative overflow-hidden">
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_100%_0%,rgba(37,99,235,0.2),transparent_50%)] pointer-events-none" />
-            <div className="relative z-10 space-y-8">
-              <div>
-                <div className="font-mono text-xs text-zinc-500 mb-2">// GLOBAL FOOTPRINT</div>
-                <div className="text-4xl font-bold text-white mb-1">Worldwide Reach</div>
-                <p className="text-zinc-400">Serving clients across multiple timezones with resilient edge infrastructure.</p>
-              </div>
-              <div>
-                <div className="font-mono text-xs text-zinc-500 mb-2">// FOCUS AREAS</div>
-                <div className="text-4xl font-bold text-white mb-1">Web, AI, & IoT</div>
-                <p className="text-zinc-400">Full-spectrum engineering capabilities under one roof.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 3. MISSION & VISION */}
-      <section className="py-24 bg-[#fafafa] px-6">
-        <div className="max-w-screen-2xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div className="bg-white border border-zinc-200 rounded-3xl p-10 shadow-sm hover:shadow-md transition-shadow">
-            <div className="w-14 h-14 rounded-2xl bg-blue-50 text-blue-600 flex items-center justify-center mb-6">
-              <Target className="w-7 h-7" />
-            </div>
-            <h3 className="text-2xl font-serif font-bold text-zinc-950 mb-4">Our Mission</h3>
-            <p className="text-zinc-600 text-base leading-relaxed">
-              To engineer digital products that solve complex operational bottlenecks without compromising on security, speed, or aesthetics. We exist to elevate the technical baseline of every business we partner with.
-            </p>
-          </div>
-          <div className="bg-white border border-zinc-200 rounded-3xl p-10 shadow-sm hover:shadow-md transition-shadow">
-            <div className="w-14 h-14 rounded-2xl bg-violet-50 text-violet-600 flex items-center justify-center mb-6">
-              <Eye className="w-7 h-7" />
-            </div>
-            <h3 className="text-2xl font-serif font-bold text-zinc-950 mb-4">Our Vision</h3>
-            <p className="text-zinc-600 text-base leading-relaxed">
-              To become the global standard for boutique software engineering, where businesses come not just for a vendor, but for a true architectural partner capable of guiding them through the era of AI and Web3.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* 4. CORE VALUES */}
-      <section className="py-24 bg-white border-y border-zinc-200 px-6">
-        <div className="max-w-screen-2xl mx-auto">
-          <div className="text-center mb-16">
-            <span className="font-mono text-xs font-semibold text-blue-600 uppercase tracking-widest mb-3 block">
-              Core Values
-            </span>
-            <h2 className="text-3xl sm:text-5xl font-serif font-bold tracking-tight text-zinc-950 mb-4">
-              What We Stand For
-            </h2>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-            {[
-              { title: "Transparency", desc: "No black-box billing. No hidden technical debt. You get direct access to the engineers building your product." },
-              { title: "Craftsmanship", desc: "We believe in writing clean, modular code. Our systems are built to be read, maintained, and scaled by humans." },
-              { title: "Resilience", desc: "Things will break. We build our architectures with automatic failovers so your business never goes offline." }
-            ].map((v, i) => (
-              <div key={i} className="p-8 bg-[#fafafa] rounded-3xl border border-zinc-200 text-center">
-                <CheckCircle2 className="w-8 h-8 text-emerald-500 mx-auto mb-4" />
-                <h4 className="text-xl font-bold text-zinc-950 mb-3">{v.title}</h4>
-                <p className="text-zinc-600 text-sm leading-relaxed">{v.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* 5. ENGINEERING PRINCIPLES */}
-      <section className="py-24 bg-[#000000] text-white px-6">
-        <div className="max-w-screen-2xl mx-auto">
-          <div className="mb-16">
-            <span className="font-mono text-xs font-semibold text-blue-400 uppercase tracking-widest mb-3 block">
-              Methodology
-            </span>
-            <h2 className="text-3xl sm:text-5xl font-serif font-bold tracking-tight text-white mb-4">
-              Engineering Principles
-            </h2>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-            <div>
-              <h4 className="text-2xl font-bold mb-3 flex items-center gap-3">
-                <ShieldCheck className="text-emerald-400 w-6 h-6" /> Zero-Trust Security
-              </h4>
-              <p className="text-zinc-400 leading-relaxed">
-                Security is injected at the architecture level. We use JWTs, AES-256 encryption, and strict IAM roles to ensure absolute data integrity.
-              </p>
-            </div>
-            <div>
-              <h4 className="text-2xl font-bold mb-3 flex items-center gap-3">
-                <Zap className="text-blue-400 w-6 h-6" /> Edge Performance
-              </h4>
-              <p className="text-zinc-400 leading-relaxed">
-                Sub-second latency is non-negotiable. We leverage global CDNs, edge computing, and aggressive caching to deliver instant experiences.
-              </p>
-            </div>
-            <div>
-              <h4 className="text-2xl font-bold mb-3 flex items-center gap-3">
-                <Terminal className="text-violet-400 w-6 h-6" /> First Principles Design
-              </h4>
-              <p className="text-zinc-400 leading-relaxed">
-                No assumptions, no bloated boilerplate. We break every requirement down to its fundamental truth before writing a single line of code.
-              </p>
-            </div>
-            <div>
-              <h4 className="text-2xl font-bold mb-3 flex items-center gap-3">
-                <Activity className="text-pink-400 w-6 h-6" /> Deep Observability
-              </h4>
-              <p className="text-zinc-400 leading-relaxed">
-                You cannot fix what you cannot see. Every system includes rich telemetry, logging, and performance monitoring by default.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 6. TECHNOLOGY EXPERTISE */}
-      <section className="py-24 bg-white px-6 border-b border-zinc-200">
-        <div className="max-w-screen-2xl mx-auto text-center">
-          <span className="font-mono text-xs font-semibold text-blue-600 uppercase tracking-widest mb-3 block">
-            Capabilities
-          </span>
-          <h2 className="text-3xl sm:text-5xl font-serif font-bold tracking-tight text-zinc-950 mb-12">
-            Technology Expertise
-          </h2>
-          <div className="flex flex-wrap justify-center gap-4 max-w-4xl mx-auto">
-            {["Next.js", "React", "TypeScript", "Node.js", "Python", "Go", "PostgreSQL", "Redis", "Docker", "AWS", "ESP32", "GraphQL", "Tailwind CSS"].map((tech) => (
-              <div key={tech} className="px-5 py-2.5 bg-[#fafafa] border border-zinc-200 rounded-full font-mono text-sm font-bold text-zinc-800 shadow-sm">
-                {tech}
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* 7. OUR PROCESS */}
-      <section className="py-24 bg-[#fafafa] px-6">
-        <div className="max-w-screen-2xl mx-auto">
-          <div className="text-center mb-16">
-            <span className="font-mono text-xs font-semibold text-blue-600 uppercase tracking-widest mb-3 block">
-              Workflow
-            </span>
-            <h2 className="text-3xl sm:text-5xl font-serif font-bold tracking-tight text-zinc-950 mb-4">
-              Our Process
-            </h2>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {[
-              { step: "01", title: "Discovery", desc: "Understanding your business goals, constraints, and operational bottlenecks." },
-              { step: "02", title: "Architecture", desc: "Designing system blueprints, database schemas, and API contracts." },
-              { step: "03", title: "Execution", desc: "Agile engineering sprints with full transparency and staging access." },
-              { step: "04", title: "Deployment", desc: "Rigorous QA, security auditing, and zero-downtime production launches." }
-            ].map((p, i) => (
-              <div key={i} className="bg-white p-8 rounded-3xl border border-zinc-200 shadow-sm relative">
-                <div className="absolute top-6 right-6 font-mono text-xs text-zinc-300 font-bold">{p.step}</div>
-                <Workflow className="w-8 h-8 text-blue-600 mb-6" />
-                <h4 className="text-xl font-bold text-zinc-950 mb-2">{p.title}</h4>
-                <p className="text-zinc-600 text-sm leading-relaxed">{p.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* 8. FOUNDER */}
-      <section className="py-24 bg-white border-y border-zinc-200 px-6">
-        <div className="max-w-screen-2xl mx-auto">
-          <div className="flex flex-col lg:flex-row gap-16 items-center">
-            <div className="lg:w-1/3">
-              <div className="aspect-square rounded-3xl bg-zinc-100 border border-zinc-200 overflow-hidden relative shadow-lg">
-                <img src="/rishvin-reddy-founder-rishvin-labs.png" alt="Rishvin Reddy" className="w-full h-full object-cover" />
-              </div>
-            </div>
-            <div className="lg:w-2/3">
-              <span className="font-mono text-xs font-semibold text-blue-600 uppercase tracking-widest mb-3 block">
-                Meet the Founder
-              </span>
-              <h2 className="text-3xl sm:text-5xl font-serif font-bold tracking-tight text-zinc-950 mb-6">
-                Rishvin Reddy
-              </h2>
-              <div className="space-y-4 text-lg text-zinc-600 leading-relaxed font-sans mb-8">
-                <p>
-                  I founded Rishvin Labs with a singular premise: the modern web deserves better engineering. As a Computer Science Engineering student specializing in secure architectures and IoT, I saw a gap between beautiful design and scalable backend logic.
-                </p>
-                <p>
-                  Today, I personally oversee the architecture of every project we take on, ensuring that the systems we deliver are not just visually stunning, but technically flawless and aggressively secure.
-                </p>
-              </div>
-              <a
-                href="https://rishvinreddy.vercel.app"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-3 bg-zinc-950 text-white px-6 py-3 rounded-xl font-bold text-sm hover:bg-blue-600 transition-all shadow-md"
-              >
-                <span>View Personal Portfolio</span>
-                <Globe className="w-4 h-4" />
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 9. TIMELINE */}
-      <section className="py-24 bg-[#fafafa] px-6 border-b border-zinc-200">
-        <div className="max-w-3xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-5xl font-serif font-bold tracking-tight text-zinc-950">
-              Our Journey
-            </h2>
-          </div>
-          <div className="relative pl-12 border-l-2 border-zinc-200 space-y-12 ml-4">
-            <div className="relative">
-              <div className="absolute -left-[57px] top-1 w-6 h-6 rounded-full bg-white border-4 border-blue-600 shadow-sm" />
-              <span className="font-mono text-xs font-bold text-zinc-400 block mb-1">THE BEGINNING</span>
-              <h3 className="text-xl font-bold text-zinc-950 mb-2">Origins in IoT & Hardware</h3>
-              <p className="text-zinc-600 text-sm leading-relaxed">
-                Started by engineering custom C++ firmware for microcontrollers and early IoT telemetry systems.
-              </p>
-            </div>
-            <div className="relative">
-              <div className="absolute -left-[57px] top-1 w-6 h-6 rounded-full bg-white border-4 border-blue-600 shadow-sm" />
-              <span className="font-mono text-xs font-bold text-zinc-400 block mb-1">EVOLUTION</span>
-              <h3 className="text-xl font-bold text-zinc-950 mb-2">Cloud & Web Expansion</h3>
-              <p className="text-zinc-600 text-sm leading-relaxed">
-                Transitioned into full-stack web architectures, bridging the gap between hardware sensors and dynamic cloud dashboards.
-              </p>
-            </div>
-            <div className="relative">
-              <div className="absolute -left-[57px] top-1 w-6 h-6 rounded-full bg-white border-4 border-emerald-500 shadow-sm" />
-              <span className="font-mono text-xs font-bold text-emerald-600 block mb-1">TODAY</span>
-              <h3 className="text-xl font-bold text-zinc-950 mb-2">Premium Engineering Studio</h3>
-              <p className="text-zinc-600 text-sm leading-relaxed">
-                Operating as a high-end technical partner for businesses requiring advanced digital products, strict security, and flawless UX.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 10. CTA */}
-      <section className="py-32 px-6 bg-zinc-950 text-white text-center">
-        <div className="max-w-3xl mx-auto">
-          <h2 className="text-4xl sm:text-5xl font-serif font-black tracking-tight text-white mb-6">
-            Ready to build something <span className="text-blue-400 italic font-normal">extraordinary?</span>
-          </h2>
-          <p className="text-zinc-400 text-lg mb-10">
-            Let&apos;s discuss your next project, architecture review, or digital transformation strategy.
+          <p className="text-lg sm:text-xl text-zinc-600 max-w-2xl mx-auto leading-relaxed">
+            Rishvin Labs is a boutique engineering studio dedicated to solving complex business problems through thoughtful architecture, clean code, and zero-trust security.
           </p>
-          <Link
-            href="/contact"
-            className="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-xl bg-white text-zinc-950 font-mono text-xs font-bold uppercase tracking-wider hover:bg-blue-600 hover:text-white transition-all shadow-xl"
-          >
-            <span>Start a Conversation</span>
-            <ArrowRight className="w-4 h-4" />
-          </Link>
         </div>
+      </section>
+
+      <section className="py-20 px-6">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-2xl font-serif font-bold text-zinc-900 mb-8">What We Do</h2>
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="bg-white p-6 rounded-2xl border border-zinc-200 shadow-sm">
+              <Code className="w-8 h-8 text-blue-600 mb-4" />
+              <h3 className="text-lg font-bold mb-2">Custom Software</h3>
+              <p className="text-zinc-600 text-sm mb-4">
+                We build scalable SaaS products, internal tools, and high-performance web applications using modern stacks like Next.js and React.
+              </p>
+              <Link href="/services/software-development" className="text-blue-600 text-sm font-medium inline-flex items-center hover:underline">
+                View Service <ArrowUpRight className="w-3 h-3 ml-1" />
+              </Link>
+            </div>
+            <div className="bg-white p-6 rounded-2xl border border-zinc-200 shadow-sm">
+              <Cpu className="w-8 h-8 text-emerald-600 mb-4" />
+              <h3 className="text-lg font-bold mb-2">AI Automation</h3>
+              <p className="text-zinc-600 text-sm mb-4">
+                Integrating LLMs and AI agents into your business workflows to automate repetitive tasks and generate new insights.
+              </p>
+              <Link href="/services/ai-development" className="text-blue-600 text-sm font-medium inline-flex items-center hover:underline">
+                View Service <ArrowUpRight className="w-3 h-3 ml-1" />
+              </Link>
+            </div>
+            <div className="bg-white p-6 rounded-2xl border border-zinc-200 shadow-sm">
+              <Shield className="w-8 h-8 text-indigo-600 mb-4" />
+              <h3 className="text-lg font-bold mb-2">D2C Technology</h3>
+              <p className="text-zinc-600 text-sm mb-4">
+                Creating fast, conversion-optimized storefronts and custom e-commerce infrastructure for modern consumer brands.
+              </p>
+              <Link href="/d2c" className="text-blue-600 text-sm font-medium inline-flex items-center hover:underline">
+                View D2C <ArrowUpRight className="w-3 h-3 ml-1" />
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20 px-6 bg-zinc-50 border-y border-zinc-200">
+        <div className="max-w-4xl mx-auto flex flex-col md:flex-row items-center gap-12">
+          <div className="md:w-1/2">
+            <h2 className="text-3xl font-serif font-bold text-zinc-900 mb-4">Who is it for?</h2>
+            <p className="text-zinc-600 mb-6 leading-relaxed">
+              We work with startups needing to build their MVP, established businesses looking to modernize legacy systems, and D2C brands aiming to optimize their digital presence.
+            </p>
+            <ul className="space-y-3">
+              <li className="flex items-center gap-3 text-zinc-700">
+                <span className="w-1.5 h-1.5 rounded-full bg-blue-600" /> Startups & Founders
+              </li>
+              <li className="flex items-center gap-3 text-zinc-700">
+                <span className="w-1.5 h-1.5 rounded-full bg-blue-600" /> E-commerce & D2C Brands
+              </li>
+              <li className="flex items-center gap-3 text-zinc-700">
+                <span className="w-1.5 h-1.5 rounded-full bg-blue-600" /> Tech-Enabled Services
+              </li>
+            </ul>
+          </div>
+          <div className="md:w-1/2 p-8 bg-zinc-950 text-white rounded-2xl shadow-xl">
+            <h3 className="text-xl font-serif font-bold mb-4">Meet the Founder</h3>
+            <p className="text-zinc-400 mb-6 text-sm leading-relaxed">
+              Rishvin Labs is led by Rishvin Reddy, a software engineer and architect with a focus on web technologies, artificial intelligence, and security.
+            </p>
+            <Link 
+              href="/about/rishvin-reddy" 
+              className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-white text-zinc-950 font-mono text-xs font-bold rounded-lg hover:bg-zinc-200 transition-colors"
+            >
+              READ FULL PROFILE
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-24 px-6 text-center">
+        <h2 className="text-3xl font-serif font-bold mb-6">Ready to discuss your project?</h2>
+        <p className="text-zinc-600 mb-8 max-w-xl mx-auto">
+          Whether it's a new product or optimizing an existing system, let's explore how we can help.
+        </p>
+        <Link 
+          href="/contact" 
+          className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-blue-600 text-white font-mono text-xs font-bold rounded-xl hover:bg-blue-700 transition-colors shadow-lg shadow-blue-600/20"
+        >
+          START A CONVERSATION
+        </Link>
       </section>
 
       <Footer />

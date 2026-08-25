@@ -1,23 +1,22 @@
 import React from 'react';
 
-import { siteConfig } from '@/lib/site';
+import { siteConfig } from '@/lib/seo/site';
 
 export function PersonSchema() {
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Person',
+    '@id': `${siteConfig.url}/#rishvin-reddy`,
     name: siteConfig.founder,
-    url: siteConfig.url,
+    url: `${siteConfig.url}/about/rishvin-reddy`,
     image: `${siteConfig.url}/rishvin-reddy-founder-rishvin-labs.png`,
     jobTitle: 'Lead Architect / Founder',
     worksFor: {
-      '@type': 'Organization',
-      name: siteConfig.name
+      '@id': `${siteConfig.url}/#rishvin-labs`
     },
     sameAs: [
       siteConfig.socials.linkedin,
       siteConfig.socials.github,
-      siteConfig.socials.portfolio,
     ].filter(Boolean),
   };
 

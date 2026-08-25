@@ -4,7 +4,7 @@ import matter from 'gray-matter';
 import readingTime from 'reading-time';
 import GithubSlugger from 'github-slugger';
 import { AnyContent, BaseContent, ContentType, TocEntry } from './content-model';
-import { siteConfig } from './site';
+import { siteConfig } from './seo/site';
 
 const contentDirectory = path.join(process.cwd(), 'content');
 

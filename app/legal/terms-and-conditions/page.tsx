@@ -1,6 +1,6 @@
 import React from "react";
 import { LegalLayout } from "@/components/legal/LegalLayout";
-import { constructMetadata } from "@/lib/metadata";
+import { constructMetadata } from "@/lib/seo/metadata";
 
 export const metadata = constructMetadata({
   title: "Terms & Conditions | Rishvin Labs",

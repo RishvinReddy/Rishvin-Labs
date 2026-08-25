@@ -12,8 +12,8 @@ type MetadataProps = {
 };
 
 export function constructMetadata({
-  title = `${siteConfig.name} | Engineering Studio`,
-  description = siteConfig.description,
+  title = siteConfig.defaultTitle,
+  description = siteConfig.defaultDescription,
   image = `${siteConfig.url}/og-default.png`,
   type = 'website',
   publishedTime,

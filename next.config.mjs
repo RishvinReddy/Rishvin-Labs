@@ -7,6 +7,15 @@ const withBundleAnalyzer = bundleAnalyzer({
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'md', 'mdx'],
+  async redirects() {
+    return [
+      {
+        source: '/founder',
+        destination: '/about/rishvin-reddy',
+        permanent: true,
+      },
+    ];
+  },
   async headers() {
     return [
       {

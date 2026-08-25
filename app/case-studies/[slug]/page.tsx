@@ -12,7 +12,7 @@ import { AuthorCard } from "@/components/blog/AuthorCard";
 import Link from "next/link";
 import rehypeSlug from "rehype-slug";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
-import { siteConfig } from "@/lib/site";
+import { siteConfig } from "@/lib/seo/site";
 
 export async function generateStaticParams() {
   const posts = getMdxFiles("case-studies");

@@ -2,7 +2,7 @@
 
 import React from "react";
 import { Link2 } from "lucide-react";
-import { siteConfig } from "@/lib/site";
+import { siteConfig } from "@/lib/seo/site";
 
 export function ShareButtons({ title, slug, type = "blog" }: { title: string; slug: string; type?: string }) {
   const url = `${siteConfig.url}/${type}/${slug}`;

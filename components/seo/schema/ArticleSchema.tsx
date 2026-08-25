@@ -1,5 +1,5 @@
 import React from 'react';
-import { siteConfig } from '@/lib/site';
+import { siteConfig } from '@/lib/seo/site';
 
 export function ArticleSchema({
   title,

@@ -1,5 +1,5 @@
 import { MetadataRoute } from 'next';
-import { siteConfig } from '@/lib/site';
+import { siteConfig } from '@/lib/seo/site';
 
 export default function manifest(): MetadataRoute.Manifest {
   const COMPANY_NAME = siteConfig.name;
@@ -7,7 +7,7 @@ export default function manifest(): MetadataRoute.Manifest {
   return {
     name: `${COMPANY_NAME} | Engineering Studio`,
     short_name: COMPANY_NAME,
-    description: siteConfig.description,
+    description: siteConfig.defaultDescription,
     start_url: '/',
     display: 'standalone',
     background_color: '#000000',

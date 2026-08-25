@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import { siteConfig } from "@/lib/site";
+import { siteConfig } from "@/lib/seo/site";
 
 export function AuthorCard({ authorName, date }: { authorName: string; date: string }) {
   // Mock image logic for founder

@@ -21,55 +21,9 @@ const jetbrainsMono = JetBrains_Mono({
   subsets: ["latin"],
 });
 
-export const metadata: Metadata = {
-  metadataBase: new URL("https://rishvinreddy.vercel.app/rishvin-labs"),
-  title: {
-    default: "Rishvin Labs | Web Development, Software, AI, Cybersecurity, IoT & Automation",
-    template: "%s | Rishvin Labs",
-  },
-  description:
-    "Rishvin Labs builds modern websites, custom software, AI automation, cybersecurity solutions, IoT systems and digital products for startups, businesses, creators and individuals. Founded by Rishvin Reddy.",
-  authors: [{ name: "Rishvin Reddy", url: "https://rishvinreddy.vercel.app" }],
-  creator: "Rishvin Reddy",
-  publisher: "Rishvin Labs",
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
-  },
-  openGraph: {
-    title: "Rishvin Labs | Web Development, Software, AI, Cybersecurity, IoT & Automation",
-    description:
-      "Rishvin Labs builds modern websites, custom software, AI automation, cybersecurity solutions, IoT systems and digital products for startups, businesses, creators and individuals. Founded by Rishvin Reddy.",
-    siteName: "Rishvin Labs",
-    url: "https://rishvinreddy.vercel.app/rishvin-labs",
-    type: "website",
-    locale: "en_IN",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Rishvin Labs | Web Development, Software, AI, Cybersecurity, IoT & Automation",
-    description: "Rishvin Labs builds modern websites, custom software, AI automation, cybersecurity solutions, IoT systems and digital products for startups, businesses, creators and individuals. Founded by Rishvin Reddy.",
-    creator: "@rishvinreddy",
-  },
-  icons: {
-    icon: "/favicon.png",
-    shortcut: "/favicon.png",
-    apple: "/favicon.png",
-  },
-  alternates: {
-    canonical: "https://rishvinreddy.vercel.app/rishvin-labs",
-  },
-  verification: {
-    google: "gqSeJRumXVEo6URkxbldpICOXZ9OBRZ3gs-B-9Wu-4k",
-  },
-};
+import { constructMetadata } from "@/lib/seo/metadata";
+
+export const metadata: Metadata = constructMetadata();
 
 import { cookies } from "next/headers";
 import { GlobalIntro } from "@/components/intro/GlobalIntro";

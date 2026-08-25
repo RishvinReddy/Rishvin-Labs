@@ -1,5 +1,5 @@
 import { getAllMdx } from "@/lib/mdx";
-import { siteConfig } from "@/lib/site";
+import { siteConfig } from "@/lib/seo/site";
 
 export async function GET() {
   const SITE_URL = siteConfig.url;
@@ -17,7 +17,7 @@ export async function GET() {
     <channel>
       <title>${siteConfig.name}</title>
       <link>${SITE_URL}</link>
-      <description>${siteConfig.description}</description>
+      <description>${siteConfig.defaultDescription}</description>
       <atom:link href="${SITE_URL}/rss.xml" rel="self" type="application/rss+xml" />
       ${allContent
         .map((post) => {
