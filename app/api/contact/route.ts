@@ -4,11 +4,33 @@ import { generateInquiryId } from '@/lib/leads/inquiry-id';
 import { calculateLeadScore } from '@/lib/leads/scoring';
 import { classifyLead } from '@/lib/leads/classification';
 import { validateContactPayload, parseProjectLinks } from '@/lib/validation/contact';
+import { render } from '@react-email/render';
 import { NewLeadEmail } from '@/emails/NewLeadEmail';
 import { InquiryConfirmationEmail } from '@/emails/InquiryConfirmationEmail';
 
+// Temporary basic in-memory rate limiting (Replace with Redis/Vercel KV for production)
+const rateLimitMap = new Map<string, { count: number, resetTime: number }>();
+const RATE_LIMIT_WINDOW_MS = 10 * 60 * 1000; // 10 minutes
+const RATE_LIMIT_MAX = 5;
+
 export async function POST(req: Request) {
   try {
+    const ip = req.headers.get('x-forwarded-for') || '127.0.0.1';
+    const now = Date.now();
+    const rateData = rateLimitMap.get(ip) || { count: 0, resetTime: now + RATE_LIMIT_WINDOW_MS };
+    
+    if (now > rateData.resetTime) {
+      rateData.count = 1;
+      rateData.resetTime = now + RATE_LIMIT_WINDOW_MS;
+    } else {
+      rateData.count++;
+    }
+    rateLimitMap.set(ip, rateData);
+
+    if (rateData.count > RATE_LIMIT_MAX) {
+      return NextResponse.json({ success: false, message: "Too many requests. Please try again later." }, { status: 429 });
+    }
+
     const body = await req.json();
 
     // 1. Validation & Sanitization
@@ -51,47 +73,58 @@ export async function POST(req: Request) {
 
     // 3. Dispatch Emails via Resend
     // We send two emails: one internal notification and one client auto-reply.
+    const emailPropsNewLead = {
+      inquiryId,
+      leadScore: score,
+      leadScoreReasons: reasons,
+      classificationCategory: category,
+      classificationPriority: priority,
+      clientName: body.from_name,
+      clientEmail,
+      clientPhone: body.phone || "Not provided",
+      clientRole: body.role || "Not specified",
+      clientCompany: body.company || "Not specified",
+      clientWebsite: body.company_website || "Not specified",
+      projectName,
+      services,
+      budget,
+      timeline,
+      businessProblem: body.business_problem || body.message || "No details provided.",
+      projectLinks: formattedLinks,
+      source,
+      submittedAt
+    };
+
+    const emailPropsConfirmation = {
+      clientName: body.from_name,
+      inquiryId,
+      projectName,
+      services,
+      timeline,
+    };
+
+    const textNewLead = await render(NewLeadEmail(emailPropsNewLead), { plainText: true });
+    const textConfirmation = await render(InquiryConfirmationEmail(emailPropsConfirmation), { plainText: true });
+
     const { data, error } = await resend.batch.send([
       {
         from: `Rishvin Labs <${fromEmail}>`,
         to: [internalEmail],
         replyTo: [clientEmail],
         subject: `New Lead: ${projectName} [${inquiryId}]`,
-        react: NewLeadEmail({
-          inquiryId,
-          leadScore: score,
-          leadScoreReasons: reasons,
-          classificationCategory: category,
-          classificationPriority: priority,
-          clientName: body.from_name,
-          clientEmail,
-          clientPhone: body.phone || "Not provided",
-          clientRole: body.role || "Not specified",
-          clientCompany: body.company || "Not specified",
-          clientWebsite: body.company_website || "Not specified",
-          projectName,
-          services,
-          budget,
-          timeline,
-          businessProblem: body.business_problem || body.message || "No details provided.",
-          projectLinks: formattedLinks,
-          source,
-          submittedAt
-        }),
+        react: NewLeadEmail(emailPropsNewLead),
+        text: textNewLead,
       },
       {
         from: `Rishvin Labs <${fromEmail}>`,
         to: [clientEmail], 
         subject: `We've received your project inquiry (${inquiryId})`,
-        react: InquiryConfirmationEmail({
-          clientName: body.from_name,
-          inquiryId,
-          projectName,
-          services,
-          timeline,
-        }),
+        react: InquiryConfirmationEmail(emailPropsConfirmation),
+        text: textConfirmation,
       }
-    ]);
+    ], {
+      idempotencyKey: `contact-inquiry-${inquiryId}`,
+    });
 
     if (error) {
       console.error("Resend Delivery Error:", error);
@@ -101,7 +134,15 @@ export async function POST(req: Request) {
       );
     }
 
-    return NextResponse.json({ success: true, inquiry_id: inquiryId, message: "Email sent successfully" });
+    const internalEmailId = data?.data?.[0]?.id || "unknown";
+    const clientEmailId = data?.data?.[1]?.id || "unknown";
+
+    return NextResponse.json({ 
+      success: true, 
+      inquiryId: inquiryId, 
+      internalEmailId,
+      clientEmailId
+    });
 
   } catch (error) {
     console.error("Contact API Server Error:", error);
