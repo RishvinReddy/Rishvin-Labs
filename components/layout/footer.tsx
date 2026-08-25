@@ -27,7 +27,7 @@ export function Footer() {
               A high-end engineering studio building intelligent digital systems, IoT sensor networks, and fortified web architectures.
             </p>
             {/* Newsletter */}
-            <div className="space-y-3">
+            <div className="space-y-3 mb-8">
               <h4 className="font-mono text-[10px] font-bold text-zinc-500 uppercase tracking-widest">Subscribe to Research Newsletter</h4>
               <form className="flex items-center">
                 <input 
@@ -43,48 +43,56 @@ export function Footer() {
                 </button>
               </form>
             </div>
+
+            {/* Socials */}
+            <div className="flex items-center gap-5 text-zinc-400">
+              <a href="https://github.com/RishvinReddy" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors" aria-label="GitHub">
+                <GitBranch className="w-5 h-5" />
+              </a>
+              <a href="https://linkedin.com/in/rishvinreddy" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors" aria-label="LinkedIn">
+                <Globe2 className="w-5 h-5" />
+              </a>
+              <a href="mailto:rishvinreddy@gmail.com" className="hover:text-white transition-colors" aria-label="Email">
+                <Mail className="w-5 h-5" />
+              </a>
+            </div>
           </div>
 
           {/* Links Grid */}
           <div className="col-span-2 lg:col-span-8 grid grid-cols-2 sm:grid-cols-4 gap-8">
-            {/* Business */}
+            {/* Studio */}
             <div>
-              <h4 className="font-mono text-[10px] font-bold text-white uppercase tracking-widest mb-5">Business</h4>
+              <h4 className="font-mono text-[10px] font-bold text-white uppercase tracking-widest mb-5">Studio</h4>
               <div className="flex flex-col gap-3 font-sans text-sm text-zinc-400">
-                <Link href="/services" className="hover:text-white transition-colors">Services</Link>
-                <Link href="/solutions" className="hover:text-white transition-colors">Solutions</Link>
-                <Link href="/work" className="hover:text-white transition-colors">Work</Link>
-                <Link href="/about" className="hover:text-white transition-colors">About</Link>
+                <Link href="/about" className="hover:text-white transition-colors">About Us</Link>
+                <Link href="/about/rishvin-reddy" className="hover:text-white transition-colors">Founder</Link>
+                <Link href="/case-studies" className="hover:text-white transition-colors">Case Studies</Link>
+                <Link href="/faq" className="hover:text-white transition-colors">FAQ</Link>
                 <Link href="/contact" className="hover:text-white transition-colors">Contact</Link>
               </div>
             </div>
 
-            {/* Community */}
+            {/* Services */}
             <div>
-              <h4 className="font-mono text-[10px] font-bold text-white uppercase tracking-widest mb-5">Community</h4>
+              <h4 className="font-mono text-[10px] font-bold text-white uppercase tracking-widest mb-5">Services</h4>
+              <div className="flex flex-col gap-3 font-sans text-sm text-zinc-400">
+                <Link href="/services/ai-development" className="hover:text-white transition-colors">AI Development</Link>
+                <Link href="/services/software-development" className="hover:text-white transition-colors">Software Engineering</Link>
+                <Link href="/services/automation" className="hover:text-white transition-colors">Process Automation</Link>
+                <Link href="/d2c" className="hover:text-white transition-colors">D2C Technology</Link>
+                <Link href="/services" className="hover:text-white transition-colors">View All Services</Link>
+              </div>
+            </div>
+
+            {/* Resources */}
+            <div>
+              <h4 className="font-mono text-[10px] font-bold text-white uppercase tracking-widest mb-5">Resources</h4>
               <div className="flex flex-col gap-3 font-sans text-sm text-zinc-400">
                 <Link href="/students" className="hover:text-white transition-colors">Student Hub</Link>
                 <Link href="/labs" className="hover:text-white transition-colors">Labs</Link>
                 <Link href="/whitepapers" className="hover:text-white transition-colors">Whitepapers</Link>
-              </div>
-            </div>
-
-            {/* Connect */}
-            <div>
-              <h4 className="font-mono text-[10px] font-bold text-white uppercase tracking-widest mb-5">Connect</h4>
-              <div className="flex flex-col gap-3 font-sans text-sm text-zinc-400">
-                <a href="https://github.com/RishvinReddy" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors flex items-center gap-2">
-                  <GitBranch className="w-3.5 h-3.5" /> GitHub
-                </a>
-                <a href="https://linkedin.com/in/rishvinreddy" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors flex items-center gap-2">
-                  <Globe2 className="w-3.5 h-3.5" /> LinkedIn
-                </a>
-                <a href="https://rishvinreddy.vercel.app" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors flex items-center gap-2">
-                  <ArrowRight className="w-3.5 h-3.5" /> Founder
-                </a>
-                <a href="mailto:rishvinreddy@gmail.com" className="hover:text-white transition-colors flex items-center gap-2">
-                  <Mail className="w-3.5 h-3.5" /> Email
-                </a>
+                <Link href="/research" className="hover:text-white transition-colors">Research</Link>
+                <Link href="/blog" className="hover:text-white transition-colors">Blog</Link>
               </div>
             </div>
 
@@ -95,14 +103,16 @@ export function Footer() {
                 <Link href="/legal/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</Link>
                 <Link href="/legal/terms-and-conditions" className="hover:text-white transition-colors">Terms of Service</Link>
                 <Link href="/legal/cookie-policy" className="hover:text-white transition-colors">Cookie Policy</Link>
+                <Link href="/legal/refund-policy" className="hover:text-white transition-colors">Refund Policy</Link>
+                <Link href="/legal/disclaimer" className="hover:text-white transition-colors">Disclaimer</Link>
               </div>
             </div>
           </div>
         </div>
 
         {/* Bottom Copyright Bar */}
-        <div className="pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 font-mono text-xs uppercase tracking-widest text-zinc-500">
-          <div>
+        <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4 font-mono text-xs uppercase tracking-widest text-zinc-500">
+          <div className="text-center md:text-left">
             &copy; {currentYear} Rishvin Labs. All rights reserved.
           </div>
           <div className="flex items-center gap-6 text-[10px]">
