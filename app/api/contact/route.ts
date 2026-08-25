@@ -1,87 +1,107 @@
 import { NextResponse } from 'next/server';
+import { resend } from '@/lib/email/resend';
+import { generateInquiryId } from '@/lib/leads/inquiry-id';
+import { calculateLeadScore } from '@/lib/leads/scoring';
+import { classifyLead } from '@/lib/leads/classification';
+import { validateContactPayload, parseProjectLinks } from '@/lib/validation/contact';
+import { NewLeadEmail } from '@/emails/NewLeadEmail';
+import { InquiryConfirmationEmail } from '@/emails/InquiryConfirmationEmail';
 
 export async function POST(req: Request) {
   try {
     const body = await req.json();
 
-    // Spam protection: honeypot
-    // If the hidden field is filled, we assume it's a bot and silently reject
-    if (body.honeypot) {
-      console.warn("Honeypot triggered, ignoring submission.");
-      return NextResponse.json({ success: true, message: "Request received" });
-    }
-
-    // Basic server-side validation
-    if (!body.from_name || !body.from_email) {
+    // 1. Validation & Sanitization
+    const validation = validateContactPayload(body);
+    if (!validation.valid) {
+      if (validation.error === "Spam detected") {
+        console.warn("Honeypot triggered, ignoring submission.");
+        return NextResponse.json({ success: true, message: "Request received" });
+      }
       return NextResponse.json(
-        { success: false, message: "Missing required fields: name or email" },
+        { success: false, message: validation.error },
         { status: 400 }
       );
     }
 
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(body.from_email)) {
-       return NextResponse.json(
-        { success: false, message: "Invalid email address format" },
-        { status: 400 }
-      );
-    }
-
-    // Rate limiting could be implemented here with Vercel KV or Edge Middleware
-
-    // EmailJS configurations
-    const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
-    const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
-    const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
-
-    if (!serviceId || !templateId || !publicKey) {
-      console.error("EmailJS environment variables are missing.");
+    if (!resend) {
+      console.error("Resend API key is missing.");
       return NextResponse.json(
         { success: false, message: "Server configuration error. Please contact rishvinreddy@gmail.com directly." },
         { status: 500 }
       );
     }
 
-    // Construct EmailJS API payload
-    const emailJsPayload = {
-      service_id: serviceId,
-      template_id: templateId,
-      user_id: publicKey,
-      template_params: {
-        from_name: body.from_name,
-        from_email: body.from_email,
-        company: body.company || "Not provided",
-        phone: body.phone || "Not provided",
-        serviceId: body.serviceId || "none",
-        serviceName: body.serviceName || "None selected",
-        source: body.source || "direct",
-        budget: body.budget || "Not specified",
-        timeline: body.timeline || "Not specified",
-        contact_channel: body.contact_channel || "Email",
-        message: body.message || "No description provided.",
-        timestamp: new Date().toISOString(),
-      }
-    };
+    // 2. Generate Lead Intelligence
+    const inquiryId = generateInquiryId();
+    const { score, reasons } = calculateLeadScore(body);
+    const { category, priority } = classifyLead(body);
+    const formattedLinks = parseProjectLinks(body.project_links);
+    
+    const submittedAt = new Date().toLocaleString("en-US", { timeZone: "Asia/Kolkata" });
+    const source = body.source ? body.source.charAt(0).toUpperCase() + body.source.slice(1) : "Website";
+    const projectName = body.project_name || body.serviceName || "New Project";
+    const services = body.serviceName || "Not specified";
+    const timeline = body.timeline || "Not specified";
+    const budget = body.budget || "Not specified";
 
-    // Forward the validated request to EmailJS REST API
-    const response = await fetch('https://api.emailjs.com/api/v1.0/email/send', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
+    const fromEmail = process.env.CONTACT_EMAIL_FROM || "onboarding@resend.dev";
+    const internalEmail = process.env.CONTACT_EMAIL_TO || "rishvinreddy@gmail.com";
+    const clientEmail = body.from_email;
+
+    // 3. Dispatch Emails via Resend
+    // We send two emails: one internal notification and one client auto-reply.
+    const { data, error } = await resend.batch.send([
+      {
+        from: `Rishvin Labs <${fromEmail}>`,
+        to: [internalEmail],
+        replyTo: [clientEmail],
+        subject: `New Lead: ${projectName} [${inquiryId}]`,
+        react: NewLeadEmail({
+          inquiryId,
+          leadScore: score,
+          leadScoreReasons: reasons,
+          classificationCategory: category,
+          classificationPriority: priority,
+          clientName: body.from_name,
+          clientEmail,
+          clientPhone: body.phone || "Not provided",
+          clientRole: body.role || "Not specified",
+          clientCompany: body.company || "Not specified",
+          clientWebsite: body.company_website || "Not specified",
+          projectName,
+          services,
+          budget,
+          timeline,
+          businessProblem: body.business_problem || body.message || "No details provided.",
+          projectLinks: formattedLinks,
+          source,
+          submittedAt
+        }),
       },
-      body: JSON.stringify(emailJsPayload),
-    });
+      {
+        from: `Rishvin Labs <${fromEmail}>`,
+        to: [clientEmail], 
+        subject: `We've received your project inquiry (${inquiryId})`,
+        react: InquiryConfirmationEmail({
+          clientName: body.from_name,
+          inquiryId,
+          projectName,
+          services,
+          timeline,
+        }),
+      }
+    ]);
 
-    if (!response.ok) {
-      const text = await response.text();
-      console.error("EmailJS Delivery Error:", text);
+    if (error) {
+      console.error("Resend Delivery Error:", error);
       return NextResponse.json(
         { success: false, message: "Failed to dispatch email. Please contact us directly." },
         { status: 500 }
       );
     }
 
-    return NextResponse.json({ success: true, message: "Email sent successfully" });
+    return NextResponse.json({ success: true, inquiry_id: inquiryId, message: "Email sent successfully" });
 
   } catch (error) {
     console.error("Contact API Server Error:", error);

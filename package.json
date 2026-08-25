@@ -11,6 +11,8 @@
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
     "@next/bundle-analyzer": "^16.2.12",
+    "@react-email/components": "^1.0.12",
+    "@react-email/render": "^2.1.0",
     "clsx": "^2.1.1",
     "flexsearch": "^0.8.212",
     "github-slugger": "^2.0.0",
@@ -24,6 +26,7 @@
     "reading-time": "^1.5.0",
     "rehype-autolink-headings": "^7.1.0",
     "rehype-slug": "^6.0.0",
+    "resend": "^6.22.1",
     "tailwind-merge": "^3.6.0"
   },
   "devDependencies": {
