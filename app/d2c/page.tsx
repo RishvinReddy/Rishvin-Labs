@@ -7,23 +7,29 @@ import { BreadcrumbSchema, ServiceSchema } from "@/components/seo/schema";
 import Link from "next/link";
 import { ArrowUpRight, ShoppingBag, Zap, LineChart, Server } from "lucide-react";
 
+import { SEO_KEYWORDS } from "@/lib/seo/keywords";
+
 export const metadata: Metadata = constructMetadata({
   title: "D2C Technology Solutions & E-Commerce Infrastructure | Rishvin Labs",
   description: "Rishvin Labs builds conversion-optimized storefronts, headless e-commerce architectures, and automation systems for ambitious Direct-to-Consumer (D2C) brands.",
-  canonicalUrl: "https://rishvinlabs.com/d2c",
+  canonicalUrl: "https://rishvin-labs.vercel.app/d2c",
+  keywords: [
+    ...SEO_KEYWORDS.services.d2c,
+    ...SEO_KEYWORDS.brand.slice(0, 3),
+  ],
 });
 
 export default function D2CPage() {
   return (
     <main className="min-h-screen flex flex-col bg-white text-zinc-950 font-sans">
       <Navbar />
-      <BreadcrumbSchema 
+      <BreadcrumbSchema
         items={[
           { name: "Home", url: "/" },
           { name: "D2C Technology", url: "/d2c" }
-        ]} 
+        ]}
       />
-      <ServiceSchema 
+      <ServiceSchema
         name="D2C Technology Solutions"
         description="Headless commerce, automation, and performance optimization for Direct-to-Consumer brands."
         url="/d2c"
@@ -50,7 +56,7 @@ export default function D2CPage() {
             <h2 className="text-3xl font-serif font-bold text-zinc-900 mb-4">Core Capabilities</h2>
             <p className="text-zinc-600 max-w-2xl mx-auto">Modern consumer brands need technology that acts as a competitive advantage, not a bottleneck.</p>
           </div>
-          
+
           <div className="grid md:grid-cols-2 gap-8">
             <div className="p-8 rounded-2xl bg-zinc-50 border border-zinc-200">
               <Zap className="w-10 h-10 text-amber-500 mb-6" />
@@ -64,7 +70,7 @@ export default function D2CPage() {
                 <li>→ Improved Core Web Vitals</li>
               </ul>
             </div>
-            
+
             <div className="p-8 rounded-2xl bg-zinc-50 border border-zinc-200">
               <Server className="w-10 h-10 text-blue-600 mb-6" />
               <h3 className="text-xl font-bold mb-3">Backend & API Integrations</h3>
@@ -77,7 +83,7 @@ export default function D2CPage() {
                 <li>→ Real-time inventory sync</li>
               </ul>
             </div>
-            
+
             <div className="p-8 rounded-2xl bg-zinc-50 border border-zinc-200">
               <ShoppingBag className="w-10 h-10 text-emerald-600 mb-6" />
               <h3 className="text-xl font-bold mb-3">Conversion Optimization</h3>
@@ -90,7 +96,7 @@ export default function D2CPage() {
                 <li>→ Search & discovery optimization</li>
               </ul>
             </div>
-            
+
             <div className="p-8 rounded-2xl bg-zinc-50 border border-zinc-200">
               <LineChart className="w-10 h-10 text-indigo-600 mb-6" />
               <h3 className="text-xl font-bold mb-3">AI for E-Commerce</h3>
@@ -110,8 +116,8 @@ export default function D2CPage() {
         <p className="text-zinc-600 mb-8 max-w-xl mx-auto">
           Ready to migrate to a headless architecture or build a custom integration? We can help you plan and execute the transition seamlessly.
         </p>
-        <Link 
-          href="/contact?service=d2c" 
+        <Link
+          href="/contact?service=d2c"
           className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-blue-600 text-white font-mono text-xs font-bold rounded-xl hover:bg-blue-700 transition-colors shadow-lg shadow-blue-600/20"
         >
           START A D2C PROJECT

@@ -1,9 +1,12 @@
 import React from "react";
 import { LegalLayout } from "@/components/legal/LegalLayout";
 import { constructMetadata } from "@/lib/seo/metadata";
+import { siteConfig } from "@/lib/seo/site";
 
 export const metadata = constructMetadata({
   title: "Cookie Policy | Rishvin Labs",
+  description: "Explanation of cookie usage, telemetry tokens, and analytical tracking preferences across Rishvin Labs websites.",
+  canonicalUrl: `${siteConfig.url}/legal/cookie-policy`,
 });
 
 export default function CookiesPage() {

@@ -1,28 +1,52 @@
 import React from "react";
 import { notFound } from "next/navigation";
+import Image from "next/image";
+import { Metadata } from "next";
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
 import { getAllContent } from "@/lib/mdx";
 import { siteConfig } from "@/lib/seo/site";
+import { constructMetadata } from "@/lib/seo/metadata";
+import { BreadcrumbSchema } from "@/components/seo/schema";
+import { SEO_KEYWORDS } from "@/lib/seo/keywords";
 import { ContentCard } from "@/components/content/ContentCard";
 import { Briefcase, BookOpen, FileText, Code2 } from "lucide-react";
 
 export async function generateStaticParams() {
-  // In a real DB, you'd fetch all authors. For now we only have the founder.
   return [
     { slug: "rishvin-reddy" }
   ];
 }
 
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params;
+  if (slug !== "rishvin-reddy") {
+    return constructMetadata({ title: "Author Not Found | Rishvin Labs" });
+  }
+
+  return constructMetadata({
+    title: `${siteConfig.founder} | Author & Lead Systems Architect at Rishvin Labs`,
+    description: `Read technical research, engineering retrospectives, and whitepapers authored by ${siteConfig.founder} at Rishvin Labs.`,
+    canonicalUrl: `${siteConfig.url}/authors/${slug}`,
+    image: `${siteConfig.url}/rishvin-reddy-founder-rishvin-labs.png`,
+    type: "profile",
+    keywords: [
+      ...SEO_KEYWORDS.founder,
+      ...SEO_KEYWORDS.brand.slice(0, 4),
+      "systems architect",
+      "cybersecurity researcher",
+    ],
+  });
+}
+
 export default async function AuthorProfilePage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
-  
-  // We only support the founder right now
+
   if (slug !== "rishvin-reddy") return notFound();
 
   const allContent = getAllContent();
   const authorContent = allContent.filter(c => c.author.toLowerCase().includes("rishvin"));
-  
+
   const counts = {
     blog: authorContent.filter(c => c.type === 'blog').length,
     research: authorContent.filter(c => c.type === 'research').length,
@@ -33,18 +57,25 @@ export default async function AuthorProfilePage({ params }: { params: Promise<{ 
   return (
     <main className="min-h-screen flex flex-col bg-[#fafafa] text-zinc-950 font-sans">
       <Navbar />
-      
+      <BreadcrumbSchema
+        items={[
+          { name: "Home", url: "/" },
+          { name: "Authors", url: "/authors" },
+          { name: siteConfig.founder, url: `/authors/${slug}` },
+        ]}
+      />
+
       <section className="pt-40 pb-24 px-6 border-b border-zinc-200">
         <div className="max-w-screen-xl mx-auto flex flex-col md:flex-row gap-12 items-start">
-          <div className="w-32 h-32 md:w-48 md:h-48 rounded-full bg-zinc-200 overflow-hidden shrink-0 border-4 border-white shadow-xl">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img 
-              src="https://avatars.githubusercontent.com/u/123456?v=4" // Placeholder
-              alt={siteConfig.founder} 
-              className="w-full h-full object-cover"
+          <div className="w-32 h-32 md:w-48 md:h-48 rounded-full bg-zinc-200 overflow-hidden shrink-0 border-4 border-white shadow-xl relative">
+            <Image
+              src="/rishvin-reddy-founder-rishvin-labs.png"
+              alt={`${siteConfig.founder} — Founder & Lead Engineer at Rishvin Labs`}
+              fill
+              className="object-cover"
             />
           </div>
-          
+
           <div className="flex-1">
             <h1 className="text-4xl md:text-5xl font-serif font-black tracking-tight text-zinc-950 mb-4">
               {siteConfig.founder}
@@ -52,7 +83,7 @@ export default async function AuthorProfilePage({ params }: { params: Promise<{ 
             <p className="text-xl text-zinc-500 max-w-2xl leading-relaxed mb-8">
               Lead Architect and Security Researcher. Focusing on zero-trust architectures, decentralized finance forensics, and scalable distributed systems.
             </p>
-            
+
             <div className="flex flex-wrap gap-4 mb-8">
               <a href={siteConfig.socials.github} target="_blank" rel="noreferrer" className="flex items-center gap-2 px-4 py-2 bg-zinc-900 text-white rounded-full text-sm font-bold hover:bg-zinc-800 transition-colors">
                 <svg viewBox="0 0 24 24" className="w-4 h-4" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg> GitHub

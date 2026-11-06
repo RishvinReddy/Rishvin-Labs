@@ -5,7 +5,17 @@ import Link from "next/link";
 import { ArrowRight, ArrowUpRight, FolderGit2 } from "lucide-react";
 import { getFeaturedProjects } from "@/data/projects";
 
-export function FeaturedWork() {
+interface FeaturedWorkProps {
+  className?: string;
+  containerClassName?: string;
+  showStatusDisclaimer?: boolean;
+}
+
+export function FeaturedWork({
+  className = "",
+  containerClassName = "max-w-6xl mx-auto px-6",
+  showStatusDisclaimer = true,
+}: FeaturedWorkProps) {
   const featured = getFeaturedProjects();
 
   const getStatusBadge = (status: string) => {
@@ -23,8 +33,8 @@ export function FeaturedWork() {
   };
 
   return (
-    <section id="work" className="py-24 bg-white border-b border-zinc-200">
-      <div className="max-w-screen-2xl mx-auto px-6">
+    <section id="work" className={`py-24 bg-white border-b border-zinc-200 scroll-mt-20 ${className}`}>
+      <div className={containerClassName}>
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
           <div>
@@ -111,6 +121,12 @@ export function FeaturedWork() {
             </div>
           ))}
         </div>
+
+        {showStatusDisclaimer && (
+          <div className="mt-12 p-4 rounded-xl bg-zinc-50 border border-zinc-200 text-center font-mono text-xs text-zinc-500 max-w-2xl mx-auto">
+            Honest Developmental Statuses: We distinguish between working tools, prototypes, and research proofs-of-concept.
+          </div>
+        )}
       </div>
     </section>
   );

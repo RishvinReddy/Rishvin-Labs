@@ -4,9 +4,21 @@ import { Footer } from "@/components/layout/footer";
 import { constructMetadata } from "@/lib/seo/metadata";
 import { CheckCircle2, Server, Globe2, Activity } from "lucide-react";
 
+import { siteConfig } from "@/lib/seo/site";
+import { BreadcrumbSchema } from "@/components/seo/schema";
+import { SEO_KEYWORDS } from "@/lib/seo/keywords";
+
 export const metadata = constructMetadata({
-  title: "System Status | Rishvin Labs",
-  description: "Real-time operational status of Rishvin Labs infrastructure, APIs, and web services.",
+  title: "System Status & Service Health | Rishvin Labs",
+  description: "Real-time operational status, network uptime, and service health metrics for Rishvin Labs infrastructure, APIs, and edge web services.",
+  canonicalUrl: `${siteConfig.url}/status`,
+  keywords: [
+    ...SEO_KEYWORDS.brand.slice(0, 3),
+    "system status",
+    "infrastructure health",
+    "API uptime",
+    "edge service telemetry",
+  ],
 });
 
 const STATUS_DATA = [
@@ -22,6 +34,12 @@ export default function StatusPage() {
   return (
     <main className="min-h-screen flex flex-col bg-[#fafafa] text-zinc-950 font-sans selection:bg-blue-600 selection:text-white">
       <Navbar />
+      <BreadcrumbSchema
+        items={[
+          { name: "Home", url: "/" },
+          { name: "System Status", url: "/status" },
+        ]}
+      />
 
       <section className="pt-40 pb-32 px-6">
         <div className="max-w-3xl mx-auto">
@@ -58,7 +76,7 @@ export default function StatusPage() {
               ))}
             </div>
           </div>
-          
+
           <div className="mt-12 p-8 bg-zinc-950 rounded-3xl text-center text-white">
             <h3 className="font-serif font-bold text-2xl mb-4">Experiencing issues?</h3>
             <p className="text-zinc-400 mb-6">If you are encountering problems not reflected on this page, please reach out to our engineering team.</p>

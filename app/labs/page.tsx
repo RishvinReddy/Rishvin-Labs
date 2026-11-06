@@ -4,10 +4,23 @@ import { Footer } from "@/components/layout/footer";
 import Link from "next/link";
 import { ArrowRight, Beaker, Cpu, ShieldCheck } from "lucide-react";
 
-export const metadata = {
+import { constructMetadata } from "@/lib/seo/metadata";
+import { siteConfig } from "@/lib/seo/site";
+import { SEO_KEYWORDS } from "@/lib/seo/keywords";
+import { BreadcrumbSchema } from "@/components/seo/schema";
+
+export const metadata = constructMetadata({
   title: "Experimental Division (Labs) | Rishvin Labs",
   description: "Unfiltered access to our ongoing research, technical concepts, and architectural experiments.",
-};
+  canonicalUrl: `${siteConfig.url}/labs`,
+  keywords: [
+    ...SEO_KEYWORDS.research.slice(0, 5),
+    ...SEO_KEYWORDS.iot.slice(0, 4),
+    ...SEO_KEYWORDS.brand.slice(0, 3),
+    "experimental engineering",
+    "technical proof of concept",
+  ],
+});
 
 export default function LabsPage() {
   const experiments = [
@@ -52,6 +65,12 @@ export default function LabsPage() {
   return (
     <main className="min-h-screen flex flex-col bg-[#fafafa] text-zinc-950 font-sans selection:bg-blue-600 selection:text-white">
       <Navbar />
+      <BreadcrumbSchema
+        items={[
+          { name: "Home", url: "/" },
+          { name: "Labs", url: "/labs" },
+        ]}
+      />
 
       {/* 1. HERO */}
       <section className="pt-40 pb-20 px-6 bg-white border-b border-zinc-200 text-center relative overflow-hidden">

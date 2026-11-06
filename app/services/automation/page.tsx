@@ -7,24 +7,30 @@ import { BreadcrumbSchema, ServiceSchema } from "@/components/seo/schema";
 import Link from "next/link";
 import { ArrowUpRight, Workflow, Link2, Clock, Settings } from "lucide-react";
 
+import { SEO_KEYWORDS } from "@/lib/seo/keywords";
+
 export const metadata: Metadata = constructMetadata({
   title: "Business Process Automation & Integrations | Rishvin Labs",
   description: "Rishvin Labs builds custom business process automation, API integrations, and workflow solutions to eliminate manual data entry and operational bottlenecks.",
-  canonicalUrl: "https://rishvinlabs.com/services/automation",
+  canonicalUrl: "https://rishvin-labs.vercel.app/services/automation",
+  keywords: [
+    ...SEO_KEYWORDS.automation,
+    ...SEO_KEYWORDS.brand.slice(0, 3),
+  ],
 });
 
 export default function AutomationPage() {
   return (
     <main className="min-h-screen flex flex-col bg-white text-zinc-950 font-sans">
       <Navbar />
-      <BreadcrumbSchema 
+      <BreadcrumbSchema
         items={[
           { name: "Home", url: "/" },
           { name: "Services", url: "/services" },
           { name: "Automation", url: "/services/automation" }
-        ]} 
+        ]}
       />
-      <ServiceSchema 
+      <ServiceSchema
         name="Business Process Automation"
         description="Custom business process automation, API integrations, and workflow solutions."
         url="/services/automation"
@@ -51,7 +57,7 @@ export default function AutomationPage() {
             <h2 className="text-3xl font-serif font-bold text-zinc-900 mb-4">How we optimize operations</h2>
             <p className="text-zinc-600 max-w-2xl mx-auto">Stop paying humans to do the work of a script. We build the connective tissue between your SaaS tools.</p>
           </div>
-          
+
           <div className="grid md:grid-cols-2 gap-8">
             <div className="p-8 rounded-2xl bg-zinc-50 border border-zinc-200">
               <Link2 className="w-10 h-10 text-blue-600 mb-6" />
@@ -60,7 +66,7 @@ export default function AutomationPage() {
                 We build secure, serverless middleware to connect systems that don&apos;t natively talk to each other, bypassing the limitations of tools like Zapier or Make.
               </p>
             </div>
-            
+
             <div className="p-8 rounded-2xl bg-zinc-50 border border-zinc-200">
               <Workflow className="w-10 h-10 text-violet-600 mb-6" />
               <h3 className="text-xl font-bold mb-3">Data Pipelines</h3>
@@ -68,7 +74,7 @@ export default function AutomationPage() {
                 Automated ETL (Extract, Transform, Load) pipelines that consolidate data from various sources into centralized analytics dashboards or data warehouses.
               </p>
             </div>
-            
+
             <div className="p-8 rounded-2xl bg-zinc-50 border border-zinc-200">
               <Clock className="w-10 h-10 text-emerald-600 mb-6" />
               <h3 className="text-xl font-bold mb-3">Time-Based Jobs (CRON)</h3>
@@ -76,7 +82,7 @@ export default function AutomationPage() {
                 Scheduled scripts that run reliably in the background to handle billing, generate reports, or clean databases without manual intervention.
               </p>
             </div>
-            
+
             <div className="p-8 rounded-2xl bg-zinc-50 border border-zinc-200">
               <Settings className="w-10 h-10 text-amber-500 mb-6" />
               <h3 className="text-xl font-bold mb-3">Legacy System Modernization</h3>
@@ -93,8 +99,8 @@ export default function AutomationPage() {
         <p className="text-zinc-600 mb-8 max-w-xl mx-auto">
           Let&apos;s identify the operational bottlenecks in your business and replace them with code.
         </p>
-        <Link 
-          href="/contact?service=automation" 
+        <Link
+          href="/contact?service=automation"
           className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-blue-600 text-white font-mono text-xs font-bold rounded-xl hover:bg-blue-700 transition-colors shadow-lg shadow-blue-600/20"
         >
           START AUTOMATING

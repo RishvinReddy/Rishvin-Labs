@@ -3,11 +3,24 @@ import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import { constructMetadata } from "@/lib/seo/metadata";
+import { siteConfig } from "@/lib/seo/site";
+import { SEO_KEYWORDS } from "@/lib/seo/keywords";
+import { BreadcrumbSchema } from "@/components/seo/schema";
 
-export const metadata = {
+export const metadata = constructMetadata({
   title: "Engineering Manifesto | Rishvin Labs",
   description: "These are the principles that govern every architectural decision, every line of production code, and every system we deploy under the Rishvin Labs name.",
-};
+  canonicalUrl: `${siteConfig.url}/manifesto`,
+  keywords: [
+    ...SEO_KEYWORDS.brand.slice(0, 4),
+    "engineering manifesto",
+    "systems over features",
+    "zero-trust principles",
+    "software engineering philosophy",
+    "reliability by design",
+  ],
+});
 
 export default function ManifestoPage() {
   const principles = [
@@ -56,6 +69,12 @@ export default function ManifestoPage() {
   return (
     <main className="min-h-screen flex flex-col bg-[#fafafa] text-zinc-950 font-sans selection:bg-blue-600 selection:text-white">
       <Navbar />
+      <BreadcrumbSchema
+        items={[
+          { name: "Home", url: "/" },
+          { name: "Manifesto", url: "/manifesto" },
+        ]}
+      />
 
       {/* 1. HERO STATEMENT */}
       <section className="pt-40 pb-20 px-6 bg-white border-b border-zinc-200">
@@ -100,7 +119,7 @@ export default function ManifestoPage() {
       {/* 3. CLOSING STATEMENT / THE STANDARD */}
       <section className="py-20 bg-white border-t border-zinc-200 px-6">
         <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
-          
+
           <div className="md:col-span-6 space-y-4">
             <span className="font-mono text-xs font-bold text-zinc-400 uppercase tracking-widest">
               [ THE STANDARD ]

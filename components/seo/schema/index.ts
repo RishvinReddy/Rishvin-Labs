@@ -8,3 +8,4 @@ export * from './SoftwareApplicationSchema';
 export * from './ServiceSchema';
 export * from './CaseStudySchema';
 export * from './AboutPageSchema';
+export * from './StudentHubSchema';

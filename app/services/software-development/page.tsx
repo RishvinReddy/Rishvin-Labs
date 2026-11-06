@@ -7,24 +7,30 @@ import { BreadcrumbSchema, ServiceSchema } from "@/components/seo/schema";
 import Link from "next/link";
 import { ArrowUpRight, Code, Layers, Shield, Zap } from "lucide-react";
 
+import { SEO_KEYWORDS } from "@/lib/seo/keywords";
+
 export const metadata: Metadata = constructMetadata({
   title: "Custom Software Development | Rishvin Labs",
   description: "Rishvin Labs engineers robust, scalable custom software, SaaS products, and enterprise applications using modern technologies.",
-  canonicalUrl: "https://rishvinlabs.com/services/software-development",
+  canonicalUrl: "https://rishvin-labs.vercel.app/services/software-development",
+  keywords: [
+    ...SEO_KEYWORDS.softwareEngineering.slice(0, 10),
+    ...SEO_KEYWORDS.brand.slice(0, 3),
+  ],
 });
 
 export default function SoftwareDevelopmentPage() {
   return (
     <main className="min-h-screen flex flex-col bg-white text-zinc-950 font-sans">
       <Navbar />
-      <BreadcrumbSchema 
+      <BreadcrumbSchema
         items={[
           { name: "Home", url: "/" },
           { name: "Services", url: "/services" },
           { name: "Software Development", url: "/services/software-development" }
-        ]} 
+        ]}
       />
-      <ServiceSchema 
+      <ServiceSchema
         name="Custom Software Development"
         description="Engineering robust, scalable custom software, SaaS products, and enterprise applications."
         url="/services/software-development"
@@ -51,7 +57,7 @@ export default function SoftwareDevelopmentPage() {
             <h2 className="text-3xl font-serif font-bold text-zinc-900 mb-4">The Stack & Approach</h2>
             <p className="text-zinc-600 max-w-2xl mx-auto">We use modern, battle-tested technologies to ensure your application can handle growth without accumulating technical debt.</p>
           </div>
-          
+
           <div className="grid md:grid-cols-2 gap-8">
             <div className="p-8 rounded-2xl bg-zinc-50 border border-zinc-200">
               <Code className="w-10 h-10 text-blue-600 mb-6" />
@@ -60,7 +66,7 @@ export default function SoftwareDevelopmentPage() {
                 Utilizing Next.js, React, and TypeScript to build type-safe, server-rendered applications that offer incredible UX and SEO out of the box.
               </p>
             </div>
-            
+
             <div className="p-8 rounded-2xl bg-zinc-50 border border-zinc-200">
               <Layers className="w-10 h-10 text-emerald-600 mb-6" />
               <h3 className="text-xl font-bold mb-3">Scalable Backends</h3>
@@ -68,7 +74,7 @@ export default function SoftwareDevelopmentPage() {
                 Designing robust APIs (REST and GraphQL) with Node.js, managing complex relational databases, and integrating distributed caching layers.
               </p>
             </div>
-            
+
             <div className="p-8 rounded-2xl bg-zinc-50 border border-zinc-200">
               <Shield className="w-10 h-10 text-indigo-600 mb-6" />
               <h3 className="text-xl font-bold mb-3">Security First</h3>
@@ -76,7 +82,7 @@ export default function SoftwareDevelopmentPage() {
                 Implementation of zero-trust principles, rigorous input validation, secure authentication flows (OAuth, SSO), and strict CSPs.
               </p>
             </div>
-            
+
             <div className="p-8 rounded-2xl bg-zinc-50 border border-zinc-200">
               <Zap className="w-10 h-10 text-amber-500 mb-6" />
               <h3 className="text-xl font-bold mb-3">Cloud Infrastructure</h3>
@@ -93,8 +99,8 @@ export default function SoftwareDevelopmentPage() {
         <p className="text-zinc-600 mb-8 max-w-xl mx-auto">
           From MVP to enterprise scale, we have the engineering expertise to bring your vision to life.
         </p>
-        <Link 
-          href="/contact?service=software-development" 
+        <Link
+          href="/contact?service=software-development"
           className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-blue-600 text-white font-mono text-xs font-bold rounded-xl hover:bg-blue-700 transition-colors shadow-lg shadow-blue-600/20"
         >
           DISCUSS YOUR PROJECT

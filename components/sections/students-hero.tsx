@@ -232,7 +232,11 @@ export function StudentsHero() {
           <div className="lg:col-span-7 flex items-center justify-center relative py-12 lg:py-16 select-none">
 
             {/* Central Anchor Container for Landscape iPad + Spaced Floating Cards */}
-            <div className="relative w-full max-w-[560px] lg:max-w-[590px] xl:max-w-[620px] mx-auto">
+            <div
+              role="region"
+              aria-label="Interactive iPad Pro Engineering Dashboard Preview: Illustrative interface showcasing learning trajectories, practice checklist, and deployment sandbox"
+              className="relative w-full max-w-[560px] lg:max-w-[590px] xl:max-w-[620px] mx-auto"
+            >
 
               {/* ════════════════ MAGNETIC APPLE PENCIL 2 (Top Edge) ════════════════ */}
               <motion.div

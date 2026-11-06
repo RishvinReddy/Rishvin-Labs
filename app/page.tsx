@@ -6,14 +6,13 @@ import { Footer } from "@/components/layout/footer";
 import { Hero } from "@/components/sections/hero";
 import { BusinessCredibility } from "@/components/sections/business-credibility";
 import { EngineeringDivisions } from "@/components/sections/engineering-divisions";
-import { FeaturedWork } from "@/components/sections/featured-work";
 import { ResultsPreview } from "@/components/sections/results-preview";
 import { TestimonialsSection } from "@/components/sections/testimonials-section";
 import { FounderTeaser } from "@/components/sections/founder-teaser";
 import { JournalPreview } from "@/components/sections/journal-preview";
 
 import Link from "next/link";
-import { ArrowRight, ShieldCheck } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { constructMetadata } from "@/lib/seo/metadata";
 
 export const metadata = constructMetadata({
@@ -38,25 +37,22 @@ export default function Home() {
       {/* SECTION 03 — ENGINEERING DIVISIONS */}
       <EngineeringDivisions />
 
-      {/* SECTION 04 — FEATURED PROJECTS */}
-      <FeaturedWork />
-
-      {/* SECTION 05 — ENGINEERING RESULTS */}
+      {/* SECTION 04 — ENGINEERING RESULTS */}
       <ResultsPreview />
 
-      {/* SECTION 06 — CUSTOMER TESTIMONIALS (Hidden until explicit client consent is logged) */}
+      {/* SECTION 05 — CUSTOMER TESTIMONIALS (Hidden until explicit client consent is logged) */}
       <TestimonialsSection />
 
-      {/* SECTION 07 — FOUNDER */}
+      {/* SECTION 06 — FOUNDER */}
       <FounderTeaser />
 
-      {/* SECTION 08 — JOURNAL AND RESEARCH */}
+      {/* SECTION 07 — JOURNAL AND RESEARCH */}
       <JournalPreview />
 
-      {/* SECTION 09 — PROJECT CONVERSION (Clean High-Intent CTA) */}
+      {/* SECTION 08 — PROJECT CONVERSION (Clean High-Intent CTA) */}
       <section id="contact" className="py-28 relative overflow-hidden bg-zinc-950 text-white border-t border-zinc-800">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_50%_40%_at_50%_50%,rgba(37,99,235,0.15),transparent_100%)] pointer-events-none" />
-        
+
         <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-zinc-900 border border-zinc-800 text-zinc-300 font-mono text-xs mb-6 shadow-xs">
             <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />

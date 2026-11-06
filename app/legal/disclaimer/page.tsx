@@ -1,9 +1,12 @@
 import React from "react";
 import { LegalLayout } from "@/components/legal/LegalLayout";
 import { constructMetadata } from "@/lib/seo/metadata";
+import { siteConfig } from "@/lib/seo/site";
 
 export const metadata = constructMetadata({
   title: "Disclaimer | Rishvin Labs",
+  description: "Legal disclosures, technical representations, and limitation of liability for Rishvin Labs engineering content.",
+  canonicalUrl: `${siteConfig.url}/legal/disclaimer`,
 });
 
 export default function DisclaimerPage() {

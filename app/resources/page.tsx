@@ -5,9 +5,19 @@ import { constructMetadata } from "@/lib/seo/metadata";
 import { Download, FolderArchive } from "lucide-react";
 import { siteConfig } from "@/lib/seo/site";
 
+import { BreadcrumbSchema } from "@/components/seo/schema";
+import { SEO_KEYWORDS } from "@/lib/seo/keywords";
+
 export const metadata = constructMetadata({
-  title: "Resources | Rishvin Labs",
-  description: "Downloadable assets, capability decks, and architecture diagrams from Rishvin Labs.",
+  title: "Resources & Downloadable Engineering Assets | Rishvin Labs",
+  description: "Downloadable capability decks, architecture blueprints, brand identity kits, and engineering assets from Rishvin Labs.",
+  canonicalUrl: `${siteConfig.url}/resources`,
+  keywords: [
+    ...SEO_KEYWORDS.brand.slice(0, 4),
+    "downloadable architecture diagrams",
+    "engineering capability deck",
+    "zero-trust reference architecture",
+  ],
 });
 
 const resources = [
@@ -39,7 +49,13 @@ export default function ResourcesPage() {
   return (
     <main className="min-h-screen flex flex-col bg-[#fafafa] text-zinc-950 font-sans">
       <Navbar />
-      
+      <BreadcrumbSchema
+        items={[
+          { name: "Home", url: "/" },
+          { name: "Resources", url: "/resources" },
+        ]}
+      />
+
       <section className="pt-40 pb-24 px-6 flex-1">
         <div className="max-w-screen-xl mx-auto">
           <header className="mb-16">

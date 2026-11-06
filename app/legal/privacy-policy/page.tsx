@@ -1,10 +1,12 @@
 import React from "react";
 import { LegalLayout } from "@/components/legal/LegalLayout";
 import { constructMetadata } from "@/lib/seo/metadata";
+import { siteConfig } from "@/lib/seo/site";
 
 export const metadata = constructMetadata({
   title: "Privacy Policy | Rishvin Labs",
   description: "Privacy Policy and data protection guidelines for Rishvin Labs.",
+  canonicalUrl: `${siteConfig.url}/legal/privacy-policy`,
 });
 
 export default function PrivacyPolicyPage() {

@@ -26,6 +26,31 @@ export function OrganizationSchema() {
       name: 'Udyam Registration Number',
       value: COMPANY.registration.registrationNumber
     },
+    address: {
+      '@type': 'PostalAddress',
+      addressLocality: COMPANY.registration.district,
+      addressRegion: COMPANY.registration.state,
+      postalCode: COMPANY.registration.pinCode,
+      addressCountry: 'IN'
+    },
+    areaServed: [
+      {
+        '@type': 'Country',
+        name: 'India'
+      },
+      {
+        '@type': 'AdministrativeArea',
+        name: 'Telangana'
+      }
+    ],
+    knowsAbout: [
+      'Custom Software Development',
+      'Web Application Security & Zero-Trust',
+      'Digital Forensics Investigation Tooling',
+      'Embedded Systems & ESP32 IoT Mesh Telemetry',
+      'Smart Contract & Blockchain Proofs',
+      'Business Process Automation Pipelines'
+    ],
     founder: {
       '@id': `${COMPANY.canonicalUrl}/#rishvin-reddy`
     },

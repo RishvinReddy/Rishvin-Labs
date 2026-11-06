@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export function ResultsPreview() {
   return (
-    <section id="results" className="py-24 px-6 bg-[#fafafa] border-b border-zinc-200 scroll-mt-20">
+    <section id="results" className="py-24 px-6 bg-white border-b border-zinc-200 scroll-mt-20">
       <div className="max-w-screen-2xl mx-auto">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
           <div className="max-w-3xl">

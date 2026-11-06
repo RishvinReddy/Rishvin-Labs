@@ -6,16 +6,33 @@ import { siteConfig } from "@/lib/seo/site";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
+import Image from "next/image";
+import { BreadcrumbSchema } from "@/components/seo/schema";
+import { SEO_KEYWORDS } from "@/lib/seo/keywords";
+
 export const metadata = constructMetadata({
-  title: "Authors | Rishvin Labs",
-  description: "Meet the researchers and engineers behind Rishvin Labs.",
+  title: "Authors & Engineering Contributors | Rishvin Labs",
+  description: "Meet the researchers, engineers, and systems architects authoring technical essays, field notes, and research papers at Rishvin Labs.",
+  canonicalUrl: `${siteConfig.url}/authors`,
+  keywords: [
+    ...SEO_KEYWORDS.founder,
+    ...SEO_KEYWORDS.brand.slice(0, 4),
+    "technical authors",
+    "software engineering writers",
+  ],
 });
 
 export default function AuthorsPage() {
   return (
     <main className="min-h-screen flex flex-col bg-[#fafafa] text-zinc-950 font-sans">
       <Navbar />
-      
+      <BreadcrumbSchema
+        items={[
+          { name: "Home", url: "/" },
+          { name: "Authors", url: "/authors" },
+        ]}
+      />
+
       <section className="pt-40 pb-24 px-6 flex-1">
         <div className="max-w-screen-xl mx-auto">
           <header className="mb-16">
@@ -28,16 +45,16 @@ export default function AuthorsPage() {
           </header>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <Link 
+            <Link
               href="/authors/rishvin-reddy"
               className="group flex items-center gap-6 p-6 bg-white rounded-3xl border border-zinc-200 hover:shadow-xl hover:border-blue-500 transition-all"
             >
-              <div className="w-20 h-20 rounded-full bg-zinc-200 overflow-hidden shrink-0">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img 
-                  src="https://avatars.githubusercontent.com/u/123456?v=4" // Placeholder
-                  alt={siteConfig.founder} 
-                  className="w-full h-full object-cover"
+              <div className="w-20 h-20 rounded-full bg-zinc-200 overflow-hidden shrink-0 relative border-2 border-white shadow-xs">
+                <Image
+                  src="/rishvin-reddy-founder-rishvin-labs.png"
+                  alt={`${siteConfig.founder} — Founder & Lead Systems Architect at Rishvin Labs`}
+                  fill
+                  className="object-cover"
                 />
               </div>
               <div className="flex-1">

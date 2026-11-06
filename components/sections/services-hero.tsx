@@ -296,7 +296,11 @@ export function ServicesHero() {
           <div className="lg:col-span-7 flex items-center justify-center relative py-6 select-none">
 
             {/* Central Workstation Anchor Container with Proportional Clearance */}
-            <div className="relative w-full max-w-[490px] lg:max-w-[520px] xl:max-w-[550px] mx-auto">
+            <div
+              role="region"
+              aria-label="Interactive Enterprise Engineering Workstation Preview: Illustrative dashboard demonstrating zero-trust telemetry, microservice pipeline metrics, and system throughput"
+              className="relative w-full max-w-[490px] lg:max-w-[520px] xl:max-w-[550px] mx-auto"
+            >
 
               {/* ════════════════ WIDESCREEN WORKSTATION MONITOR ════════════════ */}
               <motion.div

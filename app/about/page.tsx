@@ -6,22 +6,22 @@ import { constructMetadata } from "@/lib/seo/metadata";
 import { BreadcrumbSchema, AboutPageSchema, PersonSchema, OrganizationSchema } from "@/components/seo/schema";
 import Link from "next/link";
 import Image from "next/image";
-import { 
-  ArrowUpRight, 
-  Code, 
-  Shield, 
+import {
+  ArrowUpRight,
+  Code,
+  Shield,
   ShieldCheck,
-  Cpu, 
-  ArrowRight, 
-  CheckCircle2, 
-  GitBranch, 
-  ExternalLink, 
-  Globe, 
-  Lock, 
-  Terminal, 
-  Layers, 
-  FileCode2, 
-  Workflow, 
+  Cpu,
+  ArrowRight,
+  CheckCircle2,
+  GitBranch,
+  ExternalLink,
+  Globe,
+  Lock,
+  Terminal,
+  Layers,
+  FileCode2,
+  Workflow,
   HelpCircle,
   Award,
   Video,
@@ -32,7 +32,7 @@ import {
   Compass
 } from "lucide-react";
 import { COMPANY } from "@/lib/business/company";
-import { projects } from "@/data/projects";
+import { FeaturedWork } from "@/components/sections/featured-work";
 
 export const metadata: Metadata = constructMetadata({
   title: "About Rishvin Labs | Founder-Led Technology Studio & Engineering Philosophy",
@@ -52,19 +52,16 @@ export const metadata: Metadata = constructMetadata({
 });
 
 export default function AboutPage() {
-  // Select confirmed featured projects with honest developmental statuses
-  const featuredWork = projects.slice(0, 6);
-
   return (
     <main className="min-h-screen flex flex-col bg-white text-zinc-950 font-sans selection:bg-blue-600 selection:text-white">
       <Navbar />
-      
+
       {/* Structured Data Layer */}
-      <BreadcrumbSchema 
+      <BreadcrumbSchema
         items={[
           { name: "Home", url: "/" },
           { name: "About", url: "/about" }
-        ]} 
+        ]}
       />
       <AboutPageSchema />
       <PersonSchema />
@@ -75,7 +72,7 @@ export default function AboutPage() {
       ═════════════════════════════════════════════════════════════════ */}
       <section className="pt-36 pb-20 px-6 relative overflow-hidden bg-zinc-50 border-b border-zinc-200">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(37,99,235,0.06),transparent_60%)] pointer-events-none" />
-        
+
         <div className="max-w-4xl mx-auto relative z-10 text-center">
           {/* Preserved EST. 2024 badge */}
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-100 text-blue-800 text-xs font-mono font-medium tracking-wide mb-6">
@@ -182,7 +179,7 @@ export default function AboutPage() {
           </div>
 
           <div className="grid md:grid-cols-3 gap-6">
-            
+
             {/* 1. Preserved Card: Custom Software */}
             <div className="bg-white p-6 rounded-2xl border border-zinc-200 shadow-xs flex flex-col justify-between">
               <div>
@@ -321,7 +318,7 @@ export default function AboutPage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            
+
             <div className="p-6 rounded-2xl border border-zinc-200 bg-white shadow-xs">
               <div className="font-mono text-xs font-bold text-blue-600 mb-2">{"01 // CONSTRAINTS FIRST"}</div>
               <h3 className="text-lg font-serif font-bold text-zinc-900 mb-2">Understand before implementing</h3>
@@ -431,8 +428,8 @@ export default function AboutPage() {
                 desc: "Where engagements include continuing technical support, monitor real telemetry and refine the platform over time.",
               },
             ].map((phase) => (
-              <div 
-                key={phase.step} 
+              <div
+                key={phase.step}
                 className="p-5 rounded-2xl border border-zinc-200 bg-white flex flex-col sm:flex-row sm:items-center justify-between gap-4 shadow-xs"
               >
                 <div className="flex items-center gap-4">
@@ -451,76 +448,9 @@ export default function AboutPage() {
       </section>
 
       {/* ═════════════════════════════════════════════════════════════════
-          06 · SELECTED ENGINEERING WORK (Verified Project Registry)
+          06 · FEATURED WORK & TECHNICAL CASE STUDIES
       ═════════════════════════════════════════════════════════════════ */}
-      <section className="py-20 px-6 border-b border-zinc-200">
-        <div className="max-w-4xl mx-auto">
-          <div className="flex flex-col md:flex-row md:items-baseline justify-between gap-2 mb-10">
-            <div>
-              <span className="font-mono text-xs text-blue-600 font-bold uppercase tracking-widest block mb-1">
-                {"// 06 · EVIDENCE & CASE STUDIES"}
-              </span>
-              <h2 className="text-3xl font-serif font-bold text-zinc-950">
-                Selected Engineering Work
-              </h2>
-            </div>
-            <Link 
-              href="/work" 
-              className="font-mono text-xs text-blue-600 font-bold hover:underline inline-flex items-center"
-            >
-              <span>Explore All Case Studies</span>
-              <ArrowRight className="w-3.5 h-3.5 ml-1" />
-            </Link>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-            {featuredWork.map((proj) => (
-              <div 
-                key={proj.id} 
-                className="p-6 rounded-2xl border border-zinc-200 bg-white hover:border-zinc-300 transition-all flex flex-col justify-between shadow-xs"
-              >
-                <div>
-                  <div className="flex items-center justify-between gap-2 mb-3">
-                    <span className="font-mono text-[10px] text-zinc-500 uppercase tracking-wider">
-                      {proj.category}
-                    </span>
-                    <span className="font-mono text-[10px] font-semibold px-2 py-0.5 rounded bg-zinc-100 text-zinc-700 border border-zinc-200">
-                      {proj.status}
-                    </span>
-                  </div>
-                  <h3 className="text-xl font-serif font-bold text-zinc-950 mb-1">
-                    {proj.title}
-                  </h3>
-                  <div className="font-sans text-xs text-zinc-500 mb-3">
-                    {proj.subtitle}
-                  </div>
-                  <p className="text-xs text-zinc-600 leading-relaxed mb-4">
-                    {proj.problem}
-                  </p>
-                  <div className="flex flex-wrap gap-1.5 mb-5">
-                    {proj.technologies.slice(0, 4).map((tech) => (
-                      <span key={tech} className="font-mono text-[10px] px-2 py-0.5 rounded bg-zinc-50 text-zinc-600 border border-zinc-200">
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-                <Link
-                  href={`/work/${proj.id}`}
-                  className="font-mono text-xs font-bold text-blue-600 hover:text-blue-800 transition-colors inline-flex items-center gap-1 pt-3 border-t border-zinc-100"
-                >
-                  <span>Read Full Case Study</span>
-                  <ArrowRight className="w-3.5 h-3.5" />
-                </Link>
-              </div>
-            ))}
-          </div>
-
-          <div className="p-4 rounded-xl bg-zinc-50 border border-zinc-200 text-center font-mono text-xs text-zinc-500">
-            Honest Developmental Statuses: We distinguish between working tools, prototypes, and research proofs-of-concept.
-          </div>
-        </div>
-      </section>
+      <FeaturedWork />
 
       {/* ═════════════════════════════════════════════════════════════════
           07 · MEET THE FOUNDER (Preserved, Enriched & Complementary)
@@ -529,9 +459,9 @@ export default function AboutPage() {
         <div className="max-w-4xl mx-auto">
           <div className="flex flex-col md:flex-row items-center gap-10 bg-zinc-950 text-white rounded-3xl p-8 sm:p-12 shadow-xl relative overflow-hidden">
             {/* Ambient subtle glow */}
-            <div 
-              aria-hidden="true" 
-              className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(37,99,235,0.18),transparent_50%)] pointer-events-none" 
+            <div
+              aria-hidden="true"
+              className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(37,99,235,0.18),transparent_50%)] pointer-events-none"
             />
 
             <div className="w-36 h-36 sm:w-44 sm:h-44 rounded-2xl overflow-hidden border border-zinc-800 shrink-0 bg-zinc-900 relative">
@@ -548,7 +478,7 @@ export default function AboutPage() {
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-900/60 text-blue-300 font-mono text-[11px] font-bold tracking-wide mb-3 border border-blue-700/50">
                 FOUNDER &amp; LEAD ENGINEER
               </div>
-              
+
               <h3 className="text-2xl sm:text-3xl font-serif font-black tracking-tight text-white mb-1">
                 Rishvin Reddy
               </h3>
@@ -563,15 +493,15 @@ export default function AboutPage() {
 
               {/* Action Links */}
               <div className="flex flex-wrap items-center justify-center md:justify-start gap-3">
-                <Link 
-                  href="/about/rishvin-reddy" 
+                <Link
+                  href="/about/rishvin-reddy"
                   className="inline-flex items-center gap-2 px-5 py-2.5 bg-white text-zinc-950 font-mono text-xs font-bold rounded-xl hover:bg-zinc-200 transition-colors shadow-sm"
                 >
                   <span>READ FULL PROFILE</span>
                   <ArrowRight className="w-3.5 h-3.5" />
                 </Link>
 
-                <a 
+                <a
                   href={COMPANY.founder.portfolioUrl}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -581,7 +511,7 @@ export default function AboutPage() {
                   <span>Personal Portfolio ↗</span>
                 </a>
 
-                <a 
+                <a
                   href={COMPANY.founder.githubUrl}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -591,7 +521,7 @@ export default function AboutPage() {
                   <span>GitHub ↗</span>
                 </a>
 
-                <a 
+                <a
                   href={COMPANY.founder.linkedinUrl}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -614,7 +544,7 @@ export default function AboutPage() {
       ═════════════════════════════════════════════════════════════════ */}
       <section className="py-20 px-6 border-b border-zinc-200 bg-white">
         <div className="max-w-5xl mx-auto">
-          
+
           {/* Header & LinkedIn Company Profile Banner */}
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
             <div>
@@ -647,7 +577,7 @@ export default function AboutPage() {
 
           {/* Two-Column Responsive Embeds Grid */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 justify-items-center">
-            
+
             {/* Featured Post 01 */}
             <div className="w-full max-w-[504px] flex flex-col bg-zinc-50/70 border border-zinc-200 rounded-2xl overflow-hidden shadow-xs p-4 sm:p-5">
               <div className="flex items-center justify-between gap-2 mb-3 pb-3 border-b border-zinc-200">
@@ -854,7 +784,7 @@ export default function AboutPage() {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-            
+
             <div className="p-5 rounded-2xl border border-zinc-200 bg-white">
               <h3 className="font-mono text-xs font-bold uppercase text-zinc-400 mb-3 tracking-wider">Frontend</h3>
               <ul className="space-y-1.5 font-sans text-sm text-zinc-700">
@@ -945,7 +875,7 @@ export default function AboutPage() {
           </div>
 
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-            <Link 
+            <Link
               href="/research"
               className="p-4 rounded-xl border border-zinc-200 bg-white hover:border-zinc-400 transition-colors block text-center"
             >
@@ -953,7 +883,7 @@ export default function AboutPage() {
               <div className="font-mono text-[10px] text-zinc-500 uppercase">Explorations &rarr;</div>
             </Link>
 
-            <Link 
+            <Link
               href="/whitepapers"
               className="p-4 rounded-xl border border-zinc-200 bg-white hover:border-zinc-400 transition-colors block text-center"
             >
@@ -961,7 +891,7 @@ export default function AboutPage() {
               <div className="font-mono text-[10px] text-zinc-500 uppercase">Deep Dives &rarr;</div>
             </Link>
 
-            <Link 
+            <Link
               href="/journal"
               className="p-4 rounded-xl border border-zinc-200 bg-white hover:border-zinc-400 transition-colors block text-center"
             >
@@ -969,7 +899,7 @@ export default function AboutPage() {
               <div className="font-mono text-[10px] text-zinc-500 uppercase">Journal &rarr;</div>
             </Link>
 
-            <Link 
+            <Link
               href="/students"
               className="p-4 rounded-xl border border-zinc-200 bg-white hover:border-zinc-400 transition-colors block text-center"
             >
@@ -985,14 +915,14 @@ export default function AboutPage() {
       ═════════════════════════════════════════════════════════════════ */}
       <section className="py-20 px-6 border-b border-zinc-200">
         <div className="max-w-4xl mx-auto flex flex-col md:flex-row items-start gap-12">
-          
+
           <div className="md:w-1/2">
             <span className="font-mono text-xs text-blue-600 font-bold uppercase tracking-widest block mb-1">
               {"// 10 · ENGAGEMENT PARTNERS"}
             </span>
             {/* Preserved Section Title: Who is it for? */}
             <h2 className="text-3xl font-serif font-bold text-zinc-900 mb-4">Who is it for?</h2>
-            
+
             {/* Preserved descriptive paragraph */}
             <p className="text-zinc-600 mb-6 leading-relaxed text-sm">
               We work with startups needing to build their MVP, established businesses looking to modernize legacy systems, and D2C brands aiming to optimize their digital presence.
@@ -1296,7 +1226,7 @@ export default function AboutPage() {
           <h2 className="text-3xl sm:text-4xl font-serif font-bold text-zinc-950 mb-4">
             Good engineering begins with the right problem.
           </h2>
-          
+
           {/* Preserved supporting sentence */}
           <p className="text-zinc-600 mb-4 leading-relaxed">
             Ready to discuss your project? Whether it&apos;s a new product or optimizing an existing system, let&apos;s explore how we can help.
@@ -1307,16 +1237,16 @@ export default function AboutPage() {
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             {/* Preserved primary CTA button */}
-            <Link 
-              href="/contact" 
+            <Link
+              href="/contact"
               className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-blue-600 text-white font-mono text-xs font-bold rounded-xl hover:bg-blue-700 transition-colors shadow-lg shadow-blue-600/20 w-full sm:w-auto"
             >
               <span>START A CONVERSATION</span>
               <ArrowRight className="w-4 h-4" />
             </Link>
 
-            <Link 
-              href="/work" 
+            <Link
+              href="/work"
               className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white border border-zinc-200 text-zinc-900 font-mono text-xs font-bold rounded-xl hover:bg-zinc-100 transition-colors shadow-xs w-full sm:w-auto"
             >
               <span>EXPLORE WORK</span>

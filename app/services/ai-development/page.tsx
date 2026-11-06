@@ -7,24 +7,31 @@ import { BreadcrumbSchema, ServiceSchema } from "@/components/seo/schema";
 import Link from "next/link";
 import { ArrowUpRight, Bot, Cpu, Network, Database } from "lucide-react";
 
+import { SEO_KEYWORDS } from "@/lib/seo/keywords";
+
 export const metadata: Metadata = constructMetadata({
   title: "AI Development & Automation Services | Rishvin Labs",
   description: "Rishvin Labs builds custom AI agents, LLM integrations, and automated workflows to supercharge your business operations.",
-  canonicalUrl: "https://rishvinlabs.com/services/ai-development",
+  canonicalUrl: "https://rishvin-labs.vercel.app/services/ai-development",
+  keywords: [
+    ...SEO_KEYWORDS.services.ai,
+    ...SEO_KEYWORDS.automation.slice(0, 6),
+    ...SEO_KEYWORDS.brand.slice(0, 3),
+  ],
 });
 
 export default function AIDevelopmentPage() {
   return (
     <main className="min-h-screen flex flex-col bg-white text-zinc-950 font-sans">
       <Navbar />
-      <BreadcrumbSchema 
+      <BreadcrumbSchema
         items={[
           { name: "Home", url: "/" },
           { name: "Services", url: "/services" },
           { name: "AI Development", url: "/services/ai-development" }
-        ]} 
+        ]}
       />
-      <ServiceSchema 
+      <ServiceSchema
         name="AI Development & Automation"
         description="Custom AI agents, LLM integrations, and automated workflows to supercharge business operations."
         url="/services/ai-development"
@@ -88,8 +95,8 @@ export default function AIDevelopmentPage() {
         <p className="text-zinc-600 mb-8 max-w-xl mx-auto">
           From internal productivity tools to customer-facing AI products, let&apos;s architect a solution that drives value.
         </p>
-        <Link 
-          href="/contact?service=ai-development" 
+        <Link
+          href="/contact?service=ai-development"
           className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-blue-600 text-white font-mono text-xs font-bold rounded-xl hover:bg-blue-700 transition-colors shadow-lg shadow-blue-600/20"
         >
           DISCUSS YOUR AI PROJECT
