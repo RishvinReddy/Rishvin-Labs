@@ -3,6 +3,7 @@ import { Inter, Playfair_Display, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { GoogleAnalytics } from "@/components/analytics/GoogleAnalytics";
 import { MicrosoftClarity } from "@/components/analytics/MicrosoftClarity";
+import { VercelAnalytics } from "@/components/analytics/VercelAnalytics";
 import { OrganizationSchema, WebSiteSchema } from "@/components/seo/schema";
 
 const inter = Inter({
@@ -49,6 +50,7 @@ export default async function RootLayout({
         {children}
         <GoogleAnalytics />
         <MicrosoftClarity />
+        <VercelAnalytics />
       </body>
     </html>
   );

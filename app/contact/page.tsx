@@ -1,8 +1,24 @@
 import React from "react";
+import type { Metadata } from "next";
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
 import { ContactForm } from "@/components/sections/contact-form";
 import { Clock } from "lucide-react";
+import { constructMetadata } from "@/lib/seo/metadata";
+
+export const metadata: Metadata = constructMetadata({
+  title: "Initialize Engineering Commission & Inquiries | Rishvin Labs",
+  description:
+    "Engage Rishvin Labs for custom software development, cybersecurity reviews, IoT system architecture, or full-stack engineering. Direct founder-led delivery.",
+  canonicalUrl: "https://rishvin-labs.vercel.app/contact",
+  keywords: [
+    "Contact Engineering Studio",
+    "Hire Full-Stack Engineer",
+    "Cybersecurity Review Inquiry",
+    "Software Development Commission",
+    "Rishvin Labs Contact",
+  ],
+});
 
 type Props = {
   searchParams: Promise<{ [key: string]: string | string[] | undefined }>
@@ -37,6 +53,10 @@ export default async function ContactPage({ searchParams }: Props) {
             <div className="flex items-center gap-1.5 text-zinc-500">
               <Clock className="w-3.5 h-3.5 text-zinc-400" />
               <span className="font-bold text-zinc-800">IST</span> · Hyderabad
+            </div>
+            <span className="h-3 w-px bg-zinc-200 hidden sm:inline-block" />
+            <div className="hidden sm:flex items-center gap-1 text-zinc-500">
+              <span className="font-semibold text-zinc-800">Udyam MSME</span> · UDYAM-TS-08-0110899
             </div>
           </div>
           <h1 className="text-5xl sm:text-6xl font-serif font-black tracking-tight text-zinc-950 mb-4">

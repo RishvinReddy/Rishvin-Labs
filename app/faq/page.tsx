@@ -5,19 +5,43 @@ import { FaqSectionFull } from "@/components/sections/faq-section";
 import { FAQ_CATEGORIES } from "@/data/faq";
 import Link from "next/link";
 import { ArrowRight, MessageSquare } from "lucide-react";
+import { constructMetadata } from "@/lib/seo/metadata";
+import { FAQSchema, BreadcrumbSchema } from "@/components/seo/schema";
 
-export const metadata = {
-  title: "FAQ — Rishvin Labs",
+export const metadata = constructMetadata({
+  title: "Frequently Asked Questions & Studio Engagements | Rishvin Labs",
   description:
-    "Answers to common questions about Rishvin Labs services, process, pricing, technology, security, and how to start a project.",
-};
+    "Answers to common questions about Rishvin Labs' founder-led engineering model, delivery process, technical stack, pricing tiers, and engagement architecture.",
+  canonicalUrl: "https://rishvin-labs.vercel.app/faq",
+  keywords: [
+    "Rishvin Labs FAQ",
+    "Engineering Studio FAQ",
+    "Founder-Led Delivery Process",
+    "Custom Software Pricing",
+    "Cybersecurity Review Questions",
+  ],
+});
 
 const totalQuestions = FAQ_CATEGORIES.reduce((n, c) => n + c.questions.length, 0);
+
+const faqSchemaItems = FAQ_CATEGORIES.flatMap((c) =>
+  c.questions.map((q) => ({
+    question: q.q,
+    answer: q.a,
+  }))
+);
 
 export default function FaqPage() {
   return (
     <main className="min-h-screen flex flex-col bg-[#fafafa] text-zinc-950 font-sans selection:bg-blue-600 selection:text-white">
       <Navbar />
+      <BreadcrumbSchema
+        items={[
+          { name: "Home", url: "/" },
+          { name: "FAQ", url: "/faq" },
+        ]}
+      />
+      <FAQSchema items={faqSchemaItems} />
 
       {/* ── HEADER ── */}
       <section className="relative pt-36 pb-14 px-6 text-center overflow-hidden border-b border-zinc-200">
@@ -55,10 +79,10 @@ export default function FaqPage() {
         <div className="max-w-2xl mx-auto text-center space-y-5">
           <div className="font-mono text-[10px] font-bold text-zinc-400 uppercase tracking-widest">Still have questions?</div>
           <h2 className="text-2xl font-serif font-bold text-zinc-950">
-            Describe your problem. We'll handle the rest.
+            Describe your problem. We&apos;ll handle the rest.
           </h2>
           <p className="text-sm text-zinc-500 leading-relaxed">
-            You don't need to know which service you need or what technology to use. Just tell us what you're trying to solve.
+            You don&apos;t need to know which service you need or what technology to use. Just tell us what you&apos;re trying to solve.
           </p>
           <Link
             href="/contact"

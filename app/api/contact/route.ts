@@ -134,14 +134,12 @@ export async function POST(req: Request) {
       );
     }
 
-    const internalEmailId = data?.data?.[0]?.id || "unknown";
-    const clientEmailId = data?.data?.[1]?.id || "unknown";
+    // Do not surface internal Resend message IDs to the client response
+    void data; // consumed for error check above
 
     return NextResponse.json({ 
       success: true, 
-      inquiryId: inquiryId, 
-      internalEmailId,
-      clientEmailId
+      inquiryId: inquiryId,
     });
 
   } catch (error) {

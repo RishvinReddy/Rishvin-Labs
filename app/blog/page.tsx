@@ -5,10 +5,13 @@ import { getAllContent } from "@/lib/mdx";
 import { constructMetadata } from "@/lib/seo/metadata";
 import { BookOpen } from "lucide-react";
 import { ContentCard } from "@/components/content/ContentCard";
+import { BreadcrumbSchema } from "@/components/seo/schema";
 
 export const metadata = constructMetadata({
-  title: "Engineering Blog | Rishvin Labs",
-  description: "Insights, post-mortems, and engineering philosophies from Rishvin Labs.",
+  title: "Engineering Blog & Technical Insights | Rishvin Labs",
+  description:
+    "In-depth engineering post-mortems, systems design reflections, and technical philosophies from Rishvin Labs.",
+  canonicalUrl: "https://rishvin-labs.vercel.app/blog",
 });
 
 export default function BlogPage() {
@@ -17,6 +20,12 @@ export default function BlogPage() {
   return (
     <main className="min-h-screen flex flex-col bg-[#fafafa] text-zinc-950 font-sans">
       <Navbar />
+      <BreadcrumbSchema
+        items={[
+          { name: "Home", url: "/" },
+          { name: "Blog", url: "/blog" },
+        ]}
+      />
       
       <section className="pt-40 pb-24 px-6">
         <div className="max-w-screen-xl mx-auto">

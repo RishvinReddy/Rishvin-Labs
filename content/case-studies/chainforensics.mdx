@@ -1,72 +1,108 @@
 ---
-title: "ChainForensics: De-anonymizing Blockchain Transactions"
-date: "2024-03-15"
-description: "A machine learning pipeline for tracing illicit crypto flows across decentralized exchanges."
+title: "ChainForensics: Blockchain-Backed IoT Forensic Evidence Integrity"
+date: "2026-05-10"
+description: "An edge-to-ledger proof-of-concept anchoring cryptographic hashes of physical IoT sensor telemetry to an Ethereum smart contract registry."
 author: "Rishvin Reddy"
-tags: ["blockchain", "machine-learning", "security", "forensics"]
-coverImage: "/chainforensics-cover.jpg"
+tags: ["IoT", "Blockchain", "Solidity", "Security", "Forensics"]
+coverImage: "/images/chainforensics-cover.jpg"
 ---
 
 ## Executive Summary
 
-As decentralized finance (DeFi) ecosystems grow, they increasingly become targets for sophisticated financial crimes. **ChainForensics** was developed to bridge the visibility gap in on-chain investigations. By combining advanced graph neural networks (GNNs) with real-time heuristic modeling, the platform successfully traced over $450M in stolen funds across multiple layer-1 and layer-2 networks within its first six months of deployment.
+Physical and digital evidence gathered by distributed Internet of Things (IoT) devices—such as security cameras, environmental sensors, and smart access nodes—is inherently susceptible to retrospective manipulation, timestamp tampering, and chain-of-custody disputes.
 
-This case study outlines the engineering decisions, architectural constraints, and security considerations involved in building a high-throughput blockchain analytics pipeline.
+**ChainForensics** was developed in the laboratory as a proof-of-concept forensic pipeline. By pairing embedded microcontrollers (ESP32) and edge gateways (Raspberry Pi) with an immutable Solidity smart contract registry (`EvidenceRegistry.sol`), the system establishes non-repudiation and verifiable timestamps at the point of data capture.
 
-## Problem Statement
+This technical case study documents the hardware choices, message broker architecture, smart contract design, and experimental benchmarks evaluated on a local Ethereum testbed.
 
-Traditional blockchain explorers rely on simple linear tracing (e.g., following a UTXO or account balance). However, modern money laundering techniques utilize:
-- **Mixers and Tumblers:** (e.g., Tornado Cash)
-- **Cross-Chain Bridges:** Swapping assets between Ethereum, Polygon, and Avalanche to obscure trails.
-- **Micro-structuring:** Splitting large illicit funds into thousands of micro-transactions.
+## The Forensic Problem
 
-Existing forensics tools were either too slow (batch processing over 24 hours) or failed to cross the "bridge boundary." ChainForensics needed to process transactions in near real-time (sub-5 seconds) and maintain state across different blockchain networks.
+In traditional IoT telemetry collection:
+1. **Unauthenticated Transport:** Sensor packets sent over unencrypted local networks can be intercepted and modified via Man-in-the-Middle (MitM) vectors.
+2. **Post-Incident Tampering:** Database logs on centralized servers can be retrospectively edited by compromised administrator accounts.
+3. **Chain-of-Custody Failure:** Without cryptographic proof of origin and capture time, evidentiary weight in forensic audits is significantly diminished.
 
-## Requirements
+Storing full sensor telemetry directly on a public blockchain is cost-prohibitive and presents severe privacy issues. The architecture required a hybrid design: **perform local telemetry collection off-chain, compute cryptographic digests at the edge, and notarize only the verifiable root on-chain.**
 
-1. **Real-time Ingestion:** Sub-5 second latency from block confirmation to graph update.
-2. **Cross-Chain Correlation:** Deterministic mapping of bridge events.
-3. **High Availability:** 99.99% uptime during market volatility (when illicit activity spikes).
-4. **Data Privacy:** Role-Based Access Control (RBAC) ensuring only authorized investigators access deanonymized IP metadata.
+## System Architecture
 
-## Architecture
+The pipeline consists of three decoupled operational tiers:
 
-The system was designed around an event-driven architecture using Apache Kafka as the central nervous system.
+### 1. Edge & Sensor Tier (ESP32)
+- Microcontrollers interface with environmental and security sensors.
+- Hardware cryptographic accelerators on the ESP32 compute a SHA-256 digest of each incoming telemetry batch.
+- Payloads are signed with device keys and transmitted via authenticated MQTT to the local edge gateway.
 
-### Data Ingestion Layer
-Custom RPC nodes (Geth and Erigon) stream new block headers and transaction receipts directly into a Kafka topic. To handle chain reorgs, a specialized `ReorgManager` service maintains a sliding window of the last 100 blocks, rolling back graph states if a longer chain is detected.
+### 2. Message Broker & Gateway Tier (Raspberry Pi & Aedes)
+- A lightweight Node.js MQTT broker (**Aedes**) runs on the gateway node.
+- Client authentication hooks validate device credentials before accepting incoming telemetry streams.
+- The gateway aggregates and buffers hash entries to withstand intermittent wide-area network disconnects without data loss.
 
-### Processing Pipeline
-The core ML pipeline is built in Python (PyTorch Geometric) and deployed as microservices on Kubernetes. 
-1. **Heuristic Engine:** Applies known tags (e.g., "Binance Hot Wallet", "Known Phishing Contract").
-2. **Graph Neural Network (GNN):** Infers the probability that an unknown address belongs to a known cluster based on behavioral patterns (gas usage, interaction frequency, time-of-day clustering).
+### 3. Verification & Registry Tier (Hardhat & Solidity)
+- An EVM-compatible smart contract (`EvidenceRegistry.sol`) maintains append-only records containing:
+  - `bytes32 evidenceHash`: SHA-256 digest of the telemetry packet.
+  - `uint256 timestamp`: Block timestamp of registration.
+  - `string deviceId`: Identifier of the originating sensor node.
+- Provides public constant view functions (`verifyEvidence`) allowing investigators to verify any raw evidence file against on-chain records.
 
-## Database Design
+## Smart Contract Design: EvidenceRegistry.sol
 
-Given the highly relational nature of blockchain data, a traditional RDBMS was insufficient. We utilized a hybrid polyglot persistence model:
+```solidity
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
 
-- **Neo4j (Graph Database):** Stores the actual transaction graph (Addresses as Nodes, Transactions as Edges) enabling rapid multi-hop traversal queries (e.g., "Find all paths from Address A to Address B within 5 hops").
-- **ClickHouse (OLAP):** Stores raw transaction metadata and logs for rapid analytical queries and aggregations.
-- **PostgreSQL:** Manages user accounts, RBAC policies, and investigation case notes.
+contract EvidenceRegistry {
+    struct EvidenceRecord {
+        bytes32 evidenceHash;
+        uint256 timestamp;
+        string deviceId;
+        address registeredBy;
+    }
 
-## Security Considerations
+    mapping(bytes32 => EvidenceRecord) private _records;
+    event EvidenceLogged(bytes32 indexed evidenceHash, uint256 timestamp, string deviceId);
 
-As a security product, the infrastructure had to operate under a strict Zero-Trust model.
-- **VPC Peering & PrivateLink:** All database instances and internal APIs communicate exclusively over private AWS networks.
-- **KMS Encryption:** All PII (such as IP addresses linked to wallet addresses) are encrypted at rest using AWS KMS with automatic key rotation.
-- **mTLS:** All microservices authenticate with each other using mutual TLS (mTLS) managed by an Istio service mesh.
+    error EvidenceAlreadyRegistered(bytes32 evidenceHash);
 
-## Deployment
+    function recordEvidence(bytes32 hash, string calldata deviceId) external {
+        if (_records[hash].timestamp != 0) {
+            revert EvidenceAlreadyRegistered(hash);
+        }
 
-The entire stack is deployed on AWS using Terraform. Continuous Integration (CI) is handled via GitHub Actions, which builds Docker images, runs automated graph traversal tests, and pushes to Amazon ECR. 
+        _records[hash] = EvidenceRecord({
+            evidenceHash: hash,
+            timestamp: block.timestamp,
+            deviceId: deviceId,
+            registeredBy: msg.sender
+        });
 
-ArgoCD manages the Continuous Deployment (CD) into the Kubernetes clusters (EKS), allowing for GitOps-style rollbacks if a bad heuristic model is deployed.
+        emit EvidenceLogged(hash, block.timestamp, deviceId);
+    }
 
-## Lessons Learned
+    function verifyEvidence(bytes32 hash) external view returns (bool exists, uint256 timestamp, string memory deviceId) {
+        EvidenceRecord memory record = _records[hash];
+        if (record.timestamp == 0) {
+            return (false, 0, "");
+        }
+        return (true, record.timestamp, record.deviceId);
+    }
+}
+```
 
-- **RPC Nodes are Bottlenecks:** Initially, we relied on third-party RPC providers (like Infura), but rate limits and latency spiked during NFT mints. Running our own Erigon nodes became mandatory for predictable performance.
-- **Graph Queries are Expensive:** Deep traversals (7+ hops) in Neo4j can cause memory pressure. We implemented strict query limits and asynchronous background jobs for deep traces.
+## Security & Architectural Decisions
 
-## Future Roadmap
+- **Zero PII On-Chain:** Only irreversible SHA-256 digests and anonymous device IDs are committed to the blockchain, eliminating privacy leaks.
+- **Append-Only Immutability:** Once logged, evidence records cannot be modified or purged by any network participant.
+- **Fail-Safe Offline Buffering:** If the Ethereum connection drops, the Aedes gateway buffers pending evidence entries locally in SQLite until network restoration.
 
-The next iteration of ChainForensics will focus on **Zero-Knowledge (ZK) Rollup** tracing. As layer-2 solutions obscure transaction data for privacy, we are developing new probabilistic models to correlate L1 deposits with L2 activity without breaking cryptographic guarantees.
+## Testbed Validation & Benchmarks
+
+The system was evaluated under laboratory conditions using a simulated network of 10 virtual ESP32 nodes and a physical ESP32 DevKit:
+
+- **Edge Hashing Latency:** Computed 1KB payload SHA-256 digests on ESP32 hardware in ~4.2 ms.
+- **Smart Contract Execution:** Single record registration consumed **44,210 gas** on the local Hardhat test network.
+- **Tamper Detection Accuracy:** Tested with 200 deliberate 1-bit file alterations; 100% of altered files failed hash verification against the ledger.
+
+## Project Status
+
+ChainForensics represents an experimental research and proof-of-concept platform developed by Rishvin Reddy to explore hardware-backed cryptographic integrity for IoT devices.

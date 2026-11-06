@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
 import Link from "next/link";
@@ -15,21 +15,19 @@ import {
 } from "lucide-react";
 
 export default function RecommendationPage() {
-  const [role, setRole] = useState<string>("");
+  const [role, setRole] = useState<string>(() => {
+    if (typeof window !== "undefined") {
+      const params = new URLSearchParams(window.location.search);
+      return params.get("role") || "";
+    }
+    return "";
+  });
   const [goal, setGoal] = useState<string>("");
   const [budget, setBudget] = useState<string>("");
   const [timeline, setTimeline] = useState<string>("");
   
   const [status, setStatus] = useState<"form" | "loading" | "result">("form");
   const [loadingStepText, setLoadingStepText] = useState<string>("Analyzing constraints...");
-
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      const params = new URLSearchParams(window.location.search);
-      const urlRole = params.get("role");
-      if (urlRole) setRole(urlRole);
-    }
-  }, []);
 
   const roles = [
     { id: "student", title: "Student" },

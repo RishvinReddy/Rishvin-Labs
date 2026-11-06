@@ -1,20 +1,28 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import { Clock, ArrowRight } from "lucide-react";
 
-export function ReadingHistory() {
-  const [history, setHistory] = useState<any[]>([]);
+interface HistoryItem {
+  url: string;
+  type: string;
+  title: string;
+}
 
-  useEffect(() => {
-    const stored = localStorage.getItem("readingHistory");
-    if (stored) {
-      try {
-        setHistory(JSON.parse(stored).slice(0, 3));
-      } catch (e) { }
+export function ReadingHistory() {
+  const [history] = useState<HistoryItem[]>(() => {
+    if (typeof window === "undefined") return [];
+    try {
+      const stored = localStorage.getItem("readingHistory");
+      if (stored) {
+        return (JSON.parse(stored) as HistoryItem[]).slice(0, 3);
+      }
+    } catch {
+      // Ignore JSON parse errors from local storage
     }
-  }, []);
+    return [];
+  });
 
   if (history.length === 0) return null;
 

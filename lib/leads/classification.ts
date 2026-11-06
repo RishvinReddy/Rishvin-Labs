@@ -1,13 +1,17 @@
-export function classifyLead(data: Record<string, any>): { category: string, priority: 'Low' | 'Medium' | 'High' | 'Critical' } {
-  const category = data.serviceId || data.serviceName || 'General Inquiry';
+export function classifyLead(data: Record<string, unknown>): { category: string; priority: 'Low' | 'Medium' | 'High' | 'Critical' } {
+  const serviceId = typeof data.serviceId === 'string' ? data.serviceId : undefined;
+  const serviceName = typeof data.serviceName === 'string' ? data.serviceName : undefined;
+  const category = serviceId || serviceName || 'General Inquiry';
   
   let priority: 'Low' | 'Medium' | 'High' | 'Critical' = 'Medium';
+  const budget = typeof data.budget === 'string' ? data.budget : '';
+  const timeline = typeof data.timeline === 'string' ? data.timeline : '';
   
-  if (data.budget && (data.budget.includes('$25k') || data.budget.includes('$50k+'))) {
+  if (budget && (budget.includes('$25k') || budget.includes('$50k+') || budget.includes('₹50,000+'))) {
     priority = 'High';
   }
   
-  if (data.timeline && data.timeline.toLowerCase().includes('immediate')) {
+  if (timeline && timeline.toLowerCase().includes('immediate')) {
     priority = priority === 'High' ? 'Critical' : 'High';
   }
 

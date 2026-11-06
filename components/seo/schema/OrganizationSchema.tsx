@@ -1,24 +1,40 @@
 import React from 'react';
+import { COMPANY } from '@/lib/business/company';
 
-import { siteConfig } from '@/lib/seo/site';
-
+/**
+ * Organization JSON-LD Schema
+ * Represents the Rishvin Labs Studio entity.
+ * Keeps personal accounts separated in the Person entity, referencing founder by @id.
+ */
 export function OrganizationSchema() {
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Organization',
-    '@id': `${siteConfig.url}/#rishvin-labs`,
-    name: siteConfig.name,
+    '@id': `${COMPANY.canonicalUrl}/#rishvin-labs`,
+    name: COMPANY.name,
+    legalName: COMPANY.legalName,
     alternateName: ["Rishvin Labs", "RishvinLabs"],
-    url: siteConfig.url,
-    logo: `${siteConfig.url}/logo.png`,
-    founder: {
-      '@id': `${siteConfig.url}/#rishvin-reddy`
-    },
+    url: COMPANY.canonicalUrl,
+    logo: `${COMPANY.canonicalUrl}/logo.png`,
+    image: `${COMPANY.canonicalUrl}/og-default.png`,
+    description: COMPANY.description,
     sameAs: [
-      siteConfig.socials.linkedin,
-      siteConfig.socials.github,
-      siteConfig.socials.twitter,
-    ].filter(Boolean),
+      COMPANY.linkedinCompanyUrl,
+    ],
+    identifier: {
+      '@type': 'PropertyValue',
+      name: 'Udyam Registration Number',
+      value: COMPANY.registration.registrationNumber
+    },
+    founder: {
+      '@id': `${COMPANY.canonicalUrl}/#rishvin-reddy`
+    },
+    contactPoint: {
+      '@type': 'ContactPoint',
+      contactType: 'Studio Inquiries & Client Engagements',
+      email: COMPANY.contactEmail,
+      url: `${COMPANY.canonicalUrl}/contact`
+    }
   };
 
   return (

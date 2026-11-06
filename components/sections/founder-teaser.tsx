@@ -3,7 +3,8 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, Globe } from "lucide-react";
+import { ArrowRight, Globe, GitBranch, Video, MessageSquare } from "lucide-react";
+import { COMPANY } from "@/lib/business/company";
 
 export function FounderTeaser() {
   return (
@@ -11,7 +12,7 @@ export function FounderTeaser() {
       
       {/* Top Bar */}
       <div className="flex justify-between items-center border-b border-zinc-800 px-6 py-3 font-mono text-xs text-zinc-400 tracking-widest uppercase bg-[#050505]">
-        <span>// SYS.ARCHITECT.01</span>
+        <span>{"// SYS.ARCHITECT.01"}</span>
         <span className="flex items-center gap-2">
           <span className="w-2 h-2 bg-emerald-500 rounded-full shadow-[0_0_8px_#10b981]" />
           <span>STATUS: ACTIVE _</span>
@@ -77,22 +78,70 @@ export function FounderTeaser() {
                 Rishvin Labs is founded and led by Rishvin Reddy, a Computer Science Engineering student and technology builder working across software engineering, cybersecurity, Internet of Things, embedded systems, blockchain and intelligent automation.
               </p>
               <p>
-                Rishvin's work focuses on building practical technology systems—from secure software and web applications to IoT monitoring platforms, automation systems and experimental engineering products.
+                Rishvin&apos;s work focuses on building practical technology systems&mdash;from secure software and web applications to IoT monitoring platforms, automation systems and experimental engineering products.
               </p>
               <p>
                 Alongside Rishvin Labs, he maintains a dedicated engineering portfolio documenting projects, technical work, experiments, skills and ongoing development.
               </p>
             </div>
-            <div>
+            <div className="flex flex-wrap items-center gap-4 pt-2">
               <a
-                href="https://rishvinreddy.vercel.app"
+                href={COMPANY.founder.portfolioUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 mt-4 text-blue-400 font-bold hover:text-blue-300 transition-colors group"
+                className="inline-flex items-center gap-2 text-blue-400 font-bold hover:text-blue-300 transition-colors group"
               >
-                <span>Explore Rishvin Reddy's Portfolio</span>
+                <span>Explore Personal Portfolio</span>
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </a>
+
+              <div className="flex items-center gap-2 pl-2 border-l border-zinc-800">
+                <a
+                  href={COMPANY.founder.githubUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-7 h-7 rounded-lg bg-zinc-900 border border-zinc-800 flex items-center justify-center text-zinc-400 hover:text-white hover:border-zinc-700 transition-all"
+                  title="GitHub Profile"
+                  aria-label="Founder GitHub"
+                >
+                  <GitBranch className="w-3.5 h-3.5" />
+                </a>
+
+                <a
+                  href={COMPANY.founder.linkedinUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-7 h-7 rounded-lg bg-zinc-900 border border-zinc-800 flex items-center justify-center text-zinc-400 hover:text-white hover:border-zinc-700 transition-all"
+                  title="LinkedIn Profile"
+                  aria-label="Founder LinkedIn"
+                >
+                  <svg viewBox="0 0 24 24" className="w-3.5 h-3.5" fill="currentColor">
+                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                  </svg>
+                </a>
+
+                <a
+                  href={COMPANY.founder.youtubeUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-7 h-7 rounded-lg bg-zinc-900 border border-zinc-800 flex items-center justify-center text-zinc-400 hover:text-red-400 hover:border-red-900/40 transition-all"
+                  title="YouTube Channel"
+                  aria-label="Founder YouTube"
+                >
+                  <Video className="w-3.5 h-3.5" />
+                </a>
+
+                <a
+                  href={COMPANY.founder.whatsappUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-7 h-7 rounded-lg bg-zinc-900 border border-zinc-800 flex items-center justify-center text-zinc-400 hover:text-emerald-400 hover:border-emerald-900/40 transition-all"
+                  title="WhatsApp Direct Contact"
+                  aria-label="Founder WhatsApp"
+                >
+                  <MessageSquare className="w-3.5 h-3.5" />
+                </a>
+              </div>
             </div>
           </div>
 
@@ -152,7 +201,7 @@ export function FounderTeaser() {
           {/* Footer Action Area */}
           <div className="flex flex-col sm:flex-row items-stretch bg-[#000000]">
             <Link
-              href="/founder"
+              href="/about/rishvin-reddy"
               className="flex-1 p-8 flex justify-between items-center border-b sm:border-b-0 sm:border-r border-zinc-800 text-decoration-none text-white hover:bg-white hover:text-black transition-all duration-300 group"
             >
               <span className="font-serif font-black text-xl sm:text-2xl tracking-tight">

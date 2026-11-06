@@ -8,78 +8,81 @@ export interface ServiceCategory {
 
 export const serviceCategories: ServiceCategory[] = [
   {
-    id: "business-website",
-    title: "High-performance Business Websites",
-    description: "Launch a professional digital presence optimized for conversion, performance, and clear business communication.",
+    id: "software-engineering",
+    title: "Software & Product Engineering",
+    description: "Architect and deliver high-performance web applications, SaaS platforms, internal business portals, and robust APIs tailored to your exact business requirements.",
     bestFor: [
-      "Startups needing a professional launch",
-      "Local businesses establishing credibility",
-      "Service businesses and professionals",
-      "Companies replacing outdated or slow websites"
+      "Startups requiring production-grade SaaS MVPs",
+      "Businesses replacing fragile spreadsheets with custom portals",
+      "Companies demanding high Core Web Vitals and SEO performance",
+      "Teams needing custom API backends and database architectures",
     ],
     services: [
-      "Business Websites",
-      "Landing Pages",
-      "Portfolio & Personal Brand Websites",
-      "Product Websites",
-      "Performance Optimization"
-    ]
+      "Custom Web Applications (Next.js, React)",
+      "Multi-Tenant SaaS Architectures",
+      "Administrative Dashboards & Client Portals",
+      "REST & WebSocket API Services",
+      "Database Modeling & Migration (PostgreSQL, Supabase)",
+      "Performance Tuning & Core Web Vitals Optimization",
+    ],
   },
   {
-    id: "custom-web-application",
-    title: "Custom Business Applications",
-    description: "Build robust, custom software that runs your business perfectly when off-the-shelf tools aren't enough.",
+    id: "cybersecurity",
+    title: "Cybersecurity & Digital Trust",
+    description: "Fortify applications and digital assets with defense-in-depth principles, rigorous input validation pipelines, authentication hardening, and forensic evidence integrity.",
     bestFor: [
-      "Startups building MVP SaaS products",
-      "Companies needing specialized internal tools",
-      "Businesses managing complex customer portals",
-      "Teams that have outgrown spreadsheets"
+      "Platforms handling sensitive customer PII or transaction data",
+      "Founders preparing for third-party security audits or compliance",
+      "Applications requiring role-based access control (RBAC)",
+      "Organizations auditing web vulnerabilities and threat surfaces",
     ],
     services: [
-      "Custom Web Applications",
-      "SaaS MVPs",
-      "Admin Dashboards",
-      "Internal Business Tools",
-      "Customer Portals",
-      "API Integrations"
-    ]
+      "Secure Application Architecture & Threat Modeling",
+      "Role-Based Access Control (RBAC) & Session Hardening",
+      "Application Vulnerability & Code Reviews",
+      "Defense-in-Depth Input Validation (Zod, CSP, CORS)",
+      "Digital Evidence Integrity & Forensic Architecture",
+      "Air-Gapped Optical Data Transfer Protocols",
+    ],
   },
   {
-    id: "business-automation",
-    title: "Automate Repetitive Business Operations",
-    description: "Reduce manual work, connect your disconnected tools, and build reliable operational systems.",
+    id: "iot-intelligent-systems",
+    title: "IoT & Intelligent Systems",
+    description: "Bridge the physical-digital divide with low-power microcontroller firmware, real-time telemetry sensor grids, message brokers, and verifiable edge logging.",
     bestFor: [
-      "Founders doing repetitive administrative work",
-      "Teams losing track of leads or customer follow-ups",
-      "Businesses with disconnected software tools",
-      "Operations relying on manual data entry"
+      "Hardware startups building connected device prototypes",
+      "Industrial or agricultural monitoring environments",
+      "Municipal infrastructure projects (e.g. smart waste/energy grids)",
+      "Teams needing real-time telemetry dashboards and alerts",
     ],
     services: [
-      "Workflow Automation",
-      "Lead Management Systems",
-      "CRM Workflows",
-      "Data Synchronization",
-      "Business Process Automation"
-    ]
+      "ESP32 & Microcontroller Firmware Prototyping (C++)",
+      "MQTT Telemetry Pipelines & Aedes Message Brokers",
+      "Ultrasonic & Environmental Sensor Interfacing",
+      "Low-Power Deep Sleep Telemetry Profiling",
+      "Real-Time Telemetry Web Dashboards & GIS Maps",
+      "Blockchain-Backed Evidence Notarization (Solidity)",
+    ],
   },
   {
-    id: "security-review",
-    title: "Security-focused Engineering",
-    description: "Protect your applications and data with security-conscious architecture built in from day one.",
+    id: "ai-automation",
+    title: "AI & Business Automation",
+    description: "Eliminate repetitive manual operations by coupling structured language model APIs with event-driven webhook pipelines, CRM syncs, and intelligent data extraction.",
     bestFor: [
-      "Applications handling sensitive customer data",
-      "Businesses needing strict authentication systems",
-      "Companies concerned about application vulnerabilities",
-      "Teams needing a baseline security review"
+      "Founders spending hours on manual administrative tasks",
+      "Sales teams losing track of qualified inbound leads",
+      "Businesses with disconnected software applications",
+      "Teams needing structured information extraction from documents",
     ],
     services: [
-      "Secure Application Development",
-      "Authentication Architecture",
-      "Security Reviews",
-      "Data Protection Implementation",
-      "Basic Security Hardening"
-    ]
-  }
+      "Event-Driven Webhook & Pipeline Automations",
+      "Inbound Lead Scoring, Qualification & CRM Sync",
+      "Structured LLM Knowledge Extraction & Summarization",
+      "Automated Transactional Email & Notification Systems",
+      "Cross-Platform Data Synchronization Workflows",
+      "Custom Internal Tooling & Automation Bots",
+    ],
+  },
 ];
 
 export interface EngagementModel {
@@ -93,59 +96,55 @@ export interface EngagementModel {
 
 export const engagementModels: EngagementModel[] = [
   {
-    id: "launch",
-    title: "Launch",
-    description: "For businesses that need a professional digital presence fast.",
+    id: "fixed-sprint",
+    title: "Fixed-Scope Sprint",
+    description: "Ideal for well-defined deliverables: landing pages, feature modules, or security audits with a clear scope.",
     scope: [
-      "Digital strategy & positioning",
-      "Responsive frontend design",
-      "Conversion-focused structure",
-      "Lead capture integration",
-      "Deployment & basic SEO"
+      "Defined timeline: 1 – 3 weeks",
+      "Fixed milestone pricing with zero surprise charges",
+      "Full source code and deployment handover",
+      "Post-launch verification and stabilization",
     ],
-    ctaText: "Discuss Your Website",
-    ctaLink: "/contact?service=business-website&source=services"
+    ctaText: "Start a Sprint",
+    ctaLink: "/contact?source=engagement-sprint",
   },
   {
-    id: "build",
-    title: "Build",
-    description: "For businesses that need a custom digital system or application.",
+    id: "custom-build",
+    title: "Bespoke System Build",
+    description: "Complete architectural design and development of end-to-end web platforms, IoT grids, or SaaS MVPs.",
     scope: [
-      "Requirements & architecture",
-      "UX structure & interface design",
-      "Frontend & backend engineering",
-      "Database & authentication",
-      "Testing & secure deployment"
+      "End-to-end architecture & database design",
+      "Bi-weekly milestone demonstrations and staging access",
+      "Strict type-safety and automated test coverage",
+      "Detailed technical documentation and handover",
     ],
-    ctaText: "Discuss Your Product",
-    ctaLink: "/contact?service=custom-web-application&source=services"
+    ctaText: "Commission a Build",
+    ctaLink: "/contact?source=engagement-build",
   },
   {
-    id: "automate",
-    title: "Automate",
-    description: "For businesses that want to reduce manual work and connect tools.",
+    id: "security-audit",
+    title: "Architecture & Security Audit",
+    description: "Thorough review of your existing application codebase, API attack surface, and database security rules.",
     scope: [
-      "Workflow mapping & analysis",
-      "API & tool integrations",
-      "Custom notification systems",
-      "CRM automation workflows",
-      "Operational dashboards"
+      "Static code analysis and vulnerability report",
+      "Authentication and authorization flow verification",
+      "Performance and database query optimization recommendations",
+      "Executive summary & engineer-level remediation checklist",
     ],
-    ctaText: "Automate My Workflow",
-    ctaLink: "/contact?service=business-automation&source=services"
+    ctaText: "Request Audit",
+    ctaLink: "/contact?source=engagement-audit",
   },
   {
-    id: "secure",
-    title: "Secure",
-    description: "For businesses that need security-conscious engineering improvements.",
+    id: "mentorship",
+    title: "Student & Mentorship Track",
+    description: "Structured technical mentorship, hackathon preparation, and portfolio reviews for students.",
     scope: [
-      "Architecture review",
-      "Authentication hardening",
-      "Secure data handling",
-      "Application security updates",
-      "Ongoing security recommendations"
+      "1-on-1 code reviews and architectural guidance",
+      "Hackathon demo architecture and pitching preparation",
+      "Technical resume and GitHub portfolio critique",
+      "Roadmaps for full-stack, cybersecurity, and IoT paths",
     ],
-    ctaText: "Discuss Security",
-    ctaLink: "/contact?service=security-review&source=services"
-  }
+    ctaText: "Explore Student Hub",
+    ctaLink: "/students",
+  },
 ];

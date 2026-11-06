@@ -13,13 +13,26 @@ import {
 import { BUSINESS_SERVICES, getServiceById } from "@/data/catalog/services-registry";
 import { FaqSectionCompact } from "@/components/sections/faq-section";
 import { LINKS } from "@/lib/constants";
+import { formatINR, toUSD } from "@/lib/currency";
 
-const BUDGET_OPTIONS = [
+const ENTERPRISE_BUDGET_OPTIONS = [
   "< ₹10,000",
   "₹10,000 – ₹50,000",
   "₹50,000 – ₹1,00,000",
   "₹1,00,000 – ₹2,00,000",
   "₹2,00,000+",
+];
+
+const STUDENT_BUDGET_OPTIONS = [
+  "Below ₹500",
+  "₹500 – ₹1,000",
+  "₹1,001 – ₹3,000",
+  "₹3,001 – ₹5,000",
+  "₹5,001 – ₹10,000",
+  "₹10,001 – ₹20,000",
+  "₹20,001 – ₹30,000",
+  "Above ₹30,000",
+  "Not sure — request guidance",
 ];
 
 const TIMELINES = [
@@ -52,6 +65,29 @@ export function ContactForm({
   const router = useRouter();
   const preselectedService = initialServiceId ? getServiceById(initialServiceId) : undefined;
 
+  const isStudentInquiry = Boolean(
+    source?.toLowerCase().includes("student") ||
+    preselectedService?.category === "Student Program" ||
+    preselectedService?.category === "Student Support" ||
+    preselectedService?.category === "Specialist Service"
+  );
+
+  const budgetOptions = isStudentInquiry ? STUDENT_BUDGET_OPTIONS : ENTERPRISE_BUDGET_OPTIONS;
+
+  const getInitialBudgetIndex = () => {
+    if (!isStudentInquiry) return 2;
+    const price = preselectedService?.pricing?.startingPrice;
+    if (!price) return 1;
+    if (price <= 500) return 0;
+    if (price <= 1000) return 1;
+    if (price <= 3000) return 2;
+    if (price <= 5000) return 3;
+    if (price <= 10000) return 4;
+    if (price <= 20000) return 5;
+    if (price <= 30000) return 6;
+    return 7;
+  };
+
   // Step state
   const [step, setStep] = useState(1);
   const [showFullGrid, setShowFullGrid] = useState(!preselectedService);
@@ -59,7 +95,7 @@ export function ContactForm({
   // Form State
   const [selectedServices, setSelectedServices] = useState<string[]>(preselectedService ? [preselectedService.id] : []);
   const [timeline, setTimeline] = useState("1–3 Months");
-  const [budgetIndex, setBudgetIndex] = useState(2);
+  const [budgetIndex, setBudgetIndex] = useState(getInitialBudgetIndex);
   const [contactChannel, setContactChannel] = useState("Email");
   const [honeypot, setHoneypot] = useState("");
 
@@ -135,8 +171,13 @@ export function ContactForm({
       
       serviceId: primaryServiceId,
       serviceName: serviceNames,
+      servicePrice: preselectedService?.pricing 
+        ? (preselectedService.pricing.type === "fixed" 
+            ? `₹${formatINR(preselectedService.pricing.startingPrice)}` 
+            : `Starting at ₹${formatINR(preselectedService.pricing.startingPrice)}`)
+        : undefined,
       source: source || "direct",
-      budget: BUDGET_OPTIONS[budgetIndex],
+      budget: budgetOptions[budgetIndex],
       budget_flexibility,
       timeline,
       expected_start,
@@ -169,8 +210,9 @@ export function ContactForm({
       if (!response.ok || !data.success) throw new Error(data.message || "Failed to dispatch email");
       setInquiryId(data.inquiry_id || "RL-PENDING");
       setSubmitted(true);
-    } catch (err: any) {
-      setSendError(err.message || "Failed to send. Please email rishvinreddy@gmail.com directly.");
+    } catch (err: unknown) {
+      const message = err instanceof Error ? err.message : "Failed to send. Please email rishvinreddy@gmail.com directly.";
+      setSendError(message);
     } finally {
       setSending(false);
     }
@@ -282,12 +324,39 @@ export function ContactForm({
                     </div>
 
                     {!showFullGrid && preselectedService ? (
-                      <div className="relative bg-gradient-to-br from-blue-50 to-indigo-50/30 border border-blue-200 rounded-2xl p-5">
+                      <div className="relative bg-gradient-to-br from-blue-50 to-indigo-50/30 border border-blue-200 rounded-2xl p-6 shadow-xs">
                         <div className="flex items-start justify-between gap-4">
                           <div>
-                            <div className="font-mono text-[10px] font-bold uppercase tracking-widest text-blue-600 mb-1.5">You're enquiring about</div>
-                            <div className="text-lg font-serif font-bold text-zinc-950 mb-0.5">{preselectedService.name}</div>
-                            <div className="text-xs text-zinc-500 font-mono uppercase tracking-wider">{preselectedService.category}</div>
+                            <div className="font-mono text-[10px] font-bold uppercase tracking-widest text-blue-600 mb-1.5">You&apos;re enquiring about</div>
+                            <div className="text-xl font-serif font-bold text-zinc-950 mb-1">{preselectedService.name}</div>
+                            <div className="text-xs text-zinc-500 font-mono uppercase tracking-wider mb-3">{preselectedService.category}</div>
+
+                            {/* Authoritative Canonical Price Display */}
+                            {preselectedService.pricing && (
+                              <div className="inline-flex flex-wrap items-center gap-2 bg-white border border-blue-200 px-3.5 py-1.5 rounded-xl shadow-xs mb-3">
+                                <span className="font-mono text-[10px] uppercase font-bold text-zinc-400">
+                                  {preselectedService.pricing.type === "fixed" ? "Fixed Package Price:" : "Indicative Starting Rate:"}
+                                </span>
+                                <span className="font-mono text-base font-black text-blue-700">
+                                  {preselectedService.pricing.type === "starting" ? "Starting at " : ""}₹{formatINR(preselectedService.pricing.startingPrice)}
+                                </span>
+                                <span className="text-xs font-mono text-zinc-400 font-semibold">
+                                  ({toUSD(preselectedService.pricing.startingPrice)})
+                                </span>
+                              </div>
+                            )}
+
+                            {preselectedService.targetAudience && (
+                              <p className="text-xs text-zinc-600 font-sans mb-2">
+                                <strong>Target:</strong> {preselectedService.targetAudience}
+                              </p>
+                            )}
+
+                            <p className="text-[11px] text-zinc-500 font-mono leading-relaxed max-w-lg">
+                              {preselectedService.pricing?.type === "fixed"
+                                ? "Defined fixed-scope package. Final quotation includes all listed deliverables without hidden extras."
+                                : "Indicative starting price. Final quote depends on issue complexity, codebase size, and specific integrations."}
+                            </p>
                           </div>
                           <button type="button" onClick={() => setShowFullGrid(true)} className="flex items-center gap-1.5 px-3 py-1.5 bg-white border border-blue-200 rounded-lg text-[10px] font-mono font-bold uppercase tracking-widest text-blue-600 hover:bg-blue-50 transition-colors shrink-0">
                             <RotateCcw className="w-3 h-3" /> Change
@@ -340,18 +409,34 @@ export function ContactForm({
 
                     <div>
                       <div className="flex justify-between items-baseline mb-4">
-                        <label className={labelCls + " mb-0"}>Estimated Budget</label>
-                        <span className="font-mono text-lg font-extrabold text-blue-600 tabular-nums">{BUDGET_OPTIONS[budgetIndex]}</span>
+                        <label className={labelCls + " mb-0"}>
+                          {isStudentInquiry ? "Student Project / Session Budget" : "Estimated Budget"}
+                        </label>
+                        <span className="font-mono text-lg font-extrabold text-blue-600 tabular-nums">{budgetOptions[budgetIndex]}</span>
                       </div>
                       <div className="relative">
-                        <input type="range" min="0" max={BUDGET_OPTIONS.length - 1} value={budgetIndex} onChange={e => setBudgetIndex(parseInt(e.target.value))} className="w-full h-2 bg-zinc-200 rounded-full appearance-none cursor-pointer accent-blue-600" />
+                        <input type="range" min="0" max={budgetOptions.length - 1} value={budgetIndex} onChange={e => setBudgetIndex(parseInt(e.target.value))} className="w-full h-2 bg-zinc-200 rounded-full appearance-none cursor-pointer accent-blue-600" />
                         <div className="flex justify-between mt-2 px-0.5">
-                          {BUDGET_OPTIONS.map((_, i) => <div key={i} className={`w-1 h-1 rounded-full ${i <= budgetIndex ? "bg-blue-600" : "bg-zinc-300"}`} />)}
+                          {budgetOptions.map((_, i) => <div key={i} className={`w-1 h-1 rounded-full ${i <= budgetIndex ? "bg-blue-600" : "bg-zinc-300"}`} />)}
                         </div>
                       </div>
                       <div className="flex justify-between mt-1 font-mono text-[9px] text-zinc-400 font-bold uppercase">
-                        <span>{"< ₹10K"}</span><span>₹2,00,000+</span>
+                        <span>{budgetOptions[0]}</span><span>{budgetOptions[budgetOptions.length - 1]}</span>
                       </div>
+
+                      {preselectedService?.pricing && (
+                        <div className="mt-4 p-4 rounded-xl bg-blue-50/70 border border-blue-200/80 text-xs text-zinc-700 font-sans leading-relaxed">
+                          {preselectedService.pricing.type === "fixed" ? (
+                            <span>
+                              <strong>Fixed Package Note:</strong> You have selected <strong>{preselectedService.name}</strong> at <strong>₹{formatINR(preselectedService.pricing.startingPrice)}</strong>. The budget slider above helps us know if you want custom extensions or third-party add-ons beyond the fixed deliverables.
+                            </span>
+                          ) : (
+                            <span>
+                              <strong>Indicative Starting Rate:</strong> <strong>{preselectedService.name}</strong> starts at <strong>₹{formatINR(preselectedService.pricing.startingPrice)}</strong>. Choose your expected budget threshold so we can tailor the technical triage or engineering sprint accordingly.
+                            </span>
+                          )}
+                        </div>
+                      )}
                     </div>
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -670,6 +755,43 @@ export function ContactForm({
                 </div>
               ))}
             </div>
+          </div>
+        </div>
+
+        {/* Business Registration Credibility Indicator */}
+        <div className="bg-white border border-zinc-200 rounded-3xl p-6 shadow-sm">
+          <div className="flex items-center gap-2 mb-3">
+            <span className="w-2 h-2 rounded-full bg-emerald-500 shrink-0" />
+            <span className="font-mono text-[10px] font-bold text-zinc-400 uppercase tracking-widest">
+              Business Registration
+            </span>
+          </div>
+
+          <div className="flex items-start gap-3">
+            <div className="w-9 h-9 rounded-xl bg-blue-50 border border-blue-200 text-blue-600 flex items-center justify-center shrink-0">
+              <ShieldCheck className="w-4 h-4" />
+            </div>
+            <div className="min-w-0 flex-1">
+              <div className="font-serif font-bold text-sm text-zinc-950 mb-0.5">
+                Udyam Registered MSME
+              </div>
+              <div className="font-mono text-[10px] text-zinc-500 mb-2">
+                Govt. of India · UDYAM-TS-08-0110899
+              </div>
+              <p className="text-xs text-zinc-600 font-sans leading-relaxed">
+                Registered under the Government of India&apos;s Ministry of Micro, Small and Medium Enterprises framework.
+              </p>
+            </div>
+          </div>
+
+          <div className="mt-4 pt-3 border-t border-zinc-100 flex items-center justify-between text-[11px] font-mono">
+            <span className="text-zinc-400">Class: Micro (Services)</span>
+            <a
+              href="/about#credentials"
+              className="text-blue-600 hover:text-blue-800 font-bold transition-colors"
+            >
+              Verify Details &rarr;
+            </a>
           </div>
         </div>
       </div>

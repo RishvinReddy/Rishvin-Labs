@@ -5,30 +5,47 @@ import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
 import { projects } from "@/data/projects";
 import Link from "next/link";
-import { ArrowRight, Search } from "lucide-react";
+import { ArrowRight, Search, FileCode2 } from "lucide-react";
 
-export default function ProjectsPage() {
+export default function WorkPortfolioPage() {
   const [activeFilter, setActiveFilter] = useState<string>("all");
   const [searchQuery, setSearchQuery] = useState<string>("");
 
   const filteredProjects = useMemo(() => {
     return projects.filter((proj) => {
-      const matchesFilter = activeFilter === "all" || proj.category === activeFilter;
-      const matchesSearch = 
+      const matchesFilter =
+        activeFilter === "all" ||
+        proj.categorySlug === activeFilter ||
+        proj.category === activeFilter;
+      const matchesSearch =
         proj.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        proj.solution.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        proj.technologies.some(t => t.toLowerCase().includes(searchQuery.toLowerCase()));
+        proj.subtitle.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        proj.problem.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        proj.technologies.some((t) => t.toLowerCase().includes(searchQuery.toLowerCase()));
       return matchesFilter && matchesSearch;
     });
   }, [activeFilter, searchQuery]);
 
   const filters = [
-    { id: "all", label: "All" },
-    { id: "iot", label: "IoT" },
-    { id: "cybersecurity", label: "Cybersecurity" },
-    { id: "software", label: "Software" },
-    { id: "automation", label: "Automation" },
+    { id: "all", label: "All Systems" },
+    { id: "software", label: "Software & Products" },
+    { id: "cybersecurity", label: "Cybersecurity & Trust" },
+    { id: "iot", label: "IoT & Intelligent Systems" },
   ];
+
+  const getStatusColor = (status: string) => {
+    switch (status) {
+      case "Production Ready":
+      case "Working Tool":
+        return "bg-emerald-50 text-emerald-700 border-emerald-200";
+      case "Working Prototype":
+        return "bg-blue-50 text-blue-700 border-blue-200";
+      case "Research & PoC":
+        return "bg-purple-50 text-purple-700 border-purple-200";
+      default:
+        return "bg-zinc-100 text-zinc-700 border-zinc-200";
+    }
+  };
 
   return (
     <main className="min-h-screen flex flex-col bg-[#fafafa] text-zinc-950 font-sans selection:bg-blue-600 selection:text-white">
@@ -38,19 +55,19 @@ export default function ProjectsPage() {
       <section className="pt-40 pb-20 px-6 bg-white border-b border-zinc-200 text-center relative overflow-hidden">
         <div className="max-w-4xl mx-auto">
           <span className="font-mono text-xs font-semibold text-blue-600 uppercase tracking-widest mb-6 inline-block">
-            Portfolio of Systems
+            Evidence-Driven Systems Portfolio
           </span>
           <h1 className="text-4xl sm:text-6xl md:text-7xl font-serif font-black tracking-tight text-zinc-950 mb-6 max-w-3xl mx-auto leading-tight">
-            Engineering <span className="text-blue-600 font-normal italic">Case Studies.</span>
+            Engineered <span className="text-blue-600 font-normal italic">Systems.</span>
           </h1>
           <p className="text-lg sm:text-xl text-zinc-600 max-w-2xl mx-auto leading-relaxed font-sans">
-            High-performance systems architected for scale, security, and precision&mdash;from concept to production.
+            Real software platforms, IoT hardware pipelines, and security architectures. Documented with actual component designs and verified benchmarks.
           </p>
         </div>
       </section>
 
       {/* 2. FILTER & SEARCH BAR */}
-      <section className="bg-white border-b border-zinc-200 py-4 px-6 sticky top-20 z-40 shadow-sm">
+      <section className="bg-white border-b border-zinc-200 py-4 px-6 sticky top-20 z-40 shadow-xs">
         <div className="max-w-screen-2xl mx-auto flex flex-wrap items-center justify-between gap-4">
           <div className="flex flex-wrap items-center gap-2">
             {filters.map((f) => (
@@ -59,7 +76,7 @@ export default function ProjectsPage() {
                 onClick={() => setActiveFilter(f.id)}
                 className={`px-4 py-2 rounded-xl font-mono text-xs font-semibold uppercase tracking-wider transition-all ${
                   activeFilter === f.id
-                    ? "bg-zinc-950 text-white shadow-sm"
+                    ? "bg-zinc-950 text-white shadow-xs"
                     : "bg-[#fafafa] text-zinc-700 border border-zinc-200 hover:border-blue-600 hover:text-blue-600"
                 }`}
               >
@@ -68,13 +85,13 @@ export default function ProjectsPage() {
             ))}
           </div>
 
-          <div className="flex items-center gap-2 bg-[#fafafa] border border-zinc-200 rounded-xl px-4 py-2 w-full sm:w-64 focus-within:border-blue-600 focus-within:bg-white transition-all">
+          <div className="flex items-center gap-2 bg-[#fafafa] border border-zinc-200 rounded-xl px-4 py-2 w-full sm:w-72 focus-within:border-blue-600 focus-within:bg-white transition-all">
             <Search className="w-4 h-4 text-zinc-400 shrink-0" />
             <input
               type="text"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              placeholder="Search projects..."
+              placeholder="Search architecture or tech..."
               className="bg-transparent border-none outline-none font-mono text-xs text-zinc-800 placeholder:text-zinc-400 w-full"
             />
           </div>
@@ -86,12 +103,13 @@ export default function ProjectsPage() {
         <div className="max-w-screen-2xl mx-auto">
           {filteredProjects.length === 0 ? (
             <div className="text-center py-24">
-              <p className="font-mono text-sm text-zinc-500 uppercase">// NO_SYSTEMS_FOUND_MATCHING_CRITERIA</p>
+              <p className="font-mono text-sm text-zinc-500 uppercase">
+                {"// NO_SYSTEMS_FOUND_MATCHING_CRITERIA"}
+              </p>
             </div>
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {filteredProjects.map((project, idx) => {
-                const isLive = project.id !== "project-vault";
                 return (
                   <Link
                     key={project.id}
@@ -100,32 +118,33 @@ export default function ProjectsPage() {
                   >
                     <div>
                       <div className="flex items-center justify-between mb-6 pb-4 border-b border-zinc-100">
-                        <span className="font-mono text-xs font-bold text-blue-600 uppercase tracking-widest">
-                          [ {project.category} ]
+                        <span className="font-mono text-[11px] font-bold text-blue-600 uppercase tracking-widest truncate max-w-[180px]">
+                          {project.category}
                         </span>
                         <span
-                          className={`font-mono text-[10px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider ${
-                            isLive
-                              ? "bg-emerald-50 text-emerald-700 border border-emerald-200"
-                              : "bg-amber-50 text-amber-700 border border-amber-200"
-                          }`}
+                          className={`font-mono text-[10px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider border ${getStatusColor(
+                            project.status
+                          )}`}
                         >
-                          {isLive ? "Live" : "Concept"}
+                          {project.status}
                         </span>
                       </div>
 
                       <div className="font-mono text-xs text-zinc-400 mb-2">0{idx + 1}</div>
-                      <h3 className="text-xl font-bold text-zinc-950 mb-3 group-hover:text-blue-600 transition-colors">
+                      <h3 className="text-2xl font-serif font-bold text-zinc-950 mb-1 group-hover:text-blue-600 transition-colors">
                         {project.title}
                       </h3>
+                      <div className="text-xs font-mono text-zinc-500 mb-4">
+                        {project.subtitle}
+                      </div>
                       <p className="text-zinc-600 text-sm leading-relaxed mb-8">
-                        {project.solution}
+                        {project.problem}
                       </p>
                     </div>
 
                     <div>
                       <div className="flex flex-wrap gap-1.5 mb-6">
-                        {project.technologies.slice(0, 3).map((tech) => (
+                        {project.technologies.slice(0, 4).map((tech) => (
                           <span
                             key={tech}
                             className="font-mono text-[10px] px-2.5 py-1 bg-[#fafafa] border border-zinc-200 rounded-md text-zinc-600"
@@ -135,8 +154,11 @@ export default function ProjectsPage() {
                         ))}
                       </div>
 
-                      <div className="pt-4 border-t border-zinc-100 flex items-center justify-between font-semibold text-sm text-zinc-950 group-hover:text-blue-600 transition-colors">
-                        <span>View Architecture</span>
+                      <div className="pt-4 border-t border-zinc-100 flex items-center justify-between font-semibold text-xs font-mono uppercase tracking-wider text-zinc-950 group-hover:text-blue-600 transition-colors">
+                        <span className="flex items-center gap-1.5">
+                          <FileCode2 className="w-4 h-4" />
+                          View Case Study
+                        </span>
                         <ArrowRight className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" />
                       </div>
                     </div>
@@ -152,11 +174,14 @@ export default function ProjectsPage() {
       <section className="py-24 bg-white border-t border-zinc-200 px-6 text-center">
         <div className="max-w-3xl mx-auto">
           <span className="font-mono text-xs font-semibold text-blue-600 uppercase tracking-widest mb-3 block">
-            [ Next Project ]
+            [ Commission Engineering ]
           </span>
-          <h2 className="text-3xl sm:text-5xl font-serif font-bold tracking-tight text-zinc-950 mb-8 leading-tight">
-            Let&apos;s build something <span className="text-blue-600 font-normal italic">intelligent.</span>
+          <h2 className="text-3xl sm:text-5xl font-serif font-bold tracking-tight text-zinc-950 mb-6 leading-tight">
+            Have a system to <span className="text-blue-600 font-normal italic">architect?</span>
           </h2>
+          <p className="text-zinc-600 text-base sm:text-lg mb-8 max-w-xl mx-auto">
+            From proof-of-concept hardware prototypes to multi-tenant SaaS architectures, we build reliable technology for real business problems.
+          </p>
           <div className="flex flex-wrap items-center justify-center gap-4">
             <Link
               href="/contact?source=work"
@@ -167,9 +192,9 @@ export default function ProjectsPage() {
             </Link>
             <Link
               href="/services"
-              className="inline-flex items-center gap-2 px-8 py-4 rounded-2xl bg-white border border-zinc-300 text-zinc-950 font-semibold text-base hover:border-blue-600 hover:text-blue-600 transition-all shadow-sm"
+              className="inline-flex items-center gap-2 px-8 py-4 rounded-2xl bg-white border border-zinc-300 text-zinc-950 font-semibold text-base hover:border-blue-600 hover:text-blue-600 transition-all shadow-xs"
             >
-              <span>View Services</span>
+              <span>Explore Services</span>
             </Link>
           </div>
         </div>

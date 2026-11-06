@@ -15,23 +15,33 @@ const FILTERS: { label: string; value: ContentType | 'all' }[] = [
   { label: "Resources", value: "resources" },
 ];
 
+interface SearchResult {
+  type: string;
+  slug: string;
+  url: string;
+  title: string;
+  description: string;
+  publishedAt?: string;
+}
+
 export function SearchDialog({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) {
   const [query, setQuery] = useState("");
   const [filter, setFilter] = useState<ContentType | 'all'>('all');
   const [isSearching, setIsSearching] = useState(false);
-  const [results, setResults] = useState<any[]>([]);
-  const [recentSearches, setRecentSearches] = useState<string[]>([]);
-  const inputRef = useRef<HTMLInputElement>(null);
-
-  useEffect(() => {
-    // Load recent searches
-    const stored = localStorage.getItem("recentSearches");
-    if (stored) {
-      try {
-        setRecentSearches(JSON.parse(stored).slice(0, 5));
-      } catch (e) { }
+  const [results, setResults] = useState<SearchResult[]>([]);
+  const [recentSearches, setRecentSearches] = useState<string[]>(() => {
+    if (typeof window === "undefined") return [];
+    try {
+      const stored = localStorage.getItem("recentSearches");
+      if (stored) {
+        return (JSON.parse(stored) as string[]).slice(0, 5);
+      }
+    } catch {
+      // Ignore JSON parse errors
     }
-  }, []);
+    return [];
+  });
+  const inputRef = useRef<HTMLInputElement>(null);
 
   const saveRecentSearch = (term: string) => {
     if (!term.trim()) return;
@@ -186,7 +196,7 @@ export function SearchDialog({ isOpen, onClose }: { isOpen: boolean; onClose: ()
               <div className="px-2 py-2 text-[10px] font-mono font-bold text-zinc-400 uppercase tracking-widest flex items-center justify-between">
                 <span>{results.length} Results Found</span>
               </div>
-              {results.map((result: any) => (
+              {results.map((result: SearchResult) => (
                 <Link
                   key={`${result.type}-${result.slug}`}
                   href={result.url}
@@ -219,7 +229,7 @@ export function SearchDialog({ isOpen, onClose }: { isOpen: boolean; onClose: ()
                 <Search className="w-6 h-6 text-zinc-400" />
               </div>
               <h3 className="text-lg font-bold text-zinc-950 mb-2">No results found</h3>
-              <p className="text-zinc-500 text-sm">We couldn't find anything matching "{query}". Try adjusting your filters or terms.</p>
+              <p className="text-zinc-500 text-sm">We couldn&apos;t find anything matching &ldquo;{query}&rdquo;. Try adjusting your filters or terms.</p>
             </div>
           )}
         </div>

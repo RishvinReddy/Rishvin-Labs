@@ -51,7 +51,7 @@ export default function AIDevelopmentPage() {
             <div>
               <h2 className="text-3xl font-serif font-bold text-zinc-900 mb-6">Beyond the Hype</h2>
               <p className="text-zinc-600 mb-4 leading-relaxed">
-                Artificial Intelligence is transitioning from a novelty to a fundamental layer of modern software. However, generic wrappers around ChatGPT aren't enough to solve complex business problems.
+                Artificial Intelligence is transitioning from a novelty to a fundamental layer of modern software. However, generic wrappers around ChatGPT aren&apos;t enough to solve complex business problems.
               </p>
               <p className="text-zinc-600 leading-relaxed">
                 We focus on integrating AI deeply into your existing infrastructure. This means connecting models to your private data stores securely, and giving AI agents the ability to take actions in your external software platforms.
@@ -86,7 +86,7 @@ export default function AIDevelopmentPage() {
       <section className="py-24 px-6 text-center bg-zinc-50 border-t border-zinc-200">
         <h2 className="text-3xl font-serif font-bold mb-6">Build your AI advantage.</h2>
         <p className="text-zinc-600 mb-8 max-w-xl mx-auto">
-          From internal productivity tools to customer-facing AI products, let's architect a solution that drives value.
+          From internal productivity tools to customer-facing AI products, let&apos;s architect a solution that drives value.
         </p>
         <Link 
           href="/contact?service=ai-development" 

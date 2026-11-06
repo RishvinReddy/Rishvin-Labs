@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import { Cpu } from "lucide-react";
 
 export function TechMarquee() {
   const technologies = [
@@ -39,7 +38,7 @@ export function TechMarquee() {
           {[...technologies, ...technologies].map((tech, idx) => (
             <div key={idx} className="inline-flex items-center mx-4 group cursor-default">
               <span className="font-mono text-[10px] text-zinc-500 mr-2 group-hover:text-blue-500 transition-colors">
-                //
+                {"//"}
               </span>
               <span className="font-mono text-[11px] font-semibold tracking-wider text-zinc-400 group-hover:text-white transition-colors uppercase">
                 {tech}

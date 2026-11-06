@@ -12,6 +12,8 @@ export interface ServiceItem {
   description?: string;
   popular?: boolean;
   features?: string[];
+  exclusions?: string[];
+  targetAudience?: string;
 }
 
 export interface ServiceCategory {
@@ -50,5 +52,7 @@ export interface Package {
   description: string;
   popular?: boolean;
   features: string[];
+  exclusions?: string[];
+  targetAudience?: string;
   ctaLabel?: string;
 }

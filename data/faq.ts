@@ -68,12 +68,12 @@ export const FAQ_CATEGORIES: FaqCategory[] = [
     id: "pricing",
     label: "Pricing",
     questions: [
-      { q: "How much does a project cost?", a: "There is no single price for every project. Pricing depends on scope, complexity, integrations, timeline, infrastructure, and support requirements. The initial discussion helps establish this." },
-      { q: "Do you have fixed-price packages?", a: "Yes. Some clearly defined services are offered as fixed-price packages. Custom scopes are quoted separately after understanding the requirements." },
-      { q: "Can I get a quote before starting?", a: "Yes. The initial discussion can establish the requirements needed to determine an appropriate scope and estimate before any commitment is made." },
-      { q: "Do you offer monthly retainers?", a: "For suitable ongoing requirements, a recurring support or engineering engagement can be considered and structured appropriately." },
-      { q: "Do you offer audits or consultations?", a: "Yes. Smaller engagements are useful when you need architecture guidance, technical assessment, debugging, security review, or planning before committing to a larger build." },
-      { q: "Why don't you show prices for everything?", a: "Because two projects with the same general description can have very different technical requirements. A meaningful estimate requires understanding the actual problem, not just a category label." },
+      { q: "How much does a project cost?", a: "Our published service catalogue features transparent starting prices ranging from ₹300 for discrete micro-tasks to ₹30,000+ for custom multi-tier engineering sprints. Starter packages range from ₹2,999 to ₹14,999, with dedicated a la carte add-ons (from ₹1,000) and monthly continuous care retainers (from ₹1,500/mo). We provide a clear itemized breakdown before any work begins." },
+      { q: "Do you have fixed-price packages?", a: "Yes. We offer 14 curated fixed-scope packages with explicit deliverables, base assumptions, and turnaround estimates — from ₹300 Quick Fixes and ₹2,999 Launch Websites to ₹14,999 Storefront Starters and ₹24,999 Custom Business Applications." },
+      { q: "Can I get a quote before starting?", a: "Yes. You can use our interactive Project Estimate Builder on the Services page for an instant indicative estimate, or submit your specification via our Contact page to receive a formal written proposal with guaranteed milestone checkpoints within 24 hours." },
+      { q: "Do you offer monthly retainers?", a: "Yes. We provide 3 transparent monthly engineering care plans: Essential Care (₹1,500/mo, 1 hr developer time), Standard Care (₹3,500/mo, 3 hrs developer time + 24h SLA), and Extended Care (₹7,500/mo, 8 hrs developer time + same-day SLA). Unused hours roll over for up to 30 days." },
+      { q: "Do you offer audits or consultations?", a: "Yes. We offer fixed-price architectural assessments, code reviews, and cybersecurity/compliance audits starting at ₹1,999 to ₹4,999. These provide actionable findings and remediation steps before committing to larger builds." },
+      { q: "Why don't you show prices for everything?", a: "We publish starting prices and base scopes for all 36 engineering groups on our Services catalogue. However, for projects exceeding ₹30,000 or involving bespoke enterprise integrations, final quotations depend on specific third-party APIs, compliance standards, and concurrency scale." },
     ]
   },
   {

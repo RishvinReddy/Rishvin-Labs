@@ -1,4 +1,4 @@
-export function validateContactPayload(body: any): { valid: boolean, error?: string } {
+export function validateContactPayload(body: Record<string, unknown> | null | undefined): { valid: boolean; error?: string } {
   if (!body) return { valid: false, error: "Empty payload" };
 
   if (body.honeypot) {
@@ -6,47 +6,54 @@ export function validateContactPayload(body: any): { valid: boolean, error?: str
   }
 
   // Helper to trim and measure length safely
-  const trimLen = (val: any) => (typeof val === 'string' ? val.trim().length : 0);
+  const trimLen = (val: unknown) => (typeof val === 'string' ? val.trim().length : 0);
 
-  if (!body.from_name || typeof body.from_name !== 'string' || trimLen(body.from_name) === 0) {
+  const fromName = typeof body.from_name === 'string' ? body.from_name : '';
+  const fromEmail = typeof body.from_email === 'string' ? body.from_email : '';
+  const company = typeof body.company === 'string' ? body.company : '';
+  const message = typeof body.message === 'string' ? body.message : '';
+  const businessProblem = typeof body.business_problem === 'string' ? body.business_problem : '';
+  const projectLinks = typeof body.project_links === 'string' ? body.project_links : '';
+
+  if (!fromName || trimLen(fromName) === 0) {
     return { valid: false, error: "Missing or invalid name" };
   }
-  if (trimLen(body.from_name) > 100) return { valid: false, error: "Name is too long (max 100 characters)" };
+  if (trimLen(fromName) > 100) return { valid: false, error: "Name is too long (max 100 characters)" };
 
-  if (!body.from_email || typeof body.from_email !== 'string') {
+  if (!fromEmail || trimLen(fromEmail) === 0) {
     return { valid: false, error: "Missing or invalid email" };
   }
-  if (trimLen(body.from_email) > 255) return { valid: false, error: "Email is too long" };
+  if (trimLen(fromEmail) > 255) return { valid: false, error: "Email is too long" };
 
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  if (!emailRegex.test(body.from_email)) {
+  if (!emailRegex.test(fromEmail)) {
     return { valid: false, error: "Invalid email address format" };
   }
 
-  if (body.company && trimLen(body.company) > 150) {
+  if (company && trimLen(company) > 150) {
     return { valid: false, error: "Company name is too long (max 150 characters)" };
   }
 
-  if (body.message && trimLen(body.message) > 10000) {
+  if (message && trimLen(message) > 10000) {
     return { valid: false, error: "Message is too long (max 10,000 characters)" };
   }
 
-  if (body.business_problem && trimLen(body.business_problem) > 10000) {
+  if (businessProblem && trimLen(businessProblem) > 10000) {
     return { valid: false, error: "Business problem description is too long (max 10,000 characters)" };
   }
 
-  if (body.project_links) {
-    if (trimLen(body.project_links) > 5000) {
+  if (projectLinks) {
+    if (trimLen(projectLinks) > 5000) {
       return { valid: false, error: "Project links are too long (max 5,000 characters)" };
     }
-    const lines = body.project_links.split('\n').map((l: string) => l.trim()).filter(Boolean);
+    const lines = projectLinks.split('\n').map((l: string) => l.trim()).filter(Boolean);
     for (const line of lines) {
       try {
         const url = new URL(line);
         if (url.protocol !== 'http:' && url.protocol !== 'https:') {
           return { valid: false, error: `Invalid project link protocol (must be http or https): ${line}` };
         }
-      } catch (e) {
+      } catch {
         return { valid: false, error: `Invalid project link URL: ${line}` };
       }
     }
@@ -64,9 +71,7 @@ export function parseProjectLinks(linksString?: string): string {
 
   for (const line of lines) {
     try {
-      // Validate that it's a parseable URL
       const url = new URL(line);
-      // Ensure it's http/https
       if (url.protocol !== 'http:' && url.protocol !== 'https:') {
         continue;
       }
@@ -80,12 +85,7 @@ export function parseProjectLinks(linksString?: string): string {
       else if (url.hostname.includes('onedrive.live.com')) domain = 'OneDrive';
 
       validUrls.set(url.href, domain);
-    } catch (e) {
-      // Ignore invalid URLs silently or we could add them as plain text. 
-      // User request: "I would not silently discard invalid URLs without telling the user, though. Better to return a validation error if a supplied project link isn’t valid."
-      // Since this function is called during parsing, not validation, we will just include it as raw text if it doesn't parse, or we can handle it.
-      // Given the user's note, wait - I should throw a validation error during the validation phase instead. But for now, we will just leave it as raw text if it doesn't start with http to support natural language links like "Here is my drive: google.com/...". Let's assume if it starts with http it must be valid.
-      // We will just do a basic fallback here.
+    } catch {
       if (line.startsWith('http')) {
         validUrls.set(line, "Link");
       }

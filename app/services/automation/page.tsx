@@ -57,7 +57,7 @@ export default function AutomationPage() {
               <Link2 className="w-10 h-10 text-blue-600 mb-6" />
               <h3 className="text-xl font-bold mb-3">Custom API Integrations</h3>
               <p className="text-zinc-600 mb-6 leading-relaxed">
-                We build secure, serverless middleware to connect systems that don't natively talk to each other, bypassing the limitations of tools like Zapier or Make.
+                We build secure, serverless middleware to connect systems that don&apos;t natively talk to each other, bypassing the limitations of tools like Zapier or Make.
               </p>
             </div>
             
@@ -91,7 +91,7 @@ export default function AutomationPage() {
       <section className="py-24 px-6 text-center bg-zinc-50 border-t border-zinc-200">
         <h2 className="text-3xl font-serif font-bold mb-6">Scale without adding headcount.</h2>
         <p className="text-zinc-600 mb-8 max-w-xl mx-auto">
-          Let's identify the operational bottlenecks in your business and replace them with code.
+          Let&apos;s identify the operational bottlenecks in your business and replace them with code.
         </p>
         <Link 
           href="/contact?service=automation" 

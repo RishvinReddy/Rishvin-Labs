@@ -14,6 +14,16 @@ const nextConfig = {
         destination: '/about/rishvin-reddy',
         permanent: true,
       },
+      {
+        source: '/projects',
+        destination: '/work',
+        permanent: true,
+      },
+      {
+        source: '/case-studies',
+        destination: '/work',
+        permanent: true,
+      },
     ];
   },
   async headers() {

@@ -89,7 +89,7 @@ export default function SoftwareDevelopmentPage() {
       </section>
 
       <section className="py-24 px-6 text-center bg-zinc-50 border-t border-zinc-200">
-        <h2 className="text-3xl font-serif font-bold mb-6">Let's build your product.</h2>
+        <h2 className="text-3xl font-serif font-bold mb-6">Let&apos;s build your product.</h2>
         <p className="text-zinc-600 mb-8 max-w-xl mx-auto">
           From MVP to enterprise scale, we have the engineering expertise to bring your vision to life.
         </p>

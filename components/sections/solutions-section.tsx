@@ -4,12 +4,7 @@ import React from "react";
 import Link from "next/link";
 import { 
   Rocket, 
-  Layers, 
-  FolderGit2, 
-  Calculator, 
   Globe, 
-  GitBranch, 
-  Mail, 
   PhoneCall, 
   ArrowRight,
   TrendingUp,

@@ -1,6 +1,7 @@
 import { MetadataRoute } from 'next';
 import { getAllMdx } from '@/lib/mdx';
 import { siteConfig } from '@/lib/seo/site';
+import { projects } from '@/data/projects';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const SITE_URL = siteConfig.url;
@@ -9,17 +10,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '',
     '/about',
     '/about/rishvin-reddy',
-    '/d2c',
-    '/services/ai-development',
-    '/services/software-development',
-    '/services/automation',
-    '/projects',
+    '/services',
+    '/work',
+    '/results',
+    '/journal',
+    '/students',
+    '/linkedin',
     '/contact',
     '/faq',
-    '/case-studies',
     '/blog',
-    '/research',
-    '/whitepapers',
     '/legal/privacy-policy',
     '/legal/terms-and-conditions',
     '/legal/refund-policy',
@@ -47,8 +46,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const dynamicResearch = generateDynamicRoutes('research', 0.8);
   const dynamicWhitepapers = generateDynamicRoutes('whitepapers', 0.8);
 
+  const dynamicWorkProjects = projects.map((project) => ({
+    url: `${SITE_URL}/work/${project.id}`,
+    lastModified: '2026-10-15',
+    changeFrequency: 'monthly' as const,
+    priority: 0.9,
+  }));
+
   return [
     ...staticRoutes,
+    ...dynamicWorkProjects,
     ...dynamicCaseStudies,
     ...dynamicBlog,
     ...dynamicResearch,
